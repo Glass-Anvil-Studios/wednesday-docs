@@ -10,6 +10,14 @@
 
 [`/llms-full.txt`](/llms-full.txt) is a consolidated text corpus of the public documentation currently published in this repository. It is useful when a retriever needs a single ingestible source.
 
+## Runtime retrieval corpus
+
+[`/runtime-corpus.json`](/runtime-corpus.json) is the deterministic, section-level public knowledge corpus used by WEDNESDAY's self-knowledge retrieval work. Each chunk carries a stable ID, canonical documentation URL, bounded content, lifecycle state, retrieval tags, source path, and SHA-256 content fingerprint. The corpus itself has a deterministic SHA-256 fingerprint.
+
+The corpus is product knowledge only. It does not grant runtime capability, account entitlement, permission, approval, or model-tool authority. Current server/runtime authority always has higher precedence than retrieved documentation.
+
+The schema is published at [`/contracts/runtime-corpus.schema.json`](/contracts/runtime-corpus.schema.json).
+
 ## Public API structural contract
 
 [`/contracts/public-api-contract.json`](/contracts/public-api-contract.json) is the sanitized structural snapshot for API operations that WEDNESDAY has explicitly approved for public documentation. It contains public method/path metadata, parameter locations, media types, response statuses, and cryptographic structural fingerprints.
