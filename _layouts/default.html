@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'en' }}">
+<html lang="{{ site.lang | default: 'en' }}" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f10">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#050505">
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="WEDNESDAY Developer Platform">
+  <meta property="og:site_name" content="WEDNESDAY Developers">
   <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta name="twitter:card" content="summary">
+  <script>try{const t=localStorage.getItem('wednesday-docs-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(e){}</script>
   <link rel="stylesheet" href="/assets/css/site.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":{{ page.title | default: site.title | jsonify }},"description":{{ page.description | default: site.description | jsonify }},"url":"{{ site.url }}{{ page.url }}","publisher":{"@type":"Organization","name":"Glass Anvil Studios"}}</script>
 </head>
@@ -24,20 +24,22 @@
 
   <header class="global-header">
     <div class="global-inner">
-      <a class="brand" href="/" aria-label="WEDNESDAY Developer Platform home">
+      <a class="brand" href="/" aria-label="WEDNESDAY Developers home">
         <span class="brand-mark" aria-hidden="true">W</span>
-        <span class="brand-name">WEDNESDAY</span>
+        <span class="brand-name">WEDNESDAY Developers</span>
       </a>
-      <nav class="global-links" aria-label="WEDNESDAY">
-        <a class="active" href="/">Developers</a>
-        <a href="https://wednesdaychat.com">Product</a>
-        <a href="https://status.wednesdaychat.com">Status</a>
+      <nav class="global-links" aria-label="WEDNESDAY developer navigation">
+        <a href="/">Home</a>
+        <a class="global-pill active" href="/">API</a>
+        <a href="https://wednesdaychat.com">WEDNESDAY ↗</a>
+        <a href="/learn/">Resources</a>
       </nav>
       <div class="global-actions">
         <button class="search-trigger" type="button" aria-haspopup="dialog" aria-controls="docs-search-dialog">
-          <span>Search docs</span><kbd>⌘K</kbd>
+          <span>Start searching</span><span class="search-glyph" aria-hidden="true">⌕</span><kbd>⌘K</kbd>
         </button>
-        <a class="icon-link" href="https://github.com/Glass-Anvil-Studios/wednesday-docs" aria-label="WEDNESDAY docs on GitHub">GitHub</a>
+        <a class="dashboard-link" href="https://wednesdaychat.com">Open WEDNESDAY <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme"><span aria-hidden="true">◐</span></button>
         <button class="menu-button" type="button" aria-label="Toggle documentation navigation" aria-expanded="false">Menu</button>
       </div>
     </div>
@@ -58,7 +60,6 @@
   <div class="docs-shell">
     <aside class="sidebar" id="docs-sidebar" aria-label="Documentation navigation">
       <div class="sidebar-inner">
-        <div class="sidebar-title">WEDNESDAY API</div>
         <nav id="docs-nav">
           {% for section in site.data.navigation.sections %}
           <section class="nav-section">
@@ -77,14 +78,14 @@
         <div class="article-tools">
           <div>{% if page.eyebrow %}<span class="eyebrow">{{ page.eyebrow }}</span>{% endif %}</div>
           <div class="article-actions">
-            <button type="button" class="text-action" id="copy-page">Copy page</button>
+            <button type="button" class="text-action" id="copy-page">Copy Page</button>
             {% if page.markdown_url %}<a class="text-action" href="{{ page.markdown_url }}">Markdown</a>{% endif %}
           </div>
         </div>
         {{ content }}
         <footer class="page-footer">
           <span>Official WEDNESDAY developer documentation</span>
-          {% if page.markdown_url %}<a href="{{ page.markdown_url }}">View Markdown</a>{% endif %}
+          <span><a href="/changelog/">Changelog</a> · <a href="https://status.wednesdaychat.com">Status</a></span>
         </footer>
       </article>
     </main>
@@ -93,19 +94,22 @@
       <div class="toc-inner">
         <div class="toc-title">On this page</div>
         <nav id="toc-list"></nav>
+        <button type="button" class="toc-copy" id="toc-copy-page">▣&nbsp; Copy Page</button>
       </div>
     </aside>
   </div>
+
+  <a class="ask-wednesday" href="https://wednesdaychat.com" aria-label="Open WEDNESDAY">Ask WEDNESDAY</a>
 
   <div class="search-overlay" id="docs-search-dialog" role="dialog" aria-modal="true" aria-label="Search WEDNESDAY docs" hidden>
     <div class="search-dialog">
       <div class="search-input-row">
         <span aria-hidden="true">⌕</span>
-        <input id="docs-search" type="search" placeholder="Search the WEDNESDAY docs" autocomplete="off" spellcheck="false">
+        <input id="docs-search" type="search" placeholder="Search WEDNESDAY developer docs" autocomplete="off" spellcheck="false">
         <kbd>Esc</kbd>
       </div>
       <div class="search-results" id="search-results" role="listbox" aria-label="Search results">
-        <div class="search-empty"><strong>Search the developer platform</strong><span>Try “streaming”, “projects”, “files”, or “authentication”.</span></div>
+        <div class="search-empty"><strong>Search the developer platform</strong><span>Try “streaming”, “projects”, “files”, “tools”, or “authentication”.</span></div>
       </div>
     </div>
   </div>
