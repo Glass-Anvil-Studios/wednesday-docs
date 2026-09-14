@@ -2,6 +2,14 @@
 
 ## September 14, 2026
 
+### Production contract synchronization
+
+- Added a sanitized structural snapshot for intentionally public API operations.
+- Added cryptographic endpoint and whole-contract fingerprints derived from the production API contract without publishing private schemas or implementation metadata.
+- Added CI validation requiring the snapshot endpoint set to match the explicit public allowlist exactly.
+- Added the contract snapshot to the Public Release Firewall and machine-readable documentation routing.
+- Established production-to-docs drift detection so approved public API structure cannot change silently.
+
 ### Public release firewall
 
 - Added a fail-closed publication firewall to the required documentation CI check.

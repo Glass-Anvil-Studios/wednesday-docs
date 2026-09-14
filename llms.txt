@@ -28,6 +28,7 @@
 - https://docs.wednesdaychat.com/api/authentication/ — Authentication
 - https://docs.wednesdaychat.com/api/errors/ — Error behavior
 - https://docs.wednesdaychat.com/api/rate-limits/ — Rate limits
+- https://docs.wednesdaychat.com/contracts/public-api-contract.json — Sanitized production API structural contract
 
 ## Production
 - https://docs.wednesdaychat.com/production/ — Production best practices

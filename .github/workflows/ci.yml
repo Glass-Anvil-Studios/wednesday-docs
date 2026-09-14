@@ -35,6 +35,9 @@ jobs:
       - name: Validate positive public contract
         run: python scripts/validate_public_contract.py
 
+      - name: Validate production contract snapshot
+        run: python scripts/validate_production_contract_snapshot.py
+
       - name: Validate documentation sources
         run: python scripts/validate_docs.py
 
