@@ -17,9 +17,9 @@
 - https://docs.wednesdaychat.com/deep-research/ — Deep research
 
 ## Build
-- https://docs.wednesdaychat.com/models/ — Model publication and selection
+- https://docs.wednesdaychat.com/models/ — WEDNESDAY execution profiles and model-contract policy
 - https://docs.wednesdaychat.com/agents/ — Agent behavior
-- https://docs.wednesdaychat.com/tools/ — Tool capabilities
+- https://docs.wednesdaychat.com/tools/ — Tool families and execution lifecycle
 - https://docs.wednesdaychat.com/integrations/ — Integrations
 
 ## API
@@ -30,12 +30,13 @@
 - https://docs.wednesdaychat.com/api/rate-limits/ — Rate limits
 
 ## Production
-- https://docs.wednesdaychat.com/production/ — Production guidance
+- https://docs.wednesdaychat.com/production/ — Production best practices
 - https://docs.wednesdaychat.com/security/ — Security
 - https://docs.wednesdaychat.com/privacy/ — Privacy
 - https://docs.wednesdaychat.com/reliability/ — Reliability
 
 ## Resources
+- https://docs.wednesdaychat.com/learn/ — Guided learning paths
 - https://docs.wednesdaychat.com/changelog/ — Changelog
 - https://docs.wednesdaychat.com/deprecations/ — Deprecations
 - https://docs.wednesdaychat.com/machine-readable/ — Machine-readable documentation
