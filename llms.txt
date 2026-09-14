@@ -42,3 +42,5 @@
 - https://docs.wednesdaychat.com/deprecations/ — Deprecations
 - https://docs.wednesdaychat.com/machine-readable/ — Machine-readable documentation
 - https://docs.wednesdaychat.com/llms-full.txt — Consolidated public documentation corpus
+- https://docs.wednesdaychat.com/runtime-corpus.json — Deterministic section-level runtime retrieval corpus
+- https://docs.wednesdaychat.com/contracts/runtime-corpus.schema.json — Runtime corpus schema
