@@ -1,204 +1,156 @@
 (() => {
   const body = document.body;
   const menuButton = document.querySelector('.menu-button');
-  const sidebarClose = document.querySelector('.sidebar-close');
-  const sidebarLinks = Array.from(document.querySelectorAll('#docs-nav .nav-link'));
-  const searchTrigger = document.getElementById('search-trigger');
-  const searchDialog = document.getElementById('search-dialog');
+  const overlay = document.getElementById('docs-search-dialog');
   const searchInput = document.getElementById('docs-search');
-  const searchResults = document.getElementById('search-results');
-  const searchClosers = Array.from(document.querySelectorAll('[data-search-close]'));
-  const copyPage = document.getElementById('copy-page');
-  const tocNav = document.getElementById('toc-nav');
+  const results = document.getElementById('search-results');
+  const searchTriggers = document.querySelectorAll('.search-trigger');
+  const toc = document.getElementById('toc-list');
+  const article = document.querySelector('[data-copy-source]');
+  let searchIndex = null;
+  let selected = -1;
 
-  const searchIndex = sidebarLinks.map((link) => ({
-    title: link.dataset.searchTitle || link.textContent.trim(),
-    section: link.dataset.searchSection || 'Documentation',
-    href: link.getAttribute('href') || '#'
-  }));
-
-  let selectedIndex = -1;
-
-  const setMenuOpen = (open) => {
-    body.classList.toggle('nav-open', open);
-    menuButton?.setAttribute('aria-expanded', String(open));
+  const closeNav = () => {
+    body.classList.remove('nav-open');
+    menuButton?.setAttribute('aria-expanded', 'false');
   };
 
-  const renderSearch = (query = '') => {
-    if (!searchResults) return;
-    const q = query.trim().toLowerCase();
-    const matches = searchIndex.filter((item) => {
-      if (!q) return true;
-      return `${item.title} ${item.section}`.toLowerCase().includes(q);
-    }).slice(0, 12);
+  menuButton?.addEventListener('click', () => {
+    const open = body.classList.toggle('nav-open');
+    menuButton.setAttribute('aria-expanded', String(open));
+  });
 
-    selectedIndex = -1;
-    searchResults.innerHTML = '';
+  document.querySelectorAll('#docs-nav a').forEach((link) => link.addEventListener('click', closeNav));
 
-    if (!matches.length) {
-      const empty = document.createElement('div');
-      empty.className = 'search-empty';
-      empty.textContent = 'No matching documentation pages.';
-      searchResults.appendChild(empty);
-      return;
+  const openSearch = async () => {
+    overlay.hidden = false;
+    body.style.overflow = 'hidden';
+    searchInput?.focus();
+    if (!searchIndex) {
+      try {
+        const response = await fetch('/search.json', { cache: 'force-cache' });
+        if (!response.ok) throw new Error('search index unavailable');
+        searchIndex = await response.json();
+      } catch {
+        searchIndex = [];
+      }
     }
-
-    const label = document.createElement('div');
-    label.className = 'search-group-label';
-    label.textContent = q ? 'Results' : 'Suggested';
-    searchResults.appendChild(label);
-
-    matches.forEach((item) => {
-      const link = document.createElement('a');
-      link.className = 'search-result';
-      link.href = item.href;
-      link.innerHTML = `<span><span class="search-result-title">${escapeHtml(item.title)}</span><br><span class="search-result-section">${escapeHtml(item.section)}</span></span><span class="search-result-arrow">↗</span>`;
-      searchResults.appendChild(link);
-    });
-  };
-
-  const escapeHtml = (value) => value
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
-
-  const openSearch = () => {
-    if (!searchDialog) return;
-    searchDialog.hidden = false;
-    body.classList.add('search-open');
-    renderSearch(searchInput?.value || '');
-    window.setTimeout(() => searchInput?.focus(), 0);
   };
 
   const closeSearch = () => {
-    if (!searchDialog) return;
-    searchDialog.hidden = true;
-    body.classList.remove('search-open');
-    selectedIndex = -1;
+    overlay.hidden = true;
+    body.style.overflow = '';
+    selected = -1;
+    if (searchInput) searchInput.value = '';
+    renderResults('');
   };
 
-  const moveSearchSelection = (direction) => {
-    const results = Array.from(searchResults?.querySelectorAll('.search-result') || []);
-    if (!results.length) return;
-    selectedIndex = (selectedIndex + direction + results.length) % results.length;
-    results.forEach((result, index) => result.classList.toggle('selected', index === selectedIndex));
-    results[selectedIndex]?.scrollIntoView({ block: 'nearest' });
-  };
+  searchTriggers.forEach((button) => button.addEventListener('click', openSearch));
+  overlay?.addEventListener('click', (event) => { if (event.target === overlay) closeSearch(); });
 
-  menuButton?.addEventListener('click', () => setMenuOpen(!body.classList.contains('nav-open')));
-  sidebarClose?.addEventListener('click', () => setMenuOpen(false));
-  sidebarLinks.forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
-  searchTrigger?.addEventListener('click', openSearch);
-  searchClosers.forEach((closer) => closer.addEventListener('click', closeSearch));
-  searchInput?.addEventListener('input', () => renderSearch(searchInput.value));
+  const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[char]));
+
+  function renderResults(query) {
+    if (!results) return;
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      results.innerHTML = '<div class="search-empty"><strong>Search the developer platform</strong><span>Try “streaming”, “projects”, “files”, or “authentication”.</span></div>';
+      selected = -1;
+      return;
+    }
+    const matches = (searchIndex || []).map((item) => {
+      const haystack = `${item.title} ${item.description} ${item.section}`.toLowerCase();
+      const title = item.title.toLowerCase();
+      let score = 0;
+      if (title === q) score += 100;
+      if (title.startsWith(q)) score += 50;
+      if (title.includes(q)) score += 25;
+      if (haystack.includes(q)) score += 10;
+      q.split(/\s+/).forEach((token) => { if (haystack.includes(token)) score += 2; });
+      return { item, score };
+    }).filter(({ score }) => score > 0).sort((a,b) => b.score - a.score).slice(0, 12);
+    if (!matches.length) {
+      results.innerHTML = '<div class="search-empty"><strong>No matching documentation</strong><span>Try a broader term.</span></div>';
+      selected = -1;
+      return;
+    }
+    results.innerHTML = matches.map(({ item }, index) => `<a class="search-result${index === selected ? ' selected' : ''}" role="option" href="${escapeHtml(item.url)}"><div class="search-result-section">${escapeHtml(item.section || 'Docs')}</div><div class="search-result-title">${escapeHtml(item.title)}</div><div class="search-result-copy">${escapeHtml(item.description || '')}</div></a>`).join('');
+  }
+
+  searchInput?.addEventListener('input', () => { selected = -1; renderResults(searchInput.value); });
 
   document.addEventListener('keydown', (event) => {
-    const modifierSearch = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k';
-    const slashSearch = event.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName || '');
-
-    if (modifierSearch || slashSearch) {
+    const modifier = navigator.platform.toLowerCase().includes('mac') ? event.metaKey : event.ctrlKey;
+    if ((modifier && event.key.toLowerCase() === 'k') || (event.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement?.tagName || ''))) {
       event.preventDefault();
       openSearch();
       return;
     }
-
     if (event.key === 'Escape') {
-      closeSearch();
-      setMenuOpen(false);
+      if (!overlay?.hidden) closeSearch();
+      closeNav();
       return;
     }
-
-    if (!searchDialog?.hidden) {
-      if (event.key === 'ArrowDown') {
-        event.preventDefault();
-        moveSearchSelection(1);
-      } else if (event.key === 'ArrowUp') {
-        event.preventDefault();
-        moveSearchSelection(-1);
-      } else if (event.key === 'Enter' && selectedIndex >= 0) {
-        const results = Array.from(searchResults?.querySelectorAll('.search-result') || []);
-        const target = results[selectedIndex];
-        if (target) window.location.href = target.href;
-      }
+    if (!overlay?.hidden && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+      const items = Array.from(results?.querySelectorAll('.search-result') || []);
+      if (!items.length) return;
+      event.preventDefault();
+      selected = event.key === 'ArrowDown' ? Math.min(selected + 1, items.length - 1) : Math.max(selected - 1, 0);
+      items.forEach((item, index) => item.classList.toggle('selected', index === selected));
+      items[selected]?.scrollIntoView({ block: 'nearest' });
     }
-  });
-
-  copyPage?.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      const label = copyPage.querySelector('span');
-      const original = label?.textContent || 'Copy page';
-      copyPage.classList.add('copied');
-      if (label) label.textContent = 'Copied';
-      window.setTimeout(() => {
-        copyPage.classList.remove('copied');
-        if (label) label.textContent = original;
-      }, 1600);
-    } catch (_) {
-      window.prompt('Copy this page URL:', window.location.href);
+    if (!overlay?.hidden && event.key === 'Enter' && selected >= 0) {
+      const items = Array.from(results?.querySelectorAll('.search-result') || []);
+      if (items[selected]) window.location.href = items[selected].href;
     }
   });
 
   document.querySelectorAll('pre').forEach((pre) => {
-    if (pre.querySelector('.code-copy')) return;
     const button = document.createElement('button');
-    button.className = 'code-copy';
     button.type = 'button';
+    button.className = 'code-copy';
     button.textContent = 'Copy';
     button.addEventListener('click', async () => {
-      const code = pre.querySelector('code')?.innerText || pre.innerText;
+      const text = pre.querySelector('code')?.innerText || pre.innerText;
       try {
-        await navigator.clipboard.writeText(code);
+        await navigator.clipboard.writeText(text.replace(/^Copy\n?/, ''));
         button.textContent = 'Copied';
-        window.setTimeout(() => { button.textContent = 'Copy'; }, 1400);
-      } catch (_) {
-        button.textContent = 'Select text';
-      }
+        setTimeout(() => { button.textContent = 'Copy'; }, 1400);
+      } catch { button.textContent = 'Select'; }
     });
     pre.appendChild(button);
   });
 
-  if (tocNav) {
-    const headings = Array.from(document.querySelectorAll('.content-inner h2, .content-inner h3'));
-    const used = new Set();
+  document.getElementById('copy-page')?.addEventListener('click', async (event) => {
+    if (!article) return;
+    const clone = article.cloneNode(true);
+    clone.querySelectorAll('.article-tools,.page-footer,.code-copy').forEach((node) => node.remove());
+    try {
+      await navigator.clipboard.writeText(clone.innerText.trim());
+      event.currentTarget.textContent = 'Copied';
+      setTimeout(() => { event.currentTarget.textContent = 'Copy page'; }, 1400);
+    } catch { event.currentTarget.textContent = 'Select page'; }
+  });
 
-    headings.forEach((heading, index) => {
-      if (!heading.id) {
-        const base = heading.textContent.trim().toLowerCase()
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .replace(/-+/g, '-') || `section-${index + 1}`;
-        let id = base;
-        let suffix = 2;
-        while (used.has(id) || document.getElementById(id)) id = `${base}-${suffix++}`;
-        heading.id = id;
-      }
-      used.add(heading.id);
-
+  const headings = Array.from(article?.querySelectorAll('h2[id],h3[id]') || []);
+  if (toc && headings.length) {
+    headings.forEach((heading) => {
       const link = document.createElement('a');
       link.href = `#${heading.id}`;
-      link.textContent = heading.textContent.trim();
-      link.dataset.level = heading.tagName === 'H3' ? '3' : '2';
-      tocNav.appendChild(link);
+      link.textContent = heading.textContent;
+      if (heading.tagName === 'H3') link.className = 'level-3';
+      toc.appendChild(link);
     });
-
-    if (!headings.length) {
-      const toc = tocNav.closest('.toc');
-      if (toc) toc.style.display = 'none';
-    } else if ('IntersectionObserver' in window) {
-      const tocLinks = Array.from(tocNav.querySelectorAll('a'));
-      const byId = new Map(tocLinks.map((link) => [link.getAttribute('href')?.slice(1), link]));
+    if ('IntersectionObserver' in window) {
+      const links = Array.from(toc.querySelectorAll('a'));
       const observer = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
         if (!visible) return;
-        tocLinks.forEach((link) => link.classList.remove('active'));
-        byId.get(visible.target.id)?.classList.add('active');
-      }, { rootMargin: '-18% 0px -72% 0px', threshold: [0, 1] });
+        links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`));
+      }, { rootMargin: '-18% 0px -72% 0px', threshold: [0,1] });
       headings.forEach((heading) => observer.observe(heading));
     }
+  } else if (document.querySelector('.toc')) {
+    document.querySelector('.toc').style.visibility = 'hidden';
   }
 })();

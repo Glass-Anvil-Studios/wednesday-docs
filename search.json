@@ -1,0 +1,11 @@
+---
+layout: null
+permalink: /search.json
+search: false
+---
+[
+{% assign searchable = site.pages | where_exp: "p", "p.title and p.search != false" %}
+{% for p in searchable %}
+  {"title":{{ p.title | jsonify }},"description":{{ p.description | default: '' | jsonify }},"url":{{ p.url | jsonify }},"section":{{ p.eyebrow | default: 'Docs' | jsonify }}}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

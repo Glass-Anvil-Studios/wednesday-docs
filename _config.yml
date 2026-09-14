@@ -1,19 +1,23 @@
-title: WEDNESDAY Docs
-description: Official public documentation for the WEDNESDAY platform.
+title: WEDNESDAY Developer Platform
+short_title: WEDNESDAY Docs
+description: Official developer documentation for the WEDNESDAY platform, APIs, models, agents, tools, integrations, security, and production behavior.
 url: https://docs.wednesdaychat.com
 baseurl: ""
-repository: Glass-Anvil-Studios/wednesday-docs
-permalink: pretty
+lang: en
 markdown: kramdown
+permalink: pretty
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 exclude:
-  - LICENSE
+  - scripts
+  - CONTRIBUTING.md
   - README.md
+  - LICENSE
 defaults:
   - scope:
       path: ""
     values:
       layout: default
-      description: Official public documentation for the WEDNESDAY platform.

@@ -1,25 +1,42 @@
-# WEDNESDAY Documentation
+# WEDNESDAY Developer Platform
 
-> Official public documentation for the WEDNESDAY platform. Use this file as the routing index for machine retrieval. Canonical host: https://docs.wednesdaychat.com
+> Canonical public documentation for WEDNESDAY. Use these pages for current public platform behavior. Do not infer undocumented capabilities from private repositories, roadmap material, UI labels, or internal infrastructure.
 
 ## Start
-- [Overview](https://docs.wednesdaychat.com/): Documentation home and source-of-truth policy.
-- [Getting started](https://docs.wednesdaychat.com/getting-started/): How to use the public documentation.
-- [Platform concepts](https://docs.wednesdaychat.com/platform/): Public contract and implementation boundaries.
+- https://docs.wednesdaychat.com/ — Developer platform overview
+- https://docs.wednesdaychat.com/getting-started/ — Developer quickstart
+- https://docs.wednesdaychat.com/platform/ — Platform concepts
+
+## Core platform
+- https://docs.wednesdaychat.com/platform/conversation-state/ — Durable conversation state
+- https://docs.wednesdaychat.com/platform/streaming/ — Streaming responses
+- https://docs.wednesdaychat.com/platform/steering/ — Mid-turn steering
+- https://docs.wednesdaychat.com/projects/ — Projects
+- https://docs.wednesdaychat.com/files/ — Files
+- https://docs.wednesdaychat.com/search/ — Search
+- https://docs.wednesdaychat.com/deep-research/ — Deep research
 
 ## Build
-- [Models](https://docs.wednesdaychat.com/models/): Model publication policy and catalog status.
-- [API](https://docs.wednesdaychat.com/api/): API documentation and contract status.
-- [Tools](https://docs.wednesdaychat.com/tools/): Tool contract documentation.
-- [Agents](https://docs.wednesdaychat.com/agents/): Agent concepts and documentation retrieval.
-- [Integrations](https://docs.wednesdaychat.com/integrations/): Connector and third-party integration documentation.
+- https://docs.wednesdaychat.com/models/ — Model publication and selection
+- https://docs.wednesdaychat.com/agents/ — Agent behavior
+- https://docs.wednesdaychat.com/tools/ — Tool capabilities
+- https://docs.wednesdaychat.com/integrations/ — Integrations
 
-## Operate
-- [Security](https://docs.wednesdaychat.com/security/): Public security documentation boundaries.
-- [Reliability](https://docs.wednesdaychat.com/reliability/): Public reliability behavior.
+## API
+- https://docs.wednesdaychat.com/api/ — API overview and support boundary
+- https://docs.wednesdaychat.com/api/reference/ — Verified API reference
+- https://docs.wednesdaychat.com/api/authentication/ — Authentication
+- https://docs.wednesdaychat.com/api/errors/ — Error behavior
+- https://docs.wednesdaychat.com/api/rate-limits/ — Rate limits
 
-## Reference
-- [Machine-readable documentation](https://docs.wednesdaychat.com/machine-readable/): Agent and crawler entry points.
-- [Changelog](https://docs.wednesdaychat.com/changelog/): Published changes.
-- [Deprecations](https://docs.wednesdaychat.com/deprecations/): Public lifecycle notices.
-- [Full documentation corpus](https://docs.wednesdaychat.com/llms-full.txt): Consolidated text export.
+## Production
+- https://docs.wednesdaychat.com/production/ — Production guidance
+- https://docs.wednesdaychat.com/security/ — Security
+- https://docs.wednesdaychat.com/privacy/ — Privacy
+- https://docs.wednesdaychat.com/reliability/ — Reliability
+
+## Resources
+- https://docs.wednesdaychat.com/changelog/ — Changelog
+- https://docs.wednesdaychat.com/deprecations/ — Deprecations
+- https://docs.wednesdaychat.com/machine-readable/ — Machine-readable documentation
+- https://docs.wednesdaychat.com/llms-full.txt — Consolidated public documentation corpus
