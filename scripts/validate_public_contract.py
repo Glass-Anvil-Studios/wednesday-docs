@@ -5,9 +5,13 @@ import re
 import sys
 from pathlib import Path
 
-from scripts import public_release_firewall as firewall
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
 
-ROOT = Path(__file__).resolve().parents[1]
+import public_release_firewall as firewall
+
+ROOT = SCRIPT_DIR.parent
 TABLE_ENDPOINT_RE = re.compile(
     r"(?m)^\s*\|\s*`?(GET|POST|PUT|PATCH|DELETE|OPTIONS|HEAD)`?\s*\|\s*`?(/[^|`\s]+)`?\s*\|",
     re.I,
