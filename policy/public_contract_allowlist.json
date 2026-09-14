@@ -15,6 +15,10 @@
       "path": "/search"
     },
     {
+      "method": "GET",
+      "path": "/projects/{project_id}/search"
+    },
+    {
       "method": "POST",
       "path": "/chat"
     },
