@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "canonical_site_origin": "https://docs.wednesdaychat.com",
+  "approved_wednesday_origins": [
+    "https://wednesdaychat.com",
+    "https://www.wednesdaychat.com",
+    "https://docs.wednesdaychat.com",
+    "https://api.wednesdaychat.com",
+    "https://status.wednesdaychat.com"
+  ],
+  "approved_environment_variables": [],
+  "approved_http_endpoints": [
+    {
+      "method": "GET",
+      "path": "/search"
+    },
+    {
+      "method": "POST",
+      "path": "/chat"
+    },
+    {
+      "method": "POST",
+      "path": "/chat/{turn_id}/input"
+    }
+  ]
+}
