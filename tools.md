@@ -1,11 +1,3 @@
----
-title: Tools
-eyebrow: Build
-description: WEDNESDAY's typed tool execution model, lifecycle events, security boundaries, and public capability policy.
-permalink: /tools/
-markdown_url: /tools.md
----
-
 # Tools
 
 <p class="lead">Tools are explicit execution capabilities with typed lifecycle state. They are not invisible model side effects.</p>

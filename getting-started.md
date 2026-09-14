@@ -1,11 +1,3 @@
----
-title: Developer quickstart
-eyebrow: Get started
-description: Verify the WEDNESDAY production API origin and understand the supported access boundary before integrating.
-permalink: /getting-started/
-markdown_url: /getting-started.md
----
-
 # Developer quickstart
 
 <p class="lead">Start with the production contract that exists today: a public HTTPS origin, narrow unauthenticated operations, and session-protected product APIs.</p>

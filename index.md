@@ -1,51 +1,40 @@
 ---
-title: WEDNESDAY Documentation
+title: WEDNESDAY Developer Platform
 eyebrow: Developer platform
-description: Official developer documentation for building, integrating, and operating with WEDNESDAY.
+description: Build on WEDNESDAY with production-verified documentation for platform behavior, APIs, models, agents, tools, integrations, and operations.
 permalink: /
 ---
 
 <div class="hero">
-  <span class="status"><span class="status-dot"></span> Documentation online</span>
+<span class="status-pill">Production documentation</span>
 
 # Build with WEDNESDAY
 
-<p class="lead">Official developer documentation for the WEDNESDAY platform. Start with platform concepts, then move into verified models, agents, tools, integrations, production guidance, and the public API reference.</p>
+<p class="lead">Production-verified documentation for WEDNESDAY: durable conversations, streaming, projects, files, search, research, models, agents, tools, integrations, and the API boundary that connects them.</p>
 
 <div class="hero-actions">
-  <a class="button" href="/getting-started/">Developer quickstart</a>
-  <a class="button secondary" href="/api/">API reference</a>
+<a class="button" href="/getting-started/">Start building</a>
+<a class="button secondary" href="/api/reference/">API reference</a>
 </div>
 </div>
 
-## Start here
+## Start with the platform
 
 <div class="grid">
-<a class="card" href="/getting-started/"><div class="card-title">Developer quickstart</div><div class="card-copy">Learn how the documentation is organized and where to begin when building against WEDNESDAY.</div></a>
-<a class="card" href="/platform/"><div class="card-title">Platform concepts</div><div class="card-copy">Understand the public concepts and terminology used across the WEDNESDAY developer platform.</div></a>
-<a class="card" href="/api/"><div class="card-title">API reference</div><div class="card-copy">Use the production-synchronized public API contract and endpoint documentation.</div></a>
-<a class="card" href="/changelog/"><div class="card-title">Changelog</div><div class="card-copy">Track meaningful public documentation, contract, and platform changes as they are released.</div></a>
+<a class="card" href="/getting-started/"><div class="card-title">Developer quickstart</div><div class="card-copy">Understand the production origin, access model, and first verified request.</div></a>
+<a class="card" href="/platform/"><div class="card-title">Core concepts</div><div class="card-copy">Learn how session authority, durable state, streaming, projects, and tools fit together.</div></a>
+<a class="card" href="/api/reference/"><div class="card-title">API reference</div><div class="card-copy">Browse the deliberately published HTTP surface and its support boundary.</div></a>
+<a class="card" href="/production/"><div class="card-title">Production</div><div class="card-copy">Security, privacy, reliability, rate-limit, and release guidance.</div></a>
 </div>
 
-## Explore the platform
+## Frontier capability, explicit contracts
 
-<div class="grid">
-<a class="card" href="/models/"><div class="card-title">Models</div><div class="card-copy">Verified model identifiers, supported behavior, lifecycle information, and selection guidance.</div></a>
-<a class="card" href="/agents/"><div class="card-title">Agents</div><div class="card-copy">Public agent architecture, supported behavior, and developer-facing workflows.</div></a>
-<a class="card" href="/tools/"><div class="card-title">Tools</div><div class="card-copy">Developer-facing tools and tool behavior that have been verified for public release.</div></a>
-<a class="card" href="/integrations/"><div class="card-title">Integrations</div><div class="card-copy">Supported external integrations and the public contracts that govern them.</div></a>
-</div>
+WEDNESDAY is built as a stateful AI platform rather than a single stateless completion endpoint. Conversations can persist, stream structured events, use tools, retain project context, accept mid-turn steering, attach files, search durable state, and support longer-running research workflows.
 
-## Production and operations
+This documentation publishes only behavior that is safe to depend on. Internal routing, private infrastructure, secret configuration, roadmap-only features, and implementation details are not public API contracts.
 
-Use the production sections for public guidance on [reliability](/reliability/), [security](/security/), lifecycle changes, and deprecations. Operational details are published only when they are intended to be part of the supported public platform contract.
+<div class="notice"><strong>Access boundary:</strong> the production API origin is <code>https://api.wednesdaychat.com</code>. Most product operations require a valid WEDNESDAY server account session. An unrestricted third-party API-key contract is not implied by the existence of the API origin.</div>
 
-<div class="notice"><strong>Production-grounded documentation.</strong> Endpoints, model limits, tool behavior, quotas, security claims, and lifecycle statements are published only after they are verified against production source, a production specification, or another explicitly versioned public contract.</div>
+## Built for people and models
 
-## One public source of truth
-
-This site is the canonical public developer reference for WEDNESDAY. Internal implementation details, administrative surfaces, secrets, infrastructure internals, and unsupported capabilities are intentionally excluded from the public documentation.
-
-## Machine-readable by design
-
-The documentation is structured for developers, search engines, and AI agents. Use [`/llms.txt`](/llms.txt) for the routing index and [`/llms-full.txt`](/llms-full.txt) for the consolidated public documentation corpus.
+Every substantive documentation page has a raw Markdown twin. Start machine retrieval with [`/llms.txt`](/llms.txt), use [`/llms-full.txt`](/llms-full.txt) for the consolidated corpus, and use [`/search.json`](/search.json) for the lightweight search index.

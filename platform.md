@@ -1,11 +1,3 @@
----
-title: Key concepts
-eyebrow: Get started
-description: Understand WEDNESDAY's server-authoritative sessions, durable state, streaming protocol, projects, and tool-oriented execution model.
-permalink: /platform/
-markdown_url: /platform.md
----
-
 # Key concepts
 
 <p class="lead">WEDNESDAY combines server-owned identity, durable conversation state, structured streaming, project context, and tool-oriented execution into one product runtime.</p>

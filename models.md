@@ -1,11 +1,3 @@
----
-title: Models
-eyebrow: Build
-description: How WEDNESDAY publishes stable model behavior without exposing internal routing as a compatibility promise.
-permalink: /models/
-markdown_url: /models.md
----
-
 # Models
 
 <p class="lead">WEDNESDAY can route a turn through model roles, intelligence levels, latency profiles, and reasoning profiles. Only stable, explicitly documented model identifiers are treated as public contracts.</p>

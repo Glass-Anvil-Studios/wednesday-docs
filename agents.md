@@ -1,11 +1,3 @@
----
-title: Agents
-eyebrow: Build
-description: WEDNESDAY agent execution concepts: stateful turns, tool activity, durable research, steering, and approval-aware work.
-permalink: /agents/
-markdown_url: /agents.md
----
-
 # Agents
 
 <p class="lead">WEDNESDAY agent behavior is built from stateful turns, typed tool activity, durable task state, and explicit user control rather than a hidden autonomous loop.</p>

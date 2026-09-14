@@ -1,11 +1,3 @@
----
-title: Integrations
-eyebrow: Build
-description: WEDNESDAY connector and integration boundaries, including project connector bindings and GitHub-backed workflows.
-permalink: /integrations/
-markdown_url: /integrations.md
----
-
 # Integrations
 
 <p class="lead">Integrations connect WEDNESDAY to external systems without collapsing external authorization into the model or the browser client.</p>
