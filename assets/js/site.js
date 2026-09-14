@@ -32,7 +32,7 @@
   });
   document.querySelectorAll('#docs-nav a').forEach((link) => link.addEventListener('click', closeNav));
 
-  const openSearch = async () => {
+  const openDocsSearch = async () => {
     overlay.hidden = false;
     body.style.overflow = 'hidden';
     searchInput?.focus();
@@ -55,7 +55,7 @@
     renderResults('');
   };
 
-  searchTriggers.forEach((button) => button.addEventListener('click', openSearch));
+  searchTriggers.forEach((button) => button.addEventListener('click', openDocsSearch));
   overlay?.addEventListener('click', (event) => { if (event.target === overlay) closeSearch(); });
 
   const escapeHtml = (value) => String(value).replace(/[&<>\"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[char] || char));
@@ -94,7 +94,7 @@
     const modifier = navigator.platform.toLowerCase().includes('mac') ? event.metaKey : event.ctrlKey;
     if ((modifier && event.key.toLowerCase() === 'k') || (event.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement?.tagName || ''))) {
       event.preventDefault();
-      openSearch();
+      openDocsSearch();
       return;
     }
     if (event.key === 'Escape') {
