@@ -3,8 +3,8 @@
   "corpus_id": "wednesday-public-docs",
   "canonical_origin": "https://docs.wednesdaychat.com",
   "language": "en",
-  "corpus_hash": "8a24194c4993988416115738810c4b76ffd818671306715ccd33b7bb97f10d04",
-  "chunk_count": 146,
+  "corpus_hash": "fce04dbd05d20f2db474d59a6c4daa738912d3fbf26384c7f87c290a527a6f1d",
+  "chunk_count": 147,
   "chunks": [
     {
       "id": "agents.overview",
@@ -1067,6 +1067,20 @@
       "ordinal": 2
     },
     {
+      "id": "machine-readable.runtime-retrieval-corpus",
+      "title": "Machine-readable documentation",
+      "section": "Runtime retrieval corpus",
+      "url": "https://docs.wednesdaychat.com/machine-readable/#runtime-retrieval-corpus",
+      "content": "/runtime-corpus.json (/runtime-corpus.json) is the deterministic, section-level public knowledge corpus used by WEDNESDAY's self-knowledge retrieval work. Each chunk carries a stable ID, canonical documentation URL, bounded content, lifecycle state, retrieval tags, source path, and SHA-256 content fingerprint. The corpus itself has a deterministic SHA-256 fingerprint.\n\nThe corpus is product knowledge only. It does not grant runtime capability, account entitlement, permission, approval, or model-tool authority. Current server/runtime authority always has higher precedence than retrieved documentation.\n\nThe schema is published at /contracts/runtime-corpus.schema.json (/contracts/runtime-corpus.schema.json).",
+      "content_hash": "b6cb5120ff35b1fe7e2690b12b0a756a7fa3baf9cace866da3b0d487a7881ca4",
+      "tags": [
+        "machine-readable"
+      ],
+      "lifecycle": "stable",
+      "source_path": "machine-readable/index.md",
+      "ordinal": 3
+    },
+    {
       "id": "machine-readable.public-api-structural-contract",
       "title": "Machine-readable documentation",
       "section": "Public API structural contract",
@@ -1078,7 +1092,7 @@
       ],
       "lifecycle": "stable",
       "source_path": "machine-readable/index.md",
-      "ordinal": 3
+      "ordinal": 4
     },
     {
       "id": "machine-readable.search-and-crawling",
@@ -1092,7 +1106,7 @@
       ],
       "lifecycle": "stable",
       "source_path": "machine-readable/index.md",
-      "ordinal": 4
+      "ordinal": 5
     },
     {
       "id": "machine-readable.source-integrity",
@@ -1106,7 +1120,7 @@
       ],
       "lifecycle": "stable",
       "source_path": "machine-readable/index.md",
-      "ordinal": 5
+      "ordinal": 6
     },
     {
       "id": "models.overview",
