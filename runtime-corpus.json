@@ -1,0 +1,2095 @@
+{
+  "schema_version": "wednesday.docs.runtime_corpus.v1",
+  "corpus_id": "wednesday-public-docs",
+  "canonical_origin": "https://docs.wednesdaychat.com",
+  "language": "en",
+  "corpus_hash": "8a24194c4993988416115738810c4b76ffd818671306715ccd33b7bb97f10d04",
+  "chunk_count": 146,
+  "chunks": [
+    {
+      "id": "agents.overview",
+      "title": "Agents",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/agents/",
+      "content": "WEDNESDAY agent behavior is built from stateful turns, typed tool activity, durable task state, and explicit user control rather than a hidden autonomous loop.",
+      "content_hash": "c1055894026278d2ac7e16265434f71e096da5f0d6c9ee5ff7217cf0d5d8f71f",
+      "tags": [
+        "agents"
+      ],
+      "lifecycle": "stable",
+      "source_path": "agents/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "agents.stateful-execution",
+      "title": "Agents",
+      "section": "Stateful execution",
+      "url": "https://docs.wednesdaychat.com/agents/#stateful-execution",
+      "content": "A turn belongs to authenticated durable conversation state. Project context can be loaded for the conversation before execution and rendered into the system context supplied to the turn.",
+      "content_hash": "65f395f59f7bb62cbc5a86064986a98d1de6fd3bcb8beca098ad41fceadda787",
+      "tags": [
+        "agents"
+      ],
+      "lifecycle": "stable",
+      "source_path": "agents/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "agents.observable-activity",
+      "title": "Agents",
+      "section": "Observable activity",
+      "url": "https://docs.wednesdaychat.com/agents/#observable-activity",
+      "content": "The stream protocol has distinct activity and tool event families. Tool execution can report start, progress, state transitions, and completion rather than collapsing all tool work into opaque text.",
+      "content_hash": "2ed208f5790f6e081c8dbaca0610609bb0938ff8ca6aa095db8ffea8111c1e04",
+      "tags": [
+        "agents"
+      ],
+      "lifecycle": "stable",
+      "source_path": "agents/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "agents.steering-and-cancellation",
+      "title": "Agents",
+      "section": "Steering and cancellation",
+      "url": "https://docs.wednesdaychat.com/agents/#steering-and-cancellation",
+      "content": "Supported turns can accept mid-turn steering while the acceptance window remains open. Durable research tasks have an explicit cancellation route.",
+      "content_hash": "a2fe3d039b291b214de9e7d3a72c01089f8cf6b93612df74f23e4e56649b874b",
+      "tags": [
+        "agents"
+      ],
+      "lifecycle": "stable",
+      "source_path": "agents/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "agents.approval-aware-behavior",
+      "title": "Agents",
+      "section": "Approval-aware behavior",
+      "url": "https://docs.wednesdaychat.com/agents/#approval-aware-behavior",
+      "content": "The execution protocol models approval risk and reversibility as explicit concepts. Public documentation will describe concrete approval flows only when the corresponding user/developer contract is stable.",
+      "content_hash": "7798dfcefb0beda3771186116f05dca2c7ecd1bfca947cdb167d6d3b8ea59ef8",
+      "tags": [
+        "agents"
+      ],
+      "lifecycle": "stable",
+      "source_path": "agents/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "agents.agent-boundary",
+      "title": "Agents",
+      "section": "Agent boundary",
+      "url": "https://docs.wednesdaychat.com/agents/#agent-boundary",
+      "content": "An agent may use tools and durable state, but authorization remains server-owned. Agent execution does not bypass the account session, project ownership, file ownership, connector scope, or external-write approval boundaries.",
+      "content_hash": "c444554325e0d3258c7d58c4c36b87b830b4e7019158e5c6f1d61bd2550798b0",
+      "tags": [
+        "agents"
+      ],
+      "lifecycle": "stable",
+      "source_path": "agents/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "api.authentication.overview",
+      "title": "Authentication",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/api/authentication/",
+      "content": "WEDNESDAY production requests are authorized through the account session boundary used by the WEDNESDAY product. Durable ownership is derived server-side from that authorized session.",
+      "content_hash": "0bbd9fad57260b8c23fdd2761b088fa15d290b9f17d636e6abf4ef5b3cb9baca",
+      "tags": [
+        "api",
+        "authentication"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/authentication/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "api.authentication.account-authority",
+      "title": "Authentication",
+      "section": "Account authority",
+      "url": "https://docs.wednesdaychat.com/api/authentication/#account-authority",
+      "content": "For protected operations, the API resolves the account owner from the authorized server session rather than trusting a caller-supplied owner identifier. This keeps projects, conversations, files, search results, and durable chat state scoped to the authenticated account.",
+      "content_hash": "4e1cd557ab82396c9afc246179b0db87ddede7c784f4826e9484f314731b946d",
+      "tags": [
+        "api",
+        "authentication"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/authentication/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "api.authentication.browser-requests",
+      "title": "Authentication",
+      "section": "Browser requests",
+      "url": "https://docs.wednesdaychat.com/api/authentication/#browser-requests",
+      "content": "The production web application communicates with https://api.wednesdaychat.com using the WEDNESDAY session boundary. Cross-origin access is restricted to approved WEDNESDAY origins and explicitly allowed methods and headers.",
+      "content_hash": "56c82f1a7562e17bb06cf457737c168893b83e9e3094a8403d0294c5251e6ff8",
+      "tags": [
+        "api",
+        "authentication"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/authentication/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "api.authentication.request-headers",
+      "title": "Authentication",
+      "section": "Request headers",
+      "url": "https://docs.wednesdaychat.com/api/authentication/#request-headers",
+      "content": "Some production flows use WEDNESDAY-specific headers for session continuity, CSRF protection, client identity, idempotency, or turn coordination. A header appearing in the service implementation does not by itself make it a public third-party authentication mechanism.",
+      "content_hash": "dc083f8a2b6f8433beb97f0efb9b2fe3097a0b79ffdcbf577666e732fc5b0769",
+      "tags": [
+        "api",
+        "authentication"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/authentication/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "api.authentication.third-party-developer-access",
+      "title": "Authentication",
+      "section": "Third-party developer access",
+      "url": "https://docs.wednesdaychat.com/api/authentication/#third-party-developer-access",
+      "content": "No implied API-key program. WEDNESDAY does not document a general public API-key authentication contract until that contract is explicitly released. Do not attempt to synthesize account/session headers or rely on internal browser-session behavior from an external integration.",
+      "content_hash": "3bc96d84e469555419a2f8f8d0a7b39633eee5a6318091e9d686cd23d4f0645e",
+      "tags": [
+        "api",
+        "authentication"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/authentication/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "api.authentication.authorization-failures",
+      "title": "Authentication",
+      "section": "Authorization failures",
+      "url": "https://docs.wednesdaychat.com/api/authentication/#authorization-failures",
+      "content": "Callers should treat authorization and session failures as terminal for the current credential context and re-establish a valid WEDNESDAY session through the supported product flow rather than retrying with fabricated identity data.",
+      "content_hash": "f05a2f3968df7935a23ef2fb6ef0e99c679120182d3dba3406ffa128982d1439",
+      "tags": [
+        "api",
+        "authentication"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/authentication/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "api.errors.overview",
+      "title": "Errors",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/api/errors/",
+      "content": "WEDNESDAY uses standard HTTP status codes plus concise error detail strings. Clients should branch on status and documented semantics rather than parsing incidental implementation text.",
+      "content_hash": "210a19f97e94c051c103a9263f5a16278a9531b6f70f3797aeee65037cc1e5bf",
+      "tags": [
+        "api",
+        "errors"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/errors/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "api.errors.common-status-codes",
+      "title": "Errors",
+      "section": "Common status codes",
+      "url": "https://docs.wednesdaychat.com/api/errors/#common-status-codes",
+      "content": "| Status | Meaning |\n| --- | --- |\n| 400 | Invalid request shape or transport constraint. |\n| 404 | Requested account-owned resource or share target was not found. |\n| 409 | The requested state transition conflicts with current durable state. |\n| 410 | A time-bounded resource, such as an upload session, has expired. |\n| 413 | A request body exceeds the accepted size. |\n| 415 | An uploaded media type or content representation is unsupported. |\n| 422 | A validated parameter or identifier is semantically invalid. |\n| 429 | A rate limit was exceeded. Respect Retry-After when supplied. |\n| 503 | A required WEDNESDAY dependency or protection layer is unavailable. |",
+      "content_hash": "9d0152258ad0f0a961e813be89a21b33334a91ec3952f218cfe4b2f6dd57c2af",
+      "tags": [
+        "api",
+        "errors"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/errors/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "api.errors.retry-behavior",
+      "title": "Errors",
+      "section": "Retry behavior",
+      "url": "https://docs.wednesdaychat.com/api/errors/#retry-behavior",
+      "content": "Retry only when the failure class is plausibly transient. 429 responses may include a Retry-After header and should not be retried before that delay. 503 can indicate unavailable persistence, cache, model access, storage, protection, or other required platform dependencies.\n\nDo not automatically retry 400, 404, 409, 410, 413, 415, or 422 without changing the request or reconciling state.",
+      "content_hash": "9b42951fb6301bc8cc1b7b10ffcda52a608ba55c436f9791703345fc0f12b946",
+      "tags": [
+        "api",
+        "errors"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/errors/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "api.errors.durable-conflicts",
+      "title": "Errors",
+      "section": "Durable conflicts",
+      "url": "https://docs.wednesdaychat.com/api/errors/#durable-conflicts",
+      "content": "A 409 response is meaningful platform state, not a generic transport failure. Examples include trying to mutate a resource after its state has moved on or submitting steering after a turn is no longer accepting input.",
+      "content_hash": "f2337f5c94a4fda5ea07ccff94078aa020725c2255a5f95b62bfd0963572b8a5",
+      "tags": [
+        "api",
+        "errors"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/errors/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "api.errors.error-text",
+      "title": "Errors",
+      "section": "Error text",
+      "url": "https://docs.wednesdaychat.com/api/errors/#error-text",
+      "content": "Error detail strings are intended for diagnostics, but clients should not treat undocumented wording as a stable machine contract. Stable client behavior should key off HTTP status and fields explicitly documented for the endpoint.",
+      "content_hash": "c1bede795e21e40d0b76a951fac1ce1088f6148b27afa4fd7929ff093a31fae2",
+      "tags": [
+        "api",
+        "errors"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/errors/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "api.overview",
+      "title": "API",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/api/",
+      "content": "WEDNESDAY exposes a production HTTP service at https://api.wednesdaychat.com . This documentation publishes the supported external contract without treating every internal service route as public API.",
+      "content_hash": "47b9a9fabaa2a2f3ea19f8d20786875f80815875e1abddc96ce2f96741f00645",
+      "tags": [
+        "api"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "api.production-origin",
+      "title": "API",
+      "section": "Production origin",
+      "url": "https://docs.wednesdaychat.com/api/#production-origin",
+      "content": "```text\nhttps://api.wednesdaychat.com\n```\n\nThe web product and supported WEDNESDAY clients use this origin for durable product operations. The API is designed around account-authorized state, streaming execution, projects, files, search, research, sharing, and related platform workflows.",
+      "content_hash": "7a1f0cca7a761a4294e1145805aae01b1b8a1aebdb9872394a51f9e1e1d5b6ac",
+      "tags": [
+        "api"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "api.access-model",
+      "title": "API",
+      "section": "Access model",
+      "url": "https://docs.wednesdaychat.com/api/#access-model",
+      "content": "Most product operations require a valid WEDNESDAY account session and derive durable ownership from server-authorized account state. Do not fabricate owner identifiers or infer a general third-party API-key program from browser/client transport details.\n\nStart with Authentication (/api/authentication/) before integrating a protected route.",
+      "content_hash": "a6ad630a4936d5462dda433dc92b1e27e43e0a0d4ad5d6031dd5e2f0c4c316ce",
+      "tags": [
+        "api"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "api.reference",
+      "title": "API",
+      "section": "Reference",
+      "url": "https://docs.wednesdaychat.com/api/#reference",
+      "content": "Use the API reference (/api/reference/) for the deliberately published HTTP surface. The reference currently includes verified system, search, project, conversation, chat, file, and artifact capability boundaries while withholding privileged, provider-callback, administrative, and implementation-only routes.",
+      "content_hash": "77e6c690550633a9cd0381770221664bf350a008d5c6524eb6f15c751112ca57",
+      "tags": [
+        "api"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "api.errors-and-protection",
+      "title": "API",
+      "section": "Errors and protection",
+      "url": "https://docs.wednesdaychat.com/api/#errors-and-protection",
+      "content": "- Errors (/api/errors/) documents stable HTTP failure classes and retry guidance.\n- Rate limits (/api/rate-limits/) documents 429, Retry-After, fail-closed protection, and quota publication policy.\n- Production best practices (/production/) covers durable-state reconciliation, streaming, readiness, security, and release discipline.",
+      "content_hash": "0eeda647878b308505dc1dadf8ad9df3b8101884c592c7bdcf6b24910edd479c",
+      "tags": [
+        "api"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "api.contract-policy",
+      "title": "API",
+      "section": "Contract policy",
+      "url": "https://docs.wednesdaychat.com/api/#contract-policy",
+      "content": "Public documentation is a compatibility promise. An endpoint, header, provider model, internal module, or telemetry label found in source code is **not** automatically public API. WEDNESDAY publishes only the behavior it intends developers to depend on.\n\nMachine-readable docs: use /llms.txt for routing, /llms-full.txt for the consolidated corpus, and Markdown twins linked from individual reference pages.",
+      "content_hash": "21a53f9793d2026240887a336feaed32b997c1dafc522d4a735cdd1480007edd",
+      "tags": [
+        "api"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "api.rate-limits.overview",
+      "title": "Rate limits",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/api/rate-limits/",
+      "content": "WEDNESDAY applies protection at the production service boundary. Chat and durable-state operations use dedicated rate-limit paths, and the platform can fail closed when protection infrastructure is unavailable.",
+      "content_hash": "0e72798140f0584db0a7fddae82c20de083b002d41d1ab0225c88ec233e270f6",
+      "tags": [
+        "api",
+        "rate-limits"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/rate-limits/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "api.rate-limits.what-is-limited",
+      "title": "Rate limits",
+      "section": "What is limited",
+      "url": "https://docs.wednesdaychat.com/api/rate-limits/#what-is-limited",
+      "content": "Verified production code applies rate-limit enforcement to chat traffic and to conversation-oriented persistence flows used by search, projects, files, feedback, sharing, and related durable operations.",
+      "content_hash": "6e6d56aa39290298bc1fbfe71b66fc43473ac538e8a43c0c1653603ad117aa7c",
+      "tags": [
+        "api",
+        "rate-limits"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/rate-limits/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "api.rate-limits.429-too-many-requests",
+      "title": "Rate limits",
+      "section": "`429 Too Many Requests`",
+      "url": "https://docs.wednesdaychat.com/api/rate-limits/#429-too-many-requests",
+      "content": "When a limit is exceeded, the API returns 429. Where available, the response includes Retry-After with the number of seconds a client should wait before retrying.\n\n```http\nHTTP/1.1 429 Too Many Requests\nRetry-After: 12\nContent-Type: application/json\n```",
+      "content_hash": "5a4f6843ed98e965b2a46fc16e3cbe3a725d74437405228669f95f0f6f66179f",
+      "tags": [
+        "api",
+        "rate-limits"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/rate-limits/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "api.rate-limits.protection-availability",
+      "title": "Rate limits",
+      "section": "Protection availability",
+      "url": "https://docs.wednesdaychat.com/api/rate-limits/#protection-availability",
+      "content": "WEDNESDAY does not silently bypass protection when its rate-limit layer cannot make a trustworthy decision. A protection dependency failure can surface as 503 Service Unavailable instead of allowing unprotected traffic.",
+      "content_hash": "5b1e49c6596c64a3f5039a62066f151848384a92f015e9b93334baa8960d3581",
+      "tags": [
+        "api",
+        "rate-limits"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/rate-limits/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "api.rate-limits.published-quotas",
+      "title": "Rate limits",
+      "section": "Published quotas",
+      "url": "https://docs.wednesdaychat.com/api/rate-limits/#published-quotas",
+      "content": "No invented quotas. Numeric request-per-minute or token quotas are not published until they are a stable product contract. Clients should implement backoff for 429 independently of any assumed quota.",
+      "content_hash": "05625bf3dabfbfdaac5ce34c55f3a822fb0864681322bd7965cbb33d2d746043",
+      "tags": [
+        "api",
+        "rate-limits"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/rate-limits/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "api.rate-limits.client-guidance",
+      "title": "Rate limits",
+      "section": "Client guidance",
+      "url": "https://docs.wednesdaychat.com/api/rate-limits/#client-guidance",
+      "content": "Use bounded exponential backoff, honor Retry-After, avoid retry storms, and keep idempotent operations safe to replay where the endpoint contract allows it. For state-changing requests, reconcile the durable result before blindly retrying after network uncertainty.",
+      "content_hash": "9cf184a39e2b8497a57cead69cecacea05db94a422d8ad6f32f042f94b822cbb",
+      "tags": [
+        "api",
+        "rate-limits"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/rate-limits/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "api.reference.overview",
+      "title": "API reference",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/api/reference/",
+      "content": "The production API origin is https://api.wednesdaychat.com . This reference documents only routes and behaviors that are verified in the production service and explicitly approved for public use.\n\nAccess boundary: WEDNESDAY currently uses server-authorized account sessions for most product operations. The existence of an HTTP route does not imply an unrestricted third-party API-key contract.",
+      "content_hash": "a58f6645afe7298f19faee47467a0cfcbacfbd7d2d2de7d9cd5569ac0e917d6d",
+      "tags": [
+        "api",
+        "reference"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/reference/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "api.reference.search",
+      "title": "API reference",
+      "section": "Search",
+      "url": "https://docs.wednesdaychat.com/api/reference/#search",
+      "content": "GET /search?q=… Searches durable account-owned WEDNESDAY state. Query text is required and bounded; result size is bounded by the service.",
+      "content_hash": "dc6335d078b8f626dc2e3f425d3861fab81ded31df4d7e2b44bd1ee7ae02d1b0",
+      "tags": [
+        "api",
+        "reference"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/reference/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "api.reference.projects",
+      "title": "API reference",
+      "section": "Projects",
+      "url": "https://docs.wednesdaychat.com/api/reference/#projects",
+      "content": "Verified project operations include listing, creating, loading, renaming, archiving, restoring, and deleting projects; reading and updating project settings and instructions; project search; project conversations; file membership; connector bindings; and work history.",
+      "content_hash": "a10d991c9443f5d5fbcda22e8d67d3b7a5a3ad0dd4fbabf5b5c4838c3a56256d",
+      "tags": [
+        "api",
+        "reference"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/reference/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "api.reference.conversations",
+      "title": "API reference",
+      "section": "Conversations",
+      "url": "https://docs.wednesdaychat.com/api/reference/#conversations",
+      "content": "Verified conversation operations include listing and loading conversations, messages, drafts, follow-ups, branches, archive state, pin state, project movement, feedback, sharing, usage recording, and durable deletion.",
+      "content_hash": "ebfaa031619dcf6409cc9e89d6b35c4c740770781e19df930ddfced84a81d045",
+      "tags": [
+        "api",
+        "reference"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/reference/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "api.reference.chat-streaming",
+      "title": "API reference",
+      "section": "Chat streaming",
+      "url": "https://docs.wednesdaychat.com/api/reference/#chat-streaming",
+      "content": "POST /chat Starts a durable streaming chat turn for the authorized account. The stream is explicitly non-cacheable and supports structured runtime events.\n\nPOST /chat/{turn_id}/input Submits mid-turn steering input to an active turn. Durable cancellation is supported when the turn identifier resolves to a durable chat turn.",
+      "content_hash": "7aed915088a7576129047fd369721bbb69716da0bfc22f342d7cccdc419fc15f",
+      "tags": [
+        "api",
+        "reference"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/reference/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "api.reference.files-and-artifacts",
+      "title": "API reference",
+      "section": "Files and artifacts",
+      "url": "https://docs.wednesdaychat.com/api/reference/#files-and-artifacts",
+      "content": "The production service exposes owner-scoped file upload, file inspection, file-library, picker, attachment-state, download, message-attachment, assistant-artifact, location-context, memory-source-consent, and deep-research capability families. Individual contracts are published only after their request/response schemas are stable enough to support externally.",
+      "content_hash": "27318635f5b1156dc5aecf6681b8c342fb66b3051fc4a8d7be50ecaca0d77b3c",
+      "tags": [
+        "api",
+        "reference"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/reference/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "api.reference.publication-boundary",
+      "title": "API reference",
+      "section": "Publication boundary",
+      "url": "https://docs.wednesdaychat.com/api/reference/#publication-boundary",
+      "content": "Operational probes, privileged administration, deployment coordination, implementation-specific service metadata, upstream routing, and private callback surfaces are intentionally omitted from the developer reference.\n\nPublic documentation is a compatibility promise. Source-code presence alone is not a public contract.",
+      "content_hash": "daf8e70c7dd69e3e8e602c75d00156b89751111720d2ef5610e2483644291d66",
+      "tags": [
+        "api",
+        "reference"
+      ],
+      "lifecycle": "stable",
+      "source_path": "api/reference/index.md",
+      "ordinal": 6
+    },
+    {
+      "id": "changelog.september-14-2026",
+      "title": "Changelog",
+      "section": "September 14, 2026",
+      "url": "https://docs.wednesdaychat.com/changelog/#september-14-2026",
+      "content": "Production contract synchronization\n\n- Added a sanitized structural snapshot for intentionally public API operations.\n- Added cryptographic endpoint and whole-contract fingerprints derived from the production API contract without publishing private schemas or implementation metadata.\n- Added CI validation requiring the snapshot endpoint set to match the explicit public allowlist exactly.\n- Added the contract snapshot to the Public Release Firewall and machine-readable documentation routing.\n- Established production-to-docs drift detection so approved public API structure cannot change silently.\n\nPublic release firewall\n\n- Added a fail-closed publication firewall to the required documentation CI check.\n- Added an allowlisted public-contract boundary for WEDNESDAY origins and explicit HTTP endpoint declarations.\n- Added source and generated-site leakage scanning plus regression tests.\n- Excluded repository governance, policy, tests, and security-maintenance files from the GitHub Pages artifact.\n- Tightened the API reference so operational service metadata and probes are not part of the published developer contract.\n\nDocumentation infrastructure\n\n- Established docs.wednesdaychat.com on GitHub Pages.\n- Configured the custom domain and enforced HTTPS.\n- Established main as the production documentation branch.\n- Added the initial public documentation architecture and machine-readable discovery files.\n\nPlatform feature changes will be listed here only when verified against the relevant production contract.",
+      "content_hash": "5234453e88b44141a255f62bc41cfd01d18f4d1f893b29666d97dd4331b89cab",
+      "tags": [
+        "changelog"
+      ],
+      "lifecycle": "stable",
+      "source_path": "changelog/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "deep-research.overview",
+      "title": "Deep research",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/deep-research/",
+      "content": "Deep research work is represented by durable, account-owned task records so longer-running research can be inspected independently of a single browser stream.",
+      "content_hash": "cf372299cd4d7bca94f554a7a98d9c90d4951458e57253b826b07c88d1149b51",
+      "tags": [
+        "deep-research"
+      ],
+      "lifecycle": "stable",
+      "source_path": "deep-research/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "deep-research.task-routes",
+      "title": "Deep research",
+      "section": "Task routes",
+      "url": "https://docs.wednesdaychat.com/deep-research/#task-routes",
+      "content": "| Method | Route | Purpose |\n| --- | --- | --- |\n| GET | /conversations/{conversation_id}/research-tasks | List research tasks for a conversation |\n| GET | /research-tasks/{task_id} | Load one task |\n| POST | /research-tasks/{task_id}/cancel | Request cancellation |\n\nConversation task listing accepts a bounded limit from 1 to 100 with a default of 20.",
+      "content_hash": "03e48dadcbf1fda4aef6c817ed2655a81128b728570d61265c058d354e828fb2",
+      "tags": [
+        "deep-research"
+      ],
+      "lifecycle": "stable",
+      "source_path": "deep-research/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "deep-research.durable-ownership",
+      "title": "Deep research",
+      "section": "Durable ownership",
+      "url": "https://docs.wednesdaychat.com/deep-research/#durable-ownership",
+      "content": "Research tasks are resolved inside the authenticated account boundary. Task and conversation identifiers do not replace session authority.",
+      "content_hash": "b77dd88727a3207fcaa81aa83d8833dde952dbc0d499588c9020ee3f0beb07a6",
+      "tags": [
+        "deep-research"
+      ],
+      "lifecycle": "stable",
+      "source_path": "deep-research/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "deep-research.lifecycle-errors",
+      "title": "Deep research",
+      "section": "Lifecycle errors",
+      "url": "https://docs.wednesdaychat.com/deep-research/#lifecycle-errors",
+      "content": "- 404 — the task or associated resource is not available to the account.\n- 409 — the requested lifecycle transition conflicts with current task state.\n- 422 — a supplied value violates the public request contract.\n- 429 — the research-work protection limit is exceeded.\n- 503 — task persistence or protection is unavailable.",
+      "content_hash": "9a4c539219b6ab73a03c3760cc488890ad68781382ab66b97c637f07197870e2",
+      "tags": [
+        "deep-research"
+      ],
+      "lifecycle": "stable",
+      "source_path": "deep-research/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "deep-research.cache-behavior",
+      "title": "Deep research",
+      "section": "Cache behavior",
+      "url": "https://docs.wednesdaychat.com/deep-research/#cache-behavior",
+      "content": "Task reads and cancellation responses are emitted with Cache-Control: no-store so clients do not reuse stale research state.",
+      "content_hash": "f6bc94f7fdbb1cc1d881fb63843c0aed12cdfadcf6177e9983fe350aaa09c13d",
+      "tags": [
+        "deep-research"
+      ],
+      "lifecycle": "stable",
+      "source_path": "deep-research/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "deprecations.overview",
+      "title": "Deprecations",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/deprecations/",
+      "content": "This page is the canonical public index for WEDNESDAY deprecation notices that affect documented contracts.",
+      "content_hash": "76bdcee0b89273a52baa4b798d34ee0923603e7b843994312ce9b60ed3fc9a60",
+      "tags": [
+        "deprecations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "deprecations/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "deprecations.current-notices",
+      "title": "Deprecations",
+      "section": "Current notices",
+      "url": "https://docs.wednesdaychat.com/deprecations/#current-notices",
+      "content": "There are no public deprecation notices recorded in this documentation repository at this time.\n\nWhen a deprecation is published, the notice should identify the affected contract, announcement date, replacement path, migration guidance, and retirement date when one has been committed.",
+      "content_hash": "0bde165d051c94120986401e50094968b740e0ef4d6a29e7e84d75f56a2822ac",
+      "tags": [
+        "deprecations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "deprecations/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "files.overview",
+      "title": "Files",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/files/",
+      "content": "File intake uses an explicit upload-session lifecycle so WEDNESDAY can validate ownership, metadata, transport, content, and storage state before a file becomes usable.",
+      "content_hash": "8c7046b1ddad9d5f4761a10ae464e56c291cb250c6e06ded61170a3449da0765",
+      "tags": [
+        "files"
+      ],
+      "lifecycle": "stable",
+      "source_path": "files/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "files.upload-lifecycle",
+      "title": "Files",
+      "section": "Upload lifecycle",
+      "url": "https://docs.wednesdaychat.com/files/#upload-lifecycle",
+      "content": "The production upload flow exposes three core operations:\n\n| Method | Route | Purpose |\n| --- | --- | --- |\n| POST | /files/uploads | Initiate an owner-scoped upload session |\n| GET | /files/uploads/{upload_id} | Read upload progress and state |\n| PUT | /files/uploads/{upload_id}/content | Stream the complete file body |\n\nUpload initiation uses an Idempotency-Key header so safe retries can refer to the same initiation intent.",
+      "content_hash": "293be2e3263a8429edbfe56222faa3921467278a7d98ca1979eb35339f923612",
+      "tags": [
+        "files"
+      ],
+      "lifecycle": "stable",
+      "source_path": "files/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "files.transport-rules",
+      "title": "Files",
+      "section": "Transport rules",
+      "url": "https://docs.wednesdaychat.com/files/#transport-rules",
+      "content": "The content upload is intentionally strict:\n\n- compressed request bodies are not accepted;\n- partial Content-Range resume is not supported;\n- a retry sends the upload body again from byte zero;\n- the body media type must match the initiated session or use application/octet-stream;\n- declared and observed size are validated against the session.",
+      "content_hash": "a5cb52f7b407998b6573217eb6e2550a33e2d8e7e22efabe3c80a2974416f54b",
+      "tags": [
+        "files"
+      ],
+      "lifecycle": "stable",
+      "source_path": "files/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "files.validation-and-failure-states",
+      "title": "Files",
+      "section": "Validation and failure states",
+      "url": "https://docs.wednesdaychat.com/files/#validation-and-failure-states",
+      "content": "The file pipeline distinguishes malformed requests, unsupported media, invalid content, oversized files, expired sessions, missing sources, conflicts, rate limits, and temporary service failures.\n\nRelevant HTTP outcomes include 400, 404, 409, 410, 413, 415, 429, and 503.",
+      "content_hash": "990fa811fbf59fd666629eadc22c45db56896e5cd054cdd9ab616b04e9c00d64",
+      "tags": [
+        "files"
+      ],
+      "lifecycle": "stable",
+      "source_path": "files/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "files.library-and-attachments",
+      "title": "Files",
+      "section": "Library and attachments",
+      "url": "https://docs.wednesdaychat.com/files/#library-and-attachments",
+      "content": "The production file router also supports owner-scoped Library views, file picker results, attachment-state lookup, user-message attachment preparation, and secure file inspection/download paths.\n\nSecurity boundary: file IDs do not grant authority. File operations are evaluated inside the authenticated account session.",
+      "content_hash": "a8b3a14f42f7549a891756beac487f5f3db9133ada1f9efda424587fc0cedbf2",
+      "tags": [
+        "files"
+      ],
+      "lifecycle": "stable",
+      "source_path": "files/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "getting-started.overview",
+      "title": "Developer quickstart",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/getting-started/",
+      "content": "Start with the production contract that exists today: a public HTTPS origin and session-protected product APIs.",
+      "content_hash": "43b64d062b502a9af1e31164a72d60b665d670a2617166bc52087d57bac14f65",
+      "tags": [
+        "getting-started"
+      ],
+      "lifecycle": "stable",
+      "source_path": "getting-started/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "getting-started.production-origin",
+      "title": "Developer quickstart",
+      "section": "Production origin",
+      "url": "https://docs.wednesdaychat.com/getting-started/#production-origin",
+      "content": "The canonical WEDNESDAY API origin is:\n\n```text\nhttps://api.wednesdaychat.com\n```\n\nThe documentation origin is independent:\n\n```text\nhttps://docs.wednesdaychat.com\n```",
+      "content_hash": "63dbf576530f9a299caf0534b45920fceb8af3b55edc7d2c339b8b49aaf95f71",
+      "tags": [
+        "getting-started"
+      ],
+      "lifecycle": "stable",
+      "source_path": "getting-started/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "getting-started.check-platform-availability",
+      "title": "Developer quickstart",
+      "section": "Check platform availability",
+      "url": "https://docs.wednesdaychat.com/getting-started/#check-platform-availability",
+      "content": "Use status.wednesdaychat.com (https://status.wednesdaychat.com) for current WEDNESDAY service availability, maintenance, and incident communication. Operational probe routes and internal service metadata are not part of the public developer contract.",
+      "content_hash": "13223e96612d6796c7bc6983994eeaf58e9bc674f98898a6932b1f470524b8c4",
+      "tags": [
+        "getting-started"
+      ],
+      "lifecycle": "stable",
+      "source_path": "getting-started/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "getting-started.understand-authentication-before-calling-product-apis",
+      "title": "Developer quickstart",
+      "section": "Understand authentication before calling product APIs",
+      "url": "https://docs.wednesdaychat.com/getting-started/#understand-authentication-before-calling-product-apis",
+      "content": "WEDNESDAY's current production product APIs use a server-authoritative account session. Browser requests include the session credential automatically, and unsafe mutations require the WEDNESDAY CSRF header.\n\nDo **not** construct authority by sending owner IDs, roles, plans, or retired client identity headers. The server session is authoritative.\n\nExternal developer access: this documentation does not claim a generally available API-key authentication scheme. When WEDNESDAY publishes one, the Authentication and API Reference pages will define it as an explicit public contract.",
+      "content_hash": "a2d00d9fa42020de16090cebe5025cdecf369c4cfd3cc301c93fd3f18080fe47",
+      "tags": [
+        "getting-started"
+      ],
+      "lifecycle": "stable",
+      "source_path": "getting-started/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "getting-started.choose-the-right-guide",
+      "title": "Developer quickstart",
+      "section": "Choose the right guide",
+      "url": "https://docs.wednesdaychat.com/getting-started/#choose-the-right-guide",
+      "content": "- Use Conversation state (/platform/conversation-state/) for durable chat state.\n- Use Streaming (/platform/streaming/) for the structured SSE protocol.\n- Use Projects (/projects/) for scoped context and project-owned resources.\n- Use Files (/files/) for the secure upload lifecycle.\n- Use API reference (/api/reference/) for verified routes and access classification.",
+      "content_hash": "43aed02327eaef99ed12c90fd7d302027ea205f64f2ccce2d8bca82c2f862f9c",
+      "tags": [
+        "getting-started"
+      ],
+      "lifecycle": "stable",
+      "source_path": "getting-started/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "getting-started.machine-readable-version",
+      "title": "Developer quickstart",
+      "section": "Machine-readable version",
+      "url": "https://docs.wednesdaychat.com/getting-started/#machine-readable-version",
+      "content": "The raw Markdown twin for this page is available at /getting-started.md (/getting-started.md).",
+      "content_hash": "cde352861cb2f84aff6906e94dc831943a1ee0ab8e66aeac6e8e1ca6443108d7",
+      "tags": [
+        "getting-started"
+      ],
+      "lifecycle": "stable",
+      "source_path": "getting-started/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "overview.overview",
+      "title": "WEDNESDAY Developer Platform",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/",
+      "content": "API Platform\n\nDeveloper quickstart\nStart with the production boundary, learn the session model, then build against contracts that WEDNESDAY explicitly supports.\nGet started API reference\n\nHTTP · verify production availability\ncurl -sS https://api.wednesdaychat.com/health\n{\"status\":\"ok\"}\n\nProduction boundary: most product operations are authorized through a WEDNESDAY server account session. The public API origin is documented; a general third-party API-key program is not implied until WEDNESDAY explicitly releases one.",
+      "content_hash": "e0ec81ed88aac41923ccd4f077b230ca86dfcdf2750dc4bcb4bdd5dd95fc2184",
+      "tags": [
+        "overview"
+      ],
+      "lifecycle": "stable",
+      "source_path": "index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "overview.build-paths",
+      "title": "WEDNESDAY Developer Platform",
+      "section": "Build paths",
+      "url": "https://docs.wednesdaychat.com/#build-paths",
+      "content": "Platform and API Understand durable state, streaming, projects, files, search, errors, rate limits, and the verified HTTP surface. Start with the platform ↗\nAgents and tools Build around typed tool execution, project context, research, connectors, approvals, and observable runtime state. Explore agents ↗",
+      "content_hash": "ff5c5c2aa9eeff4b55adab782fd897a15adca3b6aaab2df02675e98205a0fffa",
+      "tags": [
+        "overview"
+      ],
+      "lifecycle": "stable",
+      "source_path": "index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "overview.models",
+      "title": "WEDNESDAY Developer Platform",
+      "section": "Models",
+      "url": "https://docs.wednesdaychat.com/#models",
+      "content": "WEDNESDAY routes work through stable execution profiles while retaining freedom to improve the upstream provider route behind those profiles.\n\nBalanced Balanced Production Responsive general-purpose work with balanced reasoning and latency.\nDeep Deep reasoning Production Higher-reasoning execution for complex analysis and difficult multi-step work.\nCode Coding Production Code-oriented routing for software-development-heavy tasks.",
+      "content_hash": "d5cb01750cb50b25c59755f6d821c973a6997f5677a757cb2048a74cd9cd494e",
+      "tags": [
+        "overview"
+      ],
+      "lifecycle": "stable",
+      "source_path": "index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "overview.start-building",
+      "title": "WEDNESDAY Developer Platform",
+      "section": "Start building",
+      "url": "https://docs.wednesdaychat.com/#start-building",
+      "content": "◯ Durable conversation state Persist and recover conversations rather than treating every request as isolated.\n⌁ Structured streaming Render typed model and tool events while work is still in progress.\n✦ Tool-using applications Extend model execution with bounded tools, search, files, research, and connectors.\n◇ Project context Scope instructions, files, connectors, conversations, and work history to a project.\n▣ Files and Library Upload, inspect, attach, retrieve, and manage account-owned files.\n◎ Long-running research Track research as durable task state rather than one fragile request.",
+      "content_hash": "0ee26f4ca26f5f8e67025889e48329fe815f50e0ac22f700ea1dc0495382272c",
+      "tags": [
+        "overview"
+      ],
+      "lifecycle": "stable",
+      "source_path": "index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "overview.production-resources",
+      "title": "WEDNESDAY Developer Platform",
+      "section": "Production resources",
+      "url": "https://docs.wednesdaychat.com/#production-resources",
+      "content": "Production best practices Retries, durable reconciliation, readiness, security boundaries, and release discipline.\nSecurity Authority, account scope, connector boundaries, and safe public-contract rules.\nMachine-readable docs llms.txt , consolidated docs, Markdown twins, search index, sitemap, and crawler guidance.\nStatus Check WEDNESDAY service health and incident communication independently of this documentation site.",
+      "content_hash": "aa61156d354393d2285944cba488789ef666429d908fa8d0f89bd5910c0b1838",
+      "tags": [
+        "overview"
+      ],
+      "lifecycle": "stable",
+      "source_path": "index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "overview.one-source-of-truth",
+      "title": "WEDNESDAY Developer Platform",
+      "section": "One source of truth",
+      "url": "https://docs.wednesdaychat.com/#one-source-of-truth",
+      "content": "Public documentation is a production compatibility surface. Technical claims are published only when traceable to production behavior, a verified production specification, or another explicitly versioned public contract. Internal topology, secrets, provider routing, roadmap-only functionality, and privileged operational procedures stay out of the public corpus.",
+      "content_hash": "b5f9125b7dfa1515e8ede4f3d080b38b1bf5678f42a98f5811b7e16dc44d05f2",
+      "tags": [
+        "overview"
+      ],
+      "lifecycle": "stable",
+      "source_path": "index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "integrations.overview",
+      "title": "Integrations",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/integrations/",
+      "content": "Integrations connect WEDNESDAY to external systems without collapsing external authorization into the model or the browser client.",
+      "content_hash": "7add307e10424b90e1b5fc9c8743f2dddba1bc4ea134edd3728be5798a5c0792",
+      "tags": [
+        "integrations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "integrations/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "integrations.project-connector-bindings",
+      "title": "Integrations",
+      "section": "Project connector bindings",
+      "url": "https://docs.wednesdaychat.com/integrations/#project-connector-bindings",
+      "content": "Projects expose an owner-scoped connector-binding view and an explicit unbind operation. A connector binding belongs to the authenticated project/account context; possession of a binding ID alone is not authorization.",
+      "content_hash": "9c96c3f4c2d6b5247057572d9618a6e6d904465dfb96d9248c385a20f4dade95",
+      "tags": [
+        "integrations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "integrations/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "integrations.github",
+      "title": "Integrations",
+      "section": "GitHub",
+      "url": "https://docs.wednesdaychat.com/integrations/#github",
+      "content": "The production codebase includes GitHub authorization, repository, reference-context, workspace, branch, and patch workflows. GitHub callback/webhook operations are operational integration surfaces and are not interchangeable with user-facing project APIs.",
+      "content_hash": "8c305aac5a42b1bb80633ead89f165097bb1d02c8515a324d91a6cb289fca8b3",
+      "tags": [
+        "integrations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "integrations/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "integrations.separation-of-concerns",
+      "title": "Integrations",
+      "section": "Separation of concerns",
+      "url": "https://docs.wednesdaychat.com/integrations/#separation-of-concerns",
+      "content": "A production integration has multiple independent boundaries:\n\n1. the WEDNESDAY account session;\n2. the external provider authorization or installation;\n3. resource-level scope inside that provider;\n4. approval requirements for writes or destructive actions.",
+      "content_hash": "81bdf91ad93fb712d519aa492c4542055b8fcb5e890192ac49e1d82692b3738e",
+      "tags": [
+        "integrations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "integrations/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "integrations.public-integration-contract",
+      "title": "Integrations",
+      "section": "Public integration contract",
+      "url": "https://docs.wednesdaychat.com/integrations/#public-integration-contract",
+      "content": "This documentation publishes integration behavior that users and developers may rely on. It intentionally omits secret handling, private webhook validation details, installation credentials, internal provider tokens, and privileged operational procedures.",
+      "content_hash": "a9ccf268ac72936d61f04ab384be54aa54f9bb233f4c14b8b318c69c37f997f4",
+      "tags": [
+        "integrations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "integrations/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "integrations.revocation",
+      "title": "Integrations",
+      "section": "Revocation",
+      "url": "https://docs.wednesdaychat.com/integrations/#revocation",
+      "content": "Where the product exposes an unbind or disconnect operation, clients should treat revocation as a first-class lifecycle state rather than assuming access remains valid indefinitely.",
+      "content_hash": "4696fc4829c91401856d15f4c7c4055dc63cc2e09c1d2da472b6e239d2692024",
+      "tags": [
+        "integrations"
+      ],
+      "lifecycle": "stable",
+      "source_path": "integrations/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "learn.overview",
+      "title": "Learn",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/learn/",
+      "content": "Get inspired and build\n\nUse focused learning paths to move from platform fundamentals to production WEDNESDAY applications.",
+      "content_hash": "c45c116e22c26fd843383e156d14c7d36d67449310df1bb2ea3342ae8fc4264e",
+      "tags": [
+        "learn"
+      ],
+      "lifecycle": "stable",
+      "source_path": "learn/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "learn.learning-tracks",
+      "title": "Learn",
+      "section": "Learning tracks",
+      "url": "https://docs.wednesdaychat.com/learn/#learning-tracks",
+      "content": "Building agents Understand tool execution, project context, approvals, durable work, and runtime state.\nAI app development Start with the production boundary, session authority, streaming, and durable application state.\nModel routing Choose WEDNESDAY execution profiles without coupling your application to private provider routing.\nProduction readiness Design retries, state reconciliation, security boundaries, readiness checks, and release controls.",
+      "content_hash": "4cf27cc114b602367118a4ae240f54996d73fed17b272b97ee9be4de91ee4ef9",
+      "tags": [
+        "learn"
+      ],
+      "lifecycle": "stable",
+      "source_path": "learn/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "learn.explore-by-topic",
+      "title": "Learn",
+      "section": "Explore by topic",
+      "url": "https://docs.wednesdaychat.com/learn/#explore-by-topic",
+      "content": "✦ Tools Search, files, research, projects, connectors, and bounded external execution.\n⌁ Streaming Build UIs around structured incremental model and tool events.\n▣ Files Work with uploads, Library state, attachments, and account-owned file resources.\n↗ Integrations Connect authorized external resources while preserving scope and approval boundaries.\n{ } API reference Browse the deliberately published production HTTP surface.\n≡ Docs for agents Use Markdown twins, llms.txt , the consolidated corpus, and search index.",
+      "content_hash": "0a670f00177b0e5c154464485fef775edcdb57041a71e878c4a1318c64d4966a",
+      "tags": [
+        "learn"
+      ],
+      "lifecycle": "stable",
+      "source_path": "learn/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "learn.keep-current",
+      "title": "Learn",
+      "section": "Keep current",
+      "url": "https://docs.wednesdaychat.com/learn/#keep-current",
+      "content": "Use the Changelog (/changelog/) for public documentation and platform changes, Deprecations (/deprecations/) for migration-sensitive changes, and WEDNESDAY Status (https://status.wednesdaychat.com) for operational availability.",
+      "content_hash": "866cc791e468bb4b49b7d08fe1b777b71f49e47abc7d0730a64f5dda1bb1ddb7",
+      "tags": [
+        "learn"
+      ],
+      "lifecycle": "stable",
+      "source_path": "learn/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "machine-readable.overview",
+      "title": "Machine-readable documentation",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/machine-readable/",
+      "content": "WEDNESDAY publishes stable text and contract entry points so AI agents and automated systems can discover the same public documentation humans use.",
+      "content_hash": "47baea0164a31594d0f5b0607afb397f947e2beac26aeaf50b11704a8cf4e4ff",
+      "tags": [
+        "machine-readable"
+      ],
+      "lifecycle": "stable",
+      "source_path": "machine-readable/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "machine-readable.llms-txt",
+      "title": "Machine-readable documentation",
+      "section": "`llms.txt`",
+      "url": "https://docs.wednesdaychat.com/machine-readable/#llms-txt",
+      "content": "/llms.txt (/llms.txt) is the compact routing index. Agents should start there when they need to discover relevant documentation without downloading the full site.",
+      "content_hash": "213825a2d693807b4e85468bd0da50b5720d27e9f6827a1733eede23c5cd52b5",
+      "tags": [
+        "machine-readable"
+      ],
+      "lifecycle": "stable",
+      "source_path": "machine-readable/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "machine-readable.llms-full-txt",
+      "title": "Machine-readable documentation",
+      "section": "`llms-full.txt`",
+      "url": "https://docs.wednesdaychat.com/machine-readable/#llms-full-txt",
+      "content": "/llms-full.txt (/llms-full.txt) is a consolidated text corpus of the public documentation currently published in this repository. It is useful when a retriever needs a single ingestible source.",
+      "content_hash": "3dffe9f4af61376ddcd6af4aedfd81bf8d1e5ec8bfb357df129dab27d973b704",
+      "tags": [
+        "machine-readable"
+      ],
+      "lifecycle": "stable",
+      "source_path": "machine-readable/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "machine-readable.public-api-structural-contract",
+      "title": "Machine-readable documentation",
+      "section": "Public API structural contract",
+      "url": "https://docs.wednesdaychat.com/machine-readable/#public-api-structural-contract",
+      "content": "/contracts/public-api-contract.json (/contracts/public-api-contract.json) is the sanitized structural snapshot for API operations that WEDNESDAY has explicitly approved for public documentation. It contains public method/path metadata, parameter locations, media types, response statuses, and cryptographic structural fingerprints.\n\nThe structural snapshot is intentionally narrower than the production service's complete API graph. It does not enumerate private routes, internal schema bodies, implementation descriptions, provider routing, infrastructure metadata, or private source identifiers. Absence from this artifact means an operation is not part of the published developer contract.\n\nA contract fingerprint changes when the approved production request/response structure changes. WEDNESDAY uses that signal as a documentation drift gate; it is not a substitute for the human API reference.",
+      "content_hash": "bbb3ea1a5f3ebccda4752ee9c5524fde43b98894b77da16d6d40c3e15625f472",
+      "tags": [
+        "machine-readable"
+      ],
+      "lifecycle": "stable",
+      "source_path": "machine-readable/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "machine-readable.search-and-crawling",
+      "title": "Machine-readable documentation",
+      "section": "Search and crawling",
+      "url": "https://docs.wednesdaychat.com/machine-readable/#search-and-crawling",
+      "content": "/robots.txt (/robots.txt) permits public crawling and points to /sitemap.xml (/sitemap.xml). These files are publication aids; they do not grant access to non-public WEDNESDAY systems or information.",
+      "content_hash": "28d37dd9ae8dce54987bd56b5df78f0767aa64ceb94bb8e1366c3460bd22b163",
+      "tags": [
+        "machine-readable"
+      ],
+      "lifecycle": "stable",
+      "source_path": "machine-readable/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "machine-readable.source-integrity",
+      "title": "Machine-readable documentation",
+      "section": "Source integrity",
+      "url": "https://docs.wednesdaychat.com/machine-readable/#source-integrity",
+      "content": "Machine consumers should treat URLs on docs.wednesdaychat.com as the canonical public source and preserve page titles, update dates, lifecycle notices, and contract fingerprints when indexing content.",
+      "content_hash": "ef4cc7e6e34ea339d033edd37ad544c78af167f06b24a0862bb201602b8d34e0",
+      "tags": [
+        "machine-readable"
+      ],
+      "lifecycle": "stable",
+      "source_path": "machine-readable/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "models.overview",
+      "title": "Models",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/models/",
+      "content": "Choose the execution profile that matches the work. WEDNESDAY owns the routing contract while retaining freedom to improve the underlying provider route as long as the published profile behavior remains compatible.",
+      "content_hash": "d34ff450ddf665ac2153cb080f169230a7d50c2a29fe099d806503db7d2b173d",
+      "tags": [
+        "models"
+      ],
+      "lifecycle": "stable",
+      "source_path": "models/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "models.choose-an-execution-profile",
+      "title": "Models",
+      "section": "Choose an execution profile",
+      "url": "https://docs.wednesdaychat.com/models/#choose-an-execution-profile",
+      "content": "Balanced\nBalanced Production\nDefault conversational profile for responsive, general-purpose work with balanced reasoning and latency.\n\nDeep\nDeep reasoning Production\nHigher-reasoning profile for complex analysis and tasks where depth matters more than minimum latency.\n\nCode\nCoding Production\nCode-oriented execution route used when the runtime classifies the work as software-development heavy.\n\nProfile ≠ provider model ID. WEDNESDAY can change an upstream route without renaming a WEDNESDAY execution profile when the public behavior remains compatible. Upstream provider identifiers are not a permanent developer contract unless explicitly published as one.",
+      "content_hash": "3f57928bac32492e3d2e464d21e27245dd71d200b99fa54e520b3eafe7fb217f",
+      "tags": [
+        "models"
+      ],
+      "lifecycle": "stable",
+      "source_path": "models/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "models.routing-is-observable",
+      "title": "Models",
+      "section": "Routing is observable",
+      "url": "https://docs.wednesdaychat.com/models/#routing-is-observable",
+      "content": "The streaming protocol can represent resolved routing information for a turn, including a model identifier, model role, requested and resolved intelligence level, latency profile, reasoning profile, and bounded completion behavior. Those fields make execution observable; they do not automatically turn every internal route target into a permanently supported developer model.",
+      "content_hash": "c651b340073f7d6e307289014313c711f47b1a81094096bb4e10cd53221385b6",
+      "tags": [
+        "models"
+      ],
+      "lifecycle": "stable",
+      "source_path": "models/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "models.public-model-contract",
+      "title": "Models",
+      "section": "Public model contract",
+      "url": "https://docs.wednesdaychat.com/models/#public-model-contract",
+      "content": "A named developer model becomes part of the public catalog only when WEDNESDAY publishes all of the following:\n\n- a stable WEDNESDAY model identifier;\n- supported input and output modalities;\n- tool compatibility;\n- public limits developers may rely on;\n- lifecycle state;\n- migration guidance when behavior is replaced or retired.",
+      "content_hash": "1099ffc45141268a9f8be76943f0b3a061622f80f190e8ae7e8095ab5d272670",
+      "tags": [
+        "models"
+      ],
+      "lifecycle": "stable",
+      "source_path": "models/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "models.model-selection",
+      "title": "Models",
+      "section": "Model selection",
+      "url": "https://docs.wednesdaychat.com/models/#model-selection",
+      "content": "Use the product-level intelligence and latency controls documented by the interface that exposes them. For routine work, start with Balanced. Use Deep Reasoning when task difficulty justifies additional reasoning. Code-oriented work can resolve to the Coding profile through runtime routing.",
+      "content_hash": "6508b7260d97eca547e9640f566f028acb5eec62d4fe0dae8e89af0e11a98833",
+      "tags": [
+        "models"
+      ],
+      "lifecycle": "stable",
+      "source_path": "models/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "models.lifecycle",
+      "title": "Models",
+      "section": "Lifecycle",
+      "url": "https://docs.wednesdaychat.com/models/#lifecycle",
+      "content": "Public model contracts follow an explicit lifecycle. Deprecation is announced through Deprecations (/deprecations/) and the Changelog (/changelog/) before a supported identifier is removed or materially changed.",
+      "content_hash": "8bdae3c11f8f9a542687d7b7f708419bcf66455dfddcfb9309ef8460e8b3f47f",
+      "tags": [
+        "models"
+      ],
+      "lifecycle": "stable",
+      "source_path": "models/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "platform.conversation-state.overview",
+      "title": "Conversation state",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/platform/conversation-state/",
+      "content": "Conversation state is a durable server-owned resource. It is scoped to the authenticated account and remains separate from the transport of a single live model response.",
+      "content_hash": "1bca34d552c66682690b4b64241c6ed6955c0d43cde2a6611414af4fd6424a76",
+      "tags": [
+        "platform",
+        "conversation-state"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/conversation-state/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "platform.conversation-state.core-routes",
+      "title": "Conversation state",
+      "section": "Core routes",
+      "url": "https://docs.wednesdaychat.com/platform/conversation-state/#core-routes",
+      "content": "| Method | Route | Purpose |\n| --- | --- | --- |\n| GET | /conversations | List account-owned conversations with cursor pagination |\n| GET | /conversations/{conversation_id} | Load one conversation |\n| PUT | /conversations/{conversation_id} | Persist a conversation write |\n| PUT | /conversations/{conversation_id}/title | Update the title |\n| GET | /conversations/{conversation_id}/messages | Page through messages |\n| PUT | /conversations/{conversation_id}/draft | Persist the composer draft |\n| DELETE | /conversations/{conversation_id} | Delete the conversation |\n\nAll routes in this table require the validated WEDNESDAY account session.",
+      "content_hash": "e61e5f0f03eaba47e90f876c4993c9249b38b5466f148c624004c79ce6f50d80",
+      "tags": [
+        "platform",
+        "conversation-state"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/conversation-state/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "platform.conversation-state.follow-ups-and-branches",
+      "title": "Conversation state",
+      "section": "Follow-ups and branches",
+      "url": "https://docs.wednesdaychat.com/platform/conversation-state/#follow-ups-and-branches",
+      "content": "The API supports queued follow-ups, follow-up reordering and state changes, creation of conversation branches from a message, and switching the active branch.\n\nBranch operations remain conversation-owner scoped. A client cannot select another account's durable owner by supplying an owner identifier.",
+      "content_hash": "00c2d11871c6f08d74dea9a444ec4c2636720331fd4f9f8aacd270cb85594a17",
+      "tags": [
+        "platform",
+        "conversation-state"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/conversation-state/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "platform.conversation-state.organization-state",
+      "title": "Conversation state",
+      "section": "Organization state",
+      "url": "https://docs.wednesdaychat.com/platform/conversation-state/#organization-state",
+      "content": "Conversation records can be archived, pinned, and moved into or out of projects. Project-move targets are returned from an owner-scoped route so the client does not need to infer allowed destinations.",
+      "content_hash": "2b028a77007aeecb3ccf4c357cea0a32dd2eec29146231853301eef99e45eacc",
+      "tags": [
+        "platform",
+        "conversation-state"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/conversation-state/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "platform.conversation-state.feedback-and-sharing",
+      "title": "Conversation state",
+      "section": "Feedback and sharing",
+      "url": "https://docs.wednesdaychat.com/platform/conversation-state/#feedback-and-sharing",
+      "content": "Feedback is stored against the latest eligible response in the conversation. Share creation is session-protected, while resolution of a valid share token is part of the intentionally public surface.",
+      "content_hash": "d3d952d2b3c194e4ca5b1bc0d13afe00ebf4fde9b9fbcc337472acb9b03137b0",
+      "tags": [
+        "platform",
+        "conversation-state"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/conversation-state/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "platform.conversation-state.consistency-behavior",
+      "title": "Conversation state",
+      "section": "Consistency behavior",
+      "url": "https://docs.wednesdaychat.com/platform/conversation-state/#consistency-behavior",
+      "content": "The persistence layer distinguishes missing resources, conflicts, rate limits, and temporary store failures. Clients should handle 404, 409, 429, and 503 as distinct states rather than retrying every failure identically.",
+      "content_hash": "0d2ccb23dc6f51f8f3b9105d7c442f014910b47055a88c174644922537fb8eb4",
+      "tags": [
+        "platform",
+        "conversation-state"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/conversation-state/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "platform.overview",
+      "title": "Key concepts",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/platform/",
+      "content": "WEDNESDAY combines server-owned identity, durable conversation state, structured streaming, project context, and tool-oriented execution into one product runtime.",
+      "content_hash": "96b2756092b63fc7da2e76f4baf9e678f53c3a8823a697acde6b07ac38c43d0e",
+      "tags": [
+        "platform"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "platform.server-authoritative-identity",
+      "title": "Key concepts",
+      "section": "Server-authoritative identity",
+      "url": "https://docs.wednesdaychat.com/platform/#server-authoritative-identity",
+      "content": "Protected operations derive the durable account owner from the validated server session. Client-supplied owner or role claims are not the authority boundary.\n\nThis design keeps conversation, project, file, search, feedback, and tool state consistently scoped to the authenticated account.",
+      "content_hash": "a4f415af3335857072e65928dba38cf9e7f7ee863adf6723bc6e4fbe2b5efabd",
+      "tags": [
+        "platform"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "platform.durable-conversations",
+      "title": "Key concepts",
+      "section": "Durable conversations",
+      "url": "https://docs.wednesdaychat.com/platform/#durable-conversations",
+      "content": "Conversation records are persisted independently of the live model stream. The platform supports conversation listing and loading, messages, drafts, follow-ups, branches, archive state, pinning, project movement, feedback, sharing, usage records, and deletion.\n\nRead about conversation state → (/platform/conversation-state/)",
+      "content_hash": "4b0441fba1a021a80c48f756fea5c6f658c04825e065c27a70ccba35b2ff74d8",
+      "tags": [
+        "platform"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "platform.structured-streaming",
+      "title": "Key concepts",
+      "section": "Structured streaming",
+      "url": "https://docs.wednesdaychat.com/platform/#structured-streaming",
+      "content": "Live chat responses use Server-Sent Events (text/event-stream) with a versioned event protocol. Events carry ordered sequence numbers and typed state for turns, answers, code, activities, and tools.\n\nRead about streaming → (/platform/streaming/)",
+      "content_hash": "1e663770e7e39975edfdb22fb31c30e381fdfb9afb2266cd930afb5453343bae",
+      "tags": [
+        "platform"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "platform.mid-turn-steering",
+      "title": "Key concepts",
+      "section": "Mid-turn steering",
+      "url": "https://docs.wednesdaychat.com/platform/#mid-turn-steering",
+      "content": "A running turn can accept supported steering input while it remains steerable. The server rejects steering after the acceptance window closes rather than silently pretending it was applied.\n\nRead about steering → (/platform/steering/)",
+      "content_hash": "f5e82810db42279fe92312f58cd1faedf64dd047c37c112b937c5bcc875fd0e2",
+      "tags": [
+        "platform"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "platform.projects-and-context",
+      "title": "Key concepts",
+      "section": "Projects and context",
+      "url": "https://docs.wednesdaychat.com/platform/#projects-and-context",
+      "content": "Projects group conversations and related context. Production routes support project settings, instructions, search, files, connector bindings, work history, and project-scoped conversations.\n\nRead about projects → (/projects/)",
+      "content_hash": "b9939e63015e66095da828bd4801a8055f175688717719cd2884fdfdb4dd88e1",
+      "tags": [
+        "platform"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "platform.fail-closed-api-surface",
+      "title": "Key concepts",
+      "section": "Fail-closed API surface",
+      "url": "https://docs.wednesdaychat.com/platform/#fail-closed-api-surface",
+      "content": "The production API treats unlisted routes as session-required by default. Only an explicit narrow public allowlist is available without an account session.",
+      "content_hash": "66b8fe274d32eecc61c8cab165e4b33d516fe6d2ca5a3044b211b59f652df5be",
+      "tags": [
+        "platform"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/index.md",
+      "ordinal": 6
+    },
+    {
+      "id": "platform.steering.overview",
+      "title": "Mid-turn steering",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/platform/steering/",
+      "content": "WEDNESDAY can accept supported input during a running turn instead of forcing every correction into a brand-new conversation turn.",
+      "content_hash": "3317f058c461e7dd96859beba32cb9050fe7e02f1f6b9003cc9754cc3e287ebb",
+      "tags": [
+        "platform",
+        "steering"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/steering/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "platform.steering.endpoint",
+      "title": "Mid-turn steering",
+      "section": "Endpoint",
+      "url": "https://docs.wednesdaychat.com/platform/steering/#endpoint",
+      "content": "POST /chat/{turn_id}/input Submit a validated steering payload to an active turn. Successful submission returns HTTP 202 .\n\nThe operation is account-session protected and uses the same chat-rate-limit boundary as the live chat route.",
+      "content_hash": "db31715842d89778347d9e3df8733612d09fd6c1dbc65d06a68e66fa145452b3",
+      "tags": [
+        "platform",
+        "steering"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/steering/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "platform.steering.acceptance-window",
+      "title": "Mid-turn steering",
+      "section": "Acceptance window",
+      "url": "https://docs.wednesdaychat.com/platform/steering/#acceptance-window",
+      "content": "Steering is not guaranteed after a turn stops accepting input. When the transport can no longer deliver steering, the API returns 409 Conflict rather than acknowledging input that was not applied.",
+      "content_hash": "a870771af286c2c2a5570e5a6d7cc33b45130205e669dd3933c300452bdf722e",
+      "tags": [
+        "platform",
+        "steering"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/steering/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "platform.steering.cancellation",
+      "title": "Mid-turn steering",
+      "section": "Cancellation",
+      "url": "https://docs.wednesdaychat.com/platform/steering/#cancellation",
+      "content": "Supported steering payloads can represent durable turn cancellation. Cancellation validates the durable turn identifier and persists the cancel request before the turn is treated as cancelled.",
+      "content_hash": "c119403e704500199dfb65cbc5bbadc7436c98529c5ae98bb5772fad40bf7678",
+      "tags": [
+        "platform",
+        "steering"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/steering/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "platform.steering.error-behavior",
+      "title": "Mid-turn steering",
+      "section": "Error behavior",
+      "url": "https://docs.wednesdaychat.com/platform/steering/#error-behavior",
+      "content": "- 404 — the durable turn does not exist for the account.\n- 409 — the turn is no longer accepting steering.\n- 422 — the cancellation form contains an invalid durable turn identifier.\n- 429 — the chat rate limit is exceeded.\n- 503 — steering transport, cancellation persistence, or rate-limit protection is unavailable.\n\nClients should surface these outcomes distinctly; a 409 is a lifecycle outcome, not a generic server failure.",
+      "content_hash": "d2bdebee9871beadf9492f46759b5193f645f0ddb66f6a69c5f19395ea05de80",
+      "tags": [
+        "platform",
+        "steering"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/steering/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "platform.streaming.overview",
+      "title": "Streaming",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/platform/streaming/",
+      "content": "Live chat uses Server-Sent Events with a versioned, ordered event protocol rather than an unstructured text socket.",
+      "content_hash": "0520b57af1e6921fd8dc3738cdca2b83a7e1aff2e46d0bb0eb9a223c19da193b",
+      "tags": [
+        "platform",
+        "streaming"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/streaming/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "platform.streaming.transport",
+      "title": "Streaming",
+      "section": "Transport",
+      "url": "https://docs.wednesdaychat.com/platform/streaming/#transport",
+      "content": "POST /chat returns:\n\n```text\nContent-Type: text/event-stream\nCache-Control: no-cache, no-transform\nX-Accel-Buffering: no\n```\n\nThe route requires an authenticated account session and is protected by the chat rate limiter.",
+      "content_hash": "a517f5a75458d2188520aa34ced2b61701d3acabde104527f11b4368bbb18e54",
+      "tags": [
+        "platform",
+        "streaming"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/streaming/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "platform.streaming.protocol-version",
+      "title": "Streaming",
+      "section": "Protocol version",
+      "url": "https://docs.wednesdaychat.com/platform/streaming/#protocol-version",
+      "content": "Current stream events carry protocol_version: 1, a turn identifier, and a monotonically ordered sequence field. Part-level events add a part identifier; tool events add a tool identifier.\n\nClients should treat the protocol version as part of the compatibility contract rather than assuming event payloads can change without coordination.",
+      "content_hash": "fc4cc4852529c6b5ecc65f0e82e784ec39605b1f0136bb8e6d9a083f4831a654",
+      "tags": [
+        "platform",
+        "streaming"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/streaming/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "platform.streaming.event-families",
+      "title": "Streaming",
+      "section": "Event families",
+      "url": "https://docs.wednesdaychat.com/platform/streaming/#event-families",
+      "content": "The current stream model includes typed events for:\n\n- turn start and routing;\n- activity progress;\n- answer start, delta, and completion;\n- code start, delta, and completion;\n- tool start, progress, state transitions, and completion;\n- additional bounded platform events as documented by their public contract.",
+      "content_hash": "d4e07fa5d5f2bf280991c8caee8f7af1ebc8c93f41d1532b44bf3e44e13f20f4",
+      "tags": [
+        "platform",
+        "streaming"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/streaming/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "platform.streaming.backpressure-and-intermediaries",
+      "title": "Streaming",
+      "section": "Backpressure and intermediaries",
+      "url": "https://docs.wednesdaychat.com/platform/streaming/#backpressure-and-intermediaries",
+      "content": "The API disables response buffering and transformation for the stream. Clients should consume events incrementally and should not depend on intermediaries coalescing chunks.",
+      "content_hash": "a10b56b8689fd2552a03d6af18f6abb08477c1258a6e001e111b6c94c9cb39ba",
+      "tags": [
+        "platform",
+        "streaming"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/streaming/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "platform.streaming.durable-state-is-separate",
+      "title": "Streaming",
+      "section": "Durable state is separate",
+      "url": "https://docs.wednesdaychat.com/platform/streaming/#durable-state-is-separate",
+      "content": "Streaming transports live execution. Conversation persistence is a separate durable boundary. A robust client should not assume that the presence or absence of one network chunk is itself the durable conversation record.",
+      "content_hash": "2586d98d7441548da66a85bd38a393090d64d933f9ec11f730248e2d792d576b",
+      "tags": [
+        "platform",
+        "streaming"
+      ],
+      "lifecycle": "stable",
+      "source_path": "platform/streaming/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "privacy.overview",
+      "title": "Privacy",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/privacy/",
+      "content": "WEDNESDAY scopes durable product data to the authorized account and documents privacy-relevant behavior only where it is a stable public contract.",
+      "content_hash": "966ad0a22fd6d64c2c446d29cc1692a7855972c00dbee4ae6bfd2cc7b9732bcb",
+      "tags": [
+        "privacy"
+      ],
+      "lifecycle": "stable",
+      "source_path": "privacy/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "privacy.account-scoped-state",
+      "title": "Privacy",
+      "section": "Account-scoped state",
+      "url": "https://docs.wednesdaychat.com/privacy/#account-scoped-state",
+      "content": "Projects, conversations, files, search results, feedback, research state, and related durable records are resolved through the authorized account boundary. Public share links are a deliberate exception: they expose only the share target represented by the generated share token.",
+      "content_hash": "13652b423c0e4c6df98f133bc04dc84c371915568a95f41b86f7aa63ca2dff1c",
+      "tags": [
+        "privacy"
+      ],
+      "lifecycle": "stable",
+      "source_path": "privacy/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "privacy.data-minimization",
+      "title": "Privacy",
+      "section": "Data minimization",
+      "url": "https://docs.wednesdaychat.com/privacy/#data-minimization",
+      "content": "Clients should send only the information required for the requested workflow. Do not place secrets, credentials, or unrelated personal data into prompts, project instructions, file metadata, tool arguments, logs, or public share links.",
+      "content_hash": "ca5fe31fd3d1a5915cc561561caefbb5a4f3cca7d1681e3160cea60741a20305",
+      "tags": [
+        "privacy"
+      ],
+      "lifecycle": "stable",
+      "source_path": "privacy/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "privacy.files-and-connectors",
+      "title": "Privacy",
+      "section": "Files and connectors",
+      "url": "https://docs.wednesdaychat.com/privacy/#files-and-connectors",
+      "content": "Files and connector-backed resources remain subject to owner and connector scope. Applications should preserve the user's authorization boundary when displaying, caching, exporting, or acting on retrieved data.",
+      "content_hash": "a4a3f7d386a77469b7fd5929dc66d71fb179a7b8956713e3478ddf1d3e9abe29",
+      "tags": [
+        "privacy"
+      ],
+      "lifecycle": "stable",
+      "source_path": "privacy/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "privacy.public-documentation",
+      "title": "Privacy",
+      "section": "Public documentation",
+      "url": "https://docs.wednesdaychat.com/privacy/#public-documentation",
+      "content": "This public documentation intentionally excludes secret configuration, internal endpoints, private deployment topology, incident procedures, privileged administration behavior, and implementation details that would unnecessarily expand the public data surface.",
+      "content_hash": "cfbcbe535dc2eeb01ebeefa029bfcc43675416c4f363f50f1e31c49ec8231def",
+      "tags": [
+        "privacy"
+      ],
+      "lifecycle": "stable",
+      "source_path": "privacy/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "privacy.product-policy",
+      "title": "Privacy",
+      "section": "Product policy",
+      "url": "https://docs.wednesdaychat.com/privacy/#product-policy",
+      "content": "This developer page describes technical privacy boundaries, not the full WEDNESDAY consumer privacy policy or legal terms. Product-facing privacy notices remain authoritative for legal disclosures and user rights.",
+      "content_hash": "6e62bba7ebf8f93db5adcf98b670c0a652238dce9aa098fa6db4913a19cbbf43",
+      "tags": [
+        "privacy"
+      ],
+      "lifecycle": "stable",
+      "source_path": "privacy/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "production.overview",
+      "title": "Production best practices",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/production/",
+      "content": "Move from prototype assumptions to production-safe WEDNESDAY integrations with explicit contracts, bounded retries, durable state reconciliation, security boundaries, and release-aware dependency management.",
+      "content_hash": "3af172ed6b7fa4a67ea20b78bc4ac6cd6bb05d2b3b0fb623f9ba5079f7f8f138",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "production.treat-documented-contracts-as-the-boundary",
+      "title": "Production best practices",
+      "section": "Treat documented contracts as the boundary",
+      "url": "https://docs.wednesdaychat.com/production/#treat-documented-contracts-as-the-boundary",
+      "content": "Depend only on behavior published in this documentation or another explicitly versioned WEDNESDAY contract. Do not build against private provider names, internal deployment topology, hidden headers, implementation-only routes, or source-code details that are not documented as supported.",
+      "content_hash": "41f97665114b9212c1a15c8cfb6e4d2967adb4e13daaf406eadfa3f1304c2525",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "production.design-for-durable-state",
+      "title": "Production best practices",
+      "section": "Design for durable state",
+      "url": "https://docs.wednesdaychat.com/production/#design-for-durable-state",
+      "content": "WEDNESDAY is stateful. Conversations, projects, files, research tasks, feedback, sharing, and other workflows can persist independently of a single browser request. After ambiguous network failures, reconcile server state before repeating state-changing operations.",
+      "content_hash": "741f1134b397a07a051a4aafa46779fbf2cf90287439c37acc1fab36fba99c48",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "production.handle-streaming-as-a-protocol",
+      "title": "Production best practices",
+      "section": "Handle streaming as a protocol",
+      "url": "https://docs.wednesdaychat.com/production/#handle-streaming-as-a-protocol",
+      "content": "Chat is delivered as a structured streaming workflow rather than a single response body. Clients should handle connection loss, terminal events, tool lifecycle state, steering acceptance, cancellation, and durable recovery without deriving state from visible text alone.",
+      "content_hash": "d194c0bfe8c2c2afe797e1d1f43e6b9134a1d0fa20bc05f9ecba41e8ddd20f3a",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "production.use-bounded-retries",
+      "title": "Production best practices",
+      "section": "Use bounded retries",
+      "url": "https://docs.wednesdaychat.com/production/#use-bounded-retries",
+      "content": "- honor Retry-After on 429;\n- back off on transient 503 failures;\n- do not retry semantic 4xx failures without changing the request;\n- keep retries bounded and jittered;\n- reconcile durable state after uncertain writes.",
+      "content_hash": "a608f9adbb44d7d6bf8fcead6e806c123e3260393a4bba84f31fe03dff91dc44",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "production.secure-account-owned-data",
+      "title": "Production best practices",
+      "section": "Secure account-owned data",
+      "url": "https://docs.wednesdaychat.com/production/#secure-account-owned-data",
+      "content": "Protected WEDNESDAY operations are scoped through server-authorized account sessions. Never substitute caller-provided ownership for server-derived authority. Keep credentials, private connector tokens, session material, and internal deployment values out of client logs and public documentation.",
+      "content_hash": "c5a0f749b12a8f3b3893902bfac245fd2d119a4138340e361126c5c4a93c8f48",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "production.files-and-external-data",
+      "title": "Production best practices",
+      "section": "Files and external data",
+      "url": "https://docs.wednesdaychat.com/production/#files-and-external-data",
+      "content": "Treat uploads and connector data as untrusted input. Respect file-size and media-type constraints, malware/content validation, owner scope, connector scope, and explicit approval boundaries for external actions.",
+      "content_hash": "592b17ba991dd063fab71faeee058819994b98949f98720e8bb8c5f02b547b97",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 6
+    },
+    {
+      "id": "production.observe-dependency-health",
+      "title": "Production best practices",
+      "section": "Observe dependency health",
+      "url": "https://docs.wednesdaychat.com/production/#observe-dependency-health",
+      "content": "The API exposes separate health, readiness, and version behavior. A process can be alive while the platform is not ready to serve production traffic. Production systems should distinguish availability from readiness and avoid routing critical work to an unready dependency.",
+      "content_hash": "2b2d29daa20f4e9395f3078c512801fbbc7bf5a3853c827d75e085d8a972dcc1",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 7
+    },
+    {
+      "id": "production.release-discipline",
+      "title": "Production best practices",
+      "section": "Release discipline",
+      "url": "https://docs.wednesdaychat.com/production/#release-discipline",
+      "content": "Production documentation changes should pass source validation, a deterministic Jekyll build, generated-site link validation, machine-readable corpus checks, and review before promotion to main.\n\nPublic docs are production surface. A documentation regression can break integrations just as surely as an API regression. WEDNESDAY treats docs, machine-readable indexes, and published API contracts as release artifacts.",
+      "content_hash": "63b5c60666734bdc68773f8f5c25454a1fabe9ecb010b35cd8fc50ca1c75eb06",
+      "tags": [
+        "production"
+      ],
+      "lifecycle": "stable",
+      "source_path": "production/index.md",
+      "ordinal": 8
+    },
+    {
+      "id": "projects.overview",
+      "title": "Projects",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/projects/",
+      "content": "Projects group durable conversations and project-scoped context under the authenticated WEDNESDAY account.",
+      "content_hash": "84c657d427e62bce90d0c0de102868dc47f7e5bec8c75dbe54585b678d1baf62",
+      "tags": [
+        "projects"
+      ],
+      "lifecycle": "stable",
+      "source_path": "projects/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "projects.project-lifecycle",
+      "title": "Projects",
+      "section": "Project lifecycle",
+      "url": "https://docs.wednesdaychat.com/projects/#project-lifecycle",
+      "content": "The production API supports listing, reading, creating, renaming, archiving, deleting, and restoring projects.\n\n| Method | Route |\n| --- | --- |\n| GET | /projects |\n| POST | /projects |\n| GET | /projects/{project_id} |\n| PUT | /projects/{project_id}/name |\n| PUT | /projects/{project_id}/archive |\n| DELETE | /projects/{project_id} |\n| POST | /projects/{project_id}/restore |",
+      "content_hash": "85843a58d0b6d3efe590868356151dbb5be9b688deed930d9dade46114bc3488",
+      "tags": [
+        "projects"
+      ],
+      "lifecycle": "stable",
+      "source_path": "projects/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "projects.project-context",
+      "title": "Projects",
+      "section": "Project context",
+      "url": "https://docs.wednesdaychat.com/projects/#project-context",
+      "content": "A project can expose account-owned settings and instructions through dedicated read/write routes. Chat execution can load project context for a conversation and render that context into the turn's system context.",
+      "content_hash": "eb6b8ffd4dacb88932ed64543e888965f4f50597269a35d751ab4d1f1baffc29",
+      "tags": [
+        "projects"
+      ],
+      "lifecycle": "stable",
+      "source_path": "projects/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "projects.search-and-resources",
+      "title": "Projects",
+      "section": "Search and resources",
+      "url": "https://docs.wednesdaychat.com/projects/#search-and-resources",
+      "content": "Projects have production routes for:\n\n- project-scoped search;\n- instructions and settings;\n- connector bindings;\n- work history;\n- file membership;\n- project-owned conversation listing and creation.",
+      "content_hash": "29919c4477eeca33da8779ed3dc4b19c471b7be53459b1dcec5547f513d24265",
+      "tags": [
+        "projects"
+      ],
+      "lifecycle": "stable",
+      "source_path": "projects/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "projects.ownership-boundary",
+      "title": "Projects",
+      "section": "Ownership boundary",
+      "url": "https://docs.wednesdaychat.com/projects/#ownership-boundary",
+      "content": "Every project operation in this guide is session-protected. The project ID selects a resource **within** the authenticated account; it does not select the account itself.",
+      "content_hash": "dcf53f06d6f7b1082b1c6c3e6f12c78dea6ea1bda4826759e3eec637ae65332a",
+      "tags": [
+        "projects"
+      ],
+      "lifecycle": "stable",
+      "source_path": "projects/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "projects.conflicts-and-deletion",
+      "title": "Projects",
+      "section": "Conflicts and deletion",
+      "url": "https://docs.wednesdaychat.com/projects/#conflicts-and-deletion",
+      "content": "Mutating operations may return 409 Conflict when state has changed or an explicit confirmation requirement is not satisfied. Clients should not collapse those outcomes into a generic retry loop.",
+      "content_hash": "bc16f6e48a74baa9d89aa177432c41e8f4b654e4b526f40eca1ad9c5801d10e7",
+      "tags": [
+        "projects"
+      ],
+      "lifecycle": "stable",
+      "source_path": "projects/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "reliability.overview",
+      "title": "Reliability",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/reliability/",
+      "content": "Reliability documentation explains externally observable behavior: availability, retries, timeouts, idempotency, degradation, and status communication where those contracts are publicly defined.",
+      "content_hash": "0e2ef194329e7a5443c58a40de90df18f991a6766d3bb392a75b3fff872562d1",
+      "tags": [
+        "reliability"
+      ],
+      "lifecycle": "stable",
+      "source_path": "reliability/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "reliability.status-information",
+      "title": "Reliability",
+      "section": "Status information",
+      "url": "https://docs.wednesdaychat.com/reliability/#status-information",
+      "content": "Live operational status belongs on the independent WEDNESDAY status service rather than being hard-coded into documentation pages. Documentation should explain behavior; the status service should report current incidents and availability.",
+      "content_hash": "551ceb83ca7fa90a249fb3ca7ff438208e39a46c55a2ce113b53cf6428632097",
+      "tags": [
+        "reliability"
+      ],
+      "lifecycle": "stable",
+      "source_path": "reliability/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "reliability.failure-semantics",
+      "title": "Reliability",
+      "section": "Failure semantics",
+      "url": "https://docs.wednesdaychat.com/reliability/#failure-semantics",
+      "content": "API and tool references should document actionable error behavior close to the affected contract so developers do not have to infer retry or recovery behavior.",
+      "content_hash": "53c6b38af1beca77c6dd6a96618658d7dbf5b44311640fbb54f97ac5968f46e2",
+      "tags": [
+        "reliability"
+      ],
+      "lifecycle": "stable",
+      "source_path": "reliability/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "search.overview",
+      "title": "Search",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/search/",
+      "content": "Search is a server-owned, account-scoped operation over durable WEDNESDAY state. It is separate from model web search.",
+      "content_hash": "29cb9f5496059fc3d5f4de0536e0885741b361bf7215176073fb8d93f7f02f37",
+      "tags": [
+        "search"
+      ],
+      "lifecycle": "stable",
+      "source_path": "search/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "search.global-search",
+      "title": "Search",
+      "section": "Global search",
+      "url": "https://docs.wednesdaychat.com/search/#global-search",
+      "content": "GET /search Search the authenticated account's durable search surface.\n\nThe verified query contract uses:\n\n| Parameter | Constraint |\n| --- | --- |\n| q | Required; 1–160 characters |\n| limit | 1–100; default 25 |\n\nResults are returned with Cache-Control: no-store.",
+      "content_hash": "154d5519ae9f499652900143fed40fff3c2ad7fa42411c556f8c75051b170d62",
+      "tags": [
+        "search"
+      ],
+      "lifecycle": "stable",
+      "source_path": "search/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "search.project-search",
+      "title": "Search",
+      "section": "Project search",
+      "url": "https://docs.wednesdaychat.com/search/#project-search",
+      "content": "GET /projects/{project_id}/search Search within an account-owned project, including a bounded filter and result limit.",
+      "content_hash": "1fe335afda17870ad249faa1f8d7d0317a94be6703739c922706f289aa08ca82",
+      "tags": [
+        "search"
+      ],
+      "lifecycle": "stable",
+      "source_path": "search/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "search.rate-limits-and-errors",
+      "title": "Search",
+      "section": "Rate limits and errors",
+      "url": "https://docs.wednesdaychat.com/search/#rate-limits-and-errors",
+      "content": "Search can return:\n\n- 422 for an invalid query contract;\n- 429 when the search protection limit is exceeded;\n- 503 when search storage or protection is unavailable.",
+      "content_hash": "2341070c46bf283bf42657ef213a43bb73336d6d0ea9895cc171402914d35873",
+      "tags": [
+        "search"
+      ],
+      "lifecycle": "stable",
+      "source_path": "search/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "search.not-the-same-as-web-search",
+      "title": "Search",
+      "section": "Not the same as web search",
+      "url": "https://docs.wednesdaychat.com/search/#not-the-same-as-web-search",
+      "content": "This page documents product-state search. Model tools that discover or ground information from the public web have a separate execution and security boundary and should not be inferred from /search.",
+      "content_hash": "77f96d1b272c089aa0e3acb7939a7af723d81237184b6f3e0ff2990ea575473a",
+      "tags": [
+        "search"
+      ],
+      "lifecycle": "stable",
+      "source_path": "search/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "security.overview",
+      "title": "Security",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/security/",
+      "content": "Public security documentation should help users integrate safely without exposing implementation details that would increase operational risk.",
+      "content_hash": "582eb7a052362a548d6be36c3649f4d0bc0848efa1ccfb99ef7b482860482051",
+      "tags": [
+        "security"
+      ],
+      "lifecycle": "stable",
+      "source_path": "security/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "security.documentation-security-boundary",
+      "title": "Security",
+      "section": "Documentation security boundary",
+      "url": "https://docs.wednesdaychat.com/security/#documentation-security-boundary",
+      "content": "The public repository must not contain credentials, secrets, private keys, internal-only endpoints, private network topology, customer data, confidential incident artifacts, or privileged deployment configuration files.",
+      "content_hash": "3494c9487609f8b413f4ed6a6a3f026d1bb39f4b78a3c03fa23585f949adfa1c",
+      "tags": [
+        "security"
+      ],
+      "lifecycle": "stable",
+      "source_path": "security/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "security.responsible-publication",
+      "title": "Security",
+      "section": "Responsible publication",
+      "url": "https://docs.wednesdaychat.com/security/#responsible-publication",
+      "content": "Security claims should be specific, verifiable, scoped to the applicable product surface, and reviewed before publication. Absence of a claim in this documentation should not be interpreted as a guarantee.",
+      "content_hash": "435e0a018e67c1f90fb5b17e87534626e05181aeccf1468b198b2f1638a1c17e",
+      "tags": [
+        "security"
+      ],
+      "lifecycle": "stable",
+      "source_path": "security/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "security.vulnerability-reporting",
+      "title": "Security",
+      "section": "Vulnerability reporting",
+      "url": "https://docs.wednesdaychat.com/security/#vulnerability-reporting",
+      "content": "A dedicated public vulnerability-reporting policy will be linked here when its operational intake process is finalized.",
+      "content_hash": "d452196719105d060d47fe4f88f8bc821c25055709483edea465ba4a74e779ba",
+      "tags": [
+        "security"
+      ],
+      "lifecycle": "stable",
+      "source_path": "security/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "tools.overview",
+      "title": "Tools",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/tools/",
+      "content": "Using tools\n\nExtend a WEDNESDAY turn with search, files, research, location context, projects, connectors, and other bounded execution capabilities. Tool work is represented as typed runtime state rather than hidden model side effects.\n\nSearch Files Research Projects Connectors\n\n```text\nUser request\n↓\nWEDNESDAY runtime\n↓\nTool start → progress/state → completion\n↓\nStructured result returned to the active turn\n```",
+      "content_hash": "8b4014ccef2227419c9346e3652301936c780fa586b156e2b45dafd7c9fdb201",
+      "tags": [
+        "tools"
+      ],
+      "lifecycle": "stable",
+      "source_path": "tools/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "tools.available-tool-families",
+      "title": "Tools",
+      "section": "Available tool families",
+      "url": "https://docs.wednesdaychat.com/tools/#available-tool-families",
+      "content": "⌕ Search and retrieval Search durable WEDNESDAY state and support retrieval-oriented workflows.\n▣ Files and Library Upload, inspect, select, attach, retrieve, and manage account-owned file resources.\n✦ Deep research Track longer-running research work as durable task state rather than a single request.\n◇ Projects and context Use project instructions, settings, files, conversations, connectors, and work history as scoped context.\n↗ Connectors Work with explicitly authorized external resources while preserving connector scope and approval boundaries.\n◎ Location and place context Use location preferences and place-enrichment capabilities where the product flow authorizes them.",
+      "content_hash": "1bb9dfba3d14a9cba568c76e250ad720f37e6c931e9adfaaa7c822ab2ec1bdc0",
+      "tags": [
+        "tools"
+      ],
+      "lifecycle": "stable",
+      "source_path": "tools/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "tools.tool-lifecycle",
+      "title": "Tools",
+      "section": "Tool lifecycle",
+      "url": "https://docs.wednesdaychat.com/tools/#tool-lifecycle",
+      "content": "The live stream protocol can represent tool start, progress, state transition, and completion events. Stable turn, part, and tool hierarchy identifiers let a client render nested or parallel work without inferring execution state from prose.",
+      "content_hash": "e2da492ab391a62de642e6600525da16539cff8960728f8b75e7590eb7542ed7",
+      "tags": [
+        "tools"
+      ],
+      "lifecycle": "stable",
+      "source_path": "tools/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "tools.authority-and-approvals",
+      "title": "Tools",
+      "section": "Authority and approvals",
+      "url": "https://docs.wednesdaychat.com/tools/#authority-and-approvals",
+      "content": "Tool availability never implies unlimited authority. File operations remain account-scoped, connector operations remain connector-scoped, public-network access is bounded by runtime policy, and risky external actions can require explicit approval before execution.",
+      "content_hash": "8d23fe7d2de5027485a341554972f2fd83d802c3969d6d8b4dcf9f4c4c27e366",
+      "tags": [
+        "tools"
+      ],
+      "lifecycle": "stable",
+      "source_path": "tools/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "tools.failure-handling",
+      "title": "Tools",
+      "section": "Failure handling",
+      "url": "https://docs.wednesdaychat.com/tools/#failure-handling",
+      "content": "A tool result can fail independently of the surrounding model turn. Clients should preserve tool state, surface meaningful failures, and avoid rewriting a failed execution as if the model merely “changed its mind.”",
+      "content_hash": "1c1b9d896ae14ecb19ff5c2e3ad4096e40fe4305f49d0416248b0309d6f864a3",
+      "tags": [
+        "tools"
+      ],
+      "lifecycle": "stable",
+      "source_path": "tools/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "tools.public-capability-policy",
+      "title": "Tools",
+      "section": "Public capability policy",
+      "url": "https://docs.wednesdaychat.com/tools/#public-capability-policy",
+      "content": "A tool becomes a supported developer capability only when its public name, inputs, outputs, authority requirements, failure behavior, and lifecycle are stable enough to depend on.\n\nInternal tool kinds, telemetry labels, and implementation-specific execution modules are not automatically public developer tools.",
+      "content_hash": "6e06bbd11bf41d91902c6ee469329cdb9d2535195544a9dd25b82983bc08eddd",
+      "tags": [
+        "tools"
+      ],
+      "lifecycle": "stable",
+      "source_path": "tools/index.md",
+      "ordinal": 5
+    }
+  ]
+}
