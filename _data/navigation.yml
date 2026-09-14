@@ -1,35 +1,37 @@
 sections:
-  - title: Start
+  - title: Get started
     items:
       - title: Overview
         url: /
-      - title: Getting started
+      - title: Quickstart
         url: /getting-started/
       - title: Platform concepts
         url: /platform/
-  - title: Build
+  - title: Core platform
     items:
       - title: Models
         url: /models/
-      - title: API
-        url: /api/
-      - title: Tools
-        url: /tools/
       - title: Agents
         url: /agents/
+      - title: Tools
+        url: /tools/
       - title: Integrations
         url: /integrations/
-  - title: Operate
+  - title: API
     items:
-      - title: Security
-        url: /security/
+      - title: API overview
+        url: /api/
+  - title: Production
+    items:
       - title: Reliability
         url: /reliability/
-  - title: Reference
+      - title: Security
+        url: /security/
+  - title: Resources
     items:
-      - title: Machine-readable docs
-        url: /machine-readable/
       - title: Changelog
         url: /changelog/
       - title: Deprecations
         url: /deprecations/
+      - title: Machine-readable docs
+        url: /machine-readable/
