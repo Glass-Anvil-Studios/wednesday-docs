@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "fail_closed": true,
+  "public_source_roots": [
+    "getting-started",
+    "platform",
+    "projects",
+    "files",
+    "search",
+    "deep-research",
+    "models",
+    "agents",
+    "tools",
+    "integrations",
+    "api",
+    "production",
+    "security",
+    "privacy",
+    "reliability",
+    "machine-readable",
+    "changelog",
+    "deprecations",
+    "learn"
+  ],
+  "public_root_files": [
+    "index.md",
+    "404.html",
+    "llms.txt",
+    "llms-full.txt",
+    "robots.txt",
+    "sitemap.xml",
+    "search.json",
+    "CNAME",
+    "_layouts/default.html",
+    "_data/navigation.yml",
+    "assets/js/site.js",
+    "assets/css/site.css"
+  ],
+  "blocked_route_prefixes": [
+    "/admin",
+    "/internal",
+    "/ops",
+    "/debug",
+    "/metrics",
+    "/private",
+    "/provider",
+    "/backoffice",
+    "/management"
+  ]
+}
