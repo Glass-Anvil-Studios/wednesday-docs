@@ -16,44 +16,110 @@
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="/" aria-label="WEDNESDAY Docs home"><span class="brand-mark">W</span><span>WEDNESDAY</span><span class="brand-docs">Docs</span></a>
-      <nav class="topnav" aria-label="Primary">
-        <a href="/api/">API</a>
+      <a class="brand" href="/" aria-label="WEDNESDAY Docs home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">WEDNESDAY</span>
+        <span class="brand-docs">Docs</span>
+      </a>
+
+      <button class="search-trigger" id="search-trigger" type="button" aria-haspopup="dialog" aria-controls="search-dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+        <span>Search docs</span>
+        <kbd>⌘ K</kbd>
+      </button>
+
+      <nav class="topnav" aria-label="Global">
         <a href="/changelog/">Changelog</a>
+        <a href="https://status.wednesdaychat.com">Status</a>
         <a href="https://github.com/Glass-Anvil-Studios/wednesday-docs">GitHub</a>
       </nav>
-      <button class="menu-button" type="button" aria-label="Toggle documentation navigation" aria-expanded="false">Menu</button>
+
+      <button class="menu-button" type="button" aria-label="Toggle documentation navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <div class="shell">
-    <aside class="sidebar" aria-label="Documentation">
-      <div class="search-wrap">
-        <label class="sr-only" for="docs-search">Filter documentation</label>
-        <input id="docs-search" class="docs-search" type="search" placeholder="Filter docs  /" autocomplete="off">
+  <nav class="sectionbar" aria-label="Platform documentation">
+    <div class="sectionbar-inner">
+      <a class="{% if page.url == '/' or page.url contains '/getting-started/' or page.url contains '/platform/' %}active{% endif %}" href="/">Overview</a>
+      <a class="{% if page.url contains '/models/' %}active{% endif %}" href="/models/">Models</a>
+      <a class="{% if page.url contains '/agents/' %}active{% endif %}" href="/agents/">Agents</a>
+      <a class="{% if page.url contains '/tools/' %}active{% endif %}" href="/tools/">Tools</a>
+      <a class="{% if page.url contains '/integrations/' %}active{% endif %}" href="/integrations/">Integrations</a>
+      <a class="{% if page.url contains '/security/' or page.url contains '/reliability/' %}active{% endif %}" href="/reliability/">Operate</a>
+      <a class="{% if page.url contains '/api/' %}active{% endif %}" href="/api/">API reference</a>
+    </div>
+  </nav>
+
+  <div class="docs-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+      <div class="sidebar-mobile-head">
+        <strong>Documentation</strong>
+        <button class="sidebar-close" type="button" aria-label="Close navigation">×</button>
       </div>
       <nav id="docs-nav">
         {% for section in site.data.navigation.sections %}
-        <div class="nav-section">
+        <div class="nav-section" data-search-section="{{ section.title | escape }}">
           <div class="nav-heading">{{ section.title }}</div>
           {% for item in section.items %}
-          <a class="nav-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+          <a class="nav-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}" data-search-title="{{ item.title | escape }}" data-search-section="{{ section.title | escape }}">{{ item.title }}</a>
           {% endfor %}
         </div>
         {% endfor %}
       </nav>
+      <div class="sidebar-footer">
+        <a href="/machine-readable/">For AI agents</a>
+        <a href="/llms.txt">llms.txt</a>
+      </div>
     </aside>
 
     <main class="content" id="main-content">
-      <div class="content-inner">
-        {% if page.eyebrow %}<div class="eyebrow">{{ page.eyebrow }}</div>{% endif %}
-        {{ content }}
-        <footer class="page-footer">
-          <span>Official WEDNESDAY documentation</span>
-          <a href="https://github.com/Glass-Anvil-Studios/wednesday-docs">View source repository</a>
-        </footer>
+      <div class="content-wrap">
+        <article class="content-inner">
+          <div class="page-utility">
+            {% if page.eyebrow %}<span class="eyebrow">{{ page.eyebrow }}</span>{% endif %}
+            <button id="copy-page" class="copy-page" type="button" title="Copy this page URL">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2M5 8h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z"/></svg>
+              <span>Copy page</span>
+            </button>
+          </div>
+
+          {{ content }}
+
+          <footer class="page-footer">
+            <div>
+              <strong>WEDNESDAY Docs</strong>
+              <span>Canonical public documentation</span>
+            </div>
+            <div class="page-footer-links">
+              <a href="/changelog/">Changelog</a>
+              <a href="https://status.wednesdaychat.com">Status</a>
+              <a href="https://github.com/Glass-Anvil-Studios/wednesday-docs">Source</a>
+            </div>
+          </footer>
+        </article>
+
+        <aside class="toc" aria-label="On this page">
+          <div class="toc-title">On this page</div>
+          <nav id="toc-nav"></nav>
+        </aside>
       </div>
     </main>
+  </div>
+
+  <div class="search-overlay" id="search-dialog" role="dialog" aria-modal="true" aria-label="Search documentation" hidden>
+    <div class="search-backdrop" data-search-close></div>
+    <div class="search-modal">
+      <div class="search-modal-input-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+        <label class="sr-only" for="docs-search">Search documentation</label>
+        <input id="docs-search" class="docs-search" type="search" placeholder="Search WEDNESDAY docs" autocomplete="off" spellcheck="false">
+        <kbd>Esc</kbd>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite"></div>
+      <div class="search-hint"><span>↑↓ navigate</span><span>↵ open</span><span>Esc close</span></div>
+    </div>
   </div>
 
   <script src="/assets/js/site.js" defer></script>
