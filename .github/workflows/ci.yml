@@ -26,6 +26,15 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Test publication security gates
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Enforce public release firewall
+        run: python scripts/public_release_firewall.py
+
+      - name: Validate positive public contract
+        run: python scripts/validate_public_contract.py
+
       - name: Validate documentation sources
         run: python scripts/validate_docs.py
 
@@ -37,3 +46,6 @@ jobs:
 
       - name: Validate generated site
         run: python scripts/validate_site.py _site
+
+      - name: Enforce firewall on generated site
+        run: python scripts/public_release_firewall.py --generated _site

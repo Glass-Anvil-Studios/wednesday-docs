@@ -9,6 +9,14 @@ permalink: /changelog/
 
 ## September 14, 2026
 
+### Public release firewall
+
+- Added a fail-closed publication firewall to the required documentation CI check.
+- Added an allowlisted public-contract boundary for WEDNESDAY origins and explicit HTTP endpoint declarations.
+- Added source and generated-site leakage scanning plus regression tests.
+- Excluded repository governance, policy, tests, and security-maintenance files from the GitHub Pages artifact.
+- Tightened the API reference so operational service metadata and probes are not part of the published developer contract.
+
 ### Documentation infrastructure
 
 - Established `docs.wednesdaychat.com` on GitHub Pages.

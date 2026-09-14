@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "canonical_site_origin": "https://docs.wednesdaychat.com",
+  "approved_wednesday_origins": [
+    "https://wednesdaychat.com",
+    "https://www.wednesdaychat.com",
+    "https://docs.wednesdaychat.com",
+    "https://api.wednesdaychat.com",
+    "https://status.wednesdaychat.com"
+  ],
+  "approved_environment_variables": [],
+  "approved_http_endpoints": [
+    {
+      "method": "GET",
+      "path": "/search"
+    },
+    {
+      "method": "GET",
+      "path": "/projects"
+    },
+    {
+      "method": "POST",
+      "path": "/projects"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{project_id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{project_id}/name"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{project_id}/archive"
+    },
+    {
+      "method": "DELETE",
+      "path": "/projects/{project_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/{project_id}/restore"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{project_id}/search"
+    },
+    {
+      "method": "GET",
+      "path": "/conversations"
+    },
+    {
+      "method": "GET",
+      "path": "/conversations/{conversation_id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/conversations/{conversation_id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/conversations/{conversation_id}/title"
+    },
+    {
+      "method": "GET",
+      "path": "/conversations/{conversation_id}/messages"
+    },
+    {
+      "method": "PUT",
+      "path": "/conversations/{conversation_id}/draft"
+    },
+    {
+      "method": "DELETE",
+      "path": "/conversations/{conversation_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/conversations/{conversation_id}/research-tasks"
+    },
+    {
+      "method": "GET",
+      "path": "/research-tasks/{task_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/research-tasks/{task_id}/cancel"
+    },
+    {
+      "method": "POST",
+      "path": "/files/uploads"
+    },
+    {
+      "method": "GET",
+      "path": "/files/uploads/{upload_id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/files/uploads/{upload_id}/content"
+    },
+    {
+      "method": "POST",
+      "path": "/chat"
+    },
+    {
+      "method": "POST",
+      "path": "/chat/{turn_id}/input"
+    }
+  ]
+}

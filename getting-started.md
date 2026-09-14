@@ -1,6 +1,6 @@
 # Developer quickstart
 
-<p class="lead">Start with the production contract that exists today: a public HTTPS origin, narrow unauthenticated operations, and session-protected product APIs.</p>
+<p class="lead">Start with the production contract that exists today: a public HTTPS origin and session-protected product APIs.</p>
 
 ## Production origin
 
@@ -16,21 +16,9 @@ The documentation origin is independent:
 https://docs.wednesdaychat.com
 ```
 
-## Verify service health
+## Check platform availability
 
-`GET /health` is part of the deliberately public service surface.
-
-```bash
-curl --fail --silent https://api.wednesdaychat.com/health
-```
-
-A healthy API returns:
-
-```json
-{"status":"ok"}
-```
-
-`GET /ready` reports whether required production dependencies are ready. It can return an HTTP `503` with a `not_ready` state when the service cannot safely accept production work.
+Use [status.wednesdaychat.com](https://status.wednesdaychat.com) for current WEDNESDAY service availability, maintenance, and incident communication. Operational probe routes and internal service metadata are not part of the public developer contract.
 
 ## Understand authentication before calling product APIs
 

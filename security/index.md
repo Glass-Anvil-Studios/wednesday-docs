@@ -11,7 +11,7 @@ permalink: /security/
 
 ## Documentation security boundary
 
-The public repository must not contain credentials, secrets, private keys, internal-only endpoints, private network topology, customer data, confidential incident artifacts, or deployment environment files.
+The public repository must not contain credentials, secrets, private keys, internal-only endpoints, private network topology, customer data, confidential incident artifacts, or privileged deployment configuration files.
 
 ## Responsible publication
 
