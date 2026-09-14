@@ -17,10 +17,10 @@
   <meta name="twitter:card" content="summary">
   <script>try{const t=localStorage.getItem('wednesday-docs-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(e){}</script>
   <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/showcase.css">
-  <link rel="stylesheet" href="/assets/css/phase3.css">
-  <link rel="stylesheet" href="/assets/css/phase4.css">
-  <link rel="stylesheet" href="/assets/css/phase5.css">
+  {% if page.url == '/' or page.url == '/models/' or page.url == '/api/reference/' %}<link rel="stylesheet" href="/assets/css/showcase.css">{% endif %}
+  {% if page.url == '/agents/' or page.url == '/tools/' or page.url == '/integrations/' %}<link rel="stylesheet" href="/assets/css/phase3.css">{% endif %}
+  {% if page.url == '/production/' or page.url == '/security/' or page.url == '/privacy/' or page.url == '/reliability/' %}<link rel="stylesheet" href="/assets/css/phase4.css">{% endif %}
+  {% if page.url == '/changelog/' or page.url == '/deprecations/' %}<link rel="stylesheet" href="/assets/css/phase5.css">{% endif %}
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":{{ page.title | default: site.title | jsonify }},"description":{{ page.description | default: site.description | jsonify }},"url":"{{ site.url }}{{ page.url }}","publisher":{"@type":"Organization","name":"Glass Anvil Studios"}}</script>
 </head>
 <body data-page-url="{{ page.url }}">
@@ -158,9 +158,9 @@
   </div>
 
   <script src="/assets/js/site.js" defer></script>
-  <script src="/assets/js/showcase.js" defer></script>
-  <script src="/assets/js/phase3.js" defer></script>
-  <script src="/assets/js/phase4.js" defer></script>
-  <script src="/assets/js/phase5.js" defer></script>
+  {% if page.url == '/' or page.url == '/models/' or page.url == '/api/reference/' %}<script src="/assets/js/showcase.js" defer></script>{% endif %}
+  {% if page.url == '/agents/' or page.url == '/tools/' or page.url == '/integrations/' %}<script src="/assets/js/phase3.js" defer></script>{% endif %}
+  {% if page.url == '/production/' or page.url == '/security/' or page.url == '/privacy/' or page.url == '/reliability/' %}<script src="/assets/js/phase4.js" defer></script>{% endif %}
+  {% if page.url == '/changelog/' or page.url == '/deprecations/' %}<script src="/assets/js/phase5.js" defer></script>{% endif %}
 </body>
 </html>
