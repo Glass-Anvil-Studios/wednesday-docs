@@ -5,6 +5,6 @@ search: false
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign indexed = site.pages | where_exp: "p", "p.title and p.search != false" %}
-{% for p in indexed %}<url><loc>{{ site.url }}{{ p.url }}</loc></url>
-{% endfor %}</urlset>
+{% assign indexed = site.pages | where_exp: "p", "p.title" %}
+{% for p in indexed %}{% unless p.search == false %}<url><loc>{{ site.url }}{{ p.url }}</loc></url>
+{% endunless %}{% endfor %}</urlset>
