@@ -1,5 +1,6 @@
 (() => {
   const body = document.body;
+  const root = document.documentElement;
   const menuButton = document.querySelector('.menu-button');
   const overlay = document.getElementById('docs-search-dialog');
   const searchInput = document.getElementById('docs-search');
@@ -7,8 +8,18 @@
   const searchTriggers = document.querySelectorAll('.search-trigger');
   const toc = document.getElementById('toc-list');
   const article = document.querySelector('[data-copy-source]');
+  const themeToggle = document.getElementById('theme-toggle');
   let searchIndex = null;
   let selected = -1;
+
+  const setTheme = (theme) => {
+    const next = theme === 'light' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('wednesday-docs-theme', next); } catch (_) {}
+    themeToggle?.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  };
+  setTheme(root.dataset.theme);
+  themeToggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 
   const closeNav = () => {
     body.classList.remove('nav-open');
@@ -19,7 +30,6 @@
     const open = body.classList.toggle('nav-open');
     menuButton.setAttribute('aria-expanded', String(open));
   });
-
   document.querySelectorAll('#docs-nav a').forEach((link) => link.addEventListener('click', closeNav));
 
   const openSearch = async () => {
@@ -31,7 +41,7 @@
         const response = await fetch('/search.json', { cache: 'force-cache' });
         if (!response.ok) throw new Error('search index unavailable');
         searchIndex = await response.json();
-      } catch {
+      } catch (_) {
         searchIndex = [];
       }
     }
@@ -48,27 +58,28 @@
   searchTriggers.forEach((button) => button.addEventListener('click', openSearch));
   overlay?.addEventListener('click', (event) => { if (event.target === overlay) closeSearch(); });
 
-  const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[char]));
+  const escapeHtml = (value) => String(value).replace(/[&<>\"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[char] || char));
 
   function renderResults(query) {
     if (!results) return;
     const q = query.trim().toLowerCase();
     if (!q) {
-      results.innerHTML = '<div class="search-empty"><strong>Search the developer platform</strong><span>Try “streaming”, “projects”, “files”, or “authentication”.</span></div>';
+      results.innerHTML = '<div class="search-empty"><strong>Search the developer platform</strong><span>Try “streaming”, “projects”, “files”, “tools”, or “authentication”.</span></div>';
       selected = -1;
       return;
     }
+    const tokens = q.split(/\s+/).filter(Boolean);
     const matches = (searchIndex || []).map((item) => {
-      const haystack = `${item.title} ${item.description} ${item.section}`.toLowerCase();
-      const title = item.title.toLowerCase();
+      const title = String(item.title || '').toLowerCase();
+      const haystack = `${item.title || ''} ${item.description || ''} ${item.section || ''}`.toLowerCase();
       let score = 0;
-      if (title === q) score += 100;
-      if (title.startsWith(q)) score += 50;
-      if (title.includes(q)) score += 25;
-      if (haystack.includes(q)) score += 10;
-      q.split(/\s+/).forEach((token) => { if (haystack.includes(token)) score += 2; });
+      if (title === q) score += 120;
+      if (title.startsWith(q)) score += 60;
+      if (title.includes(q)) score += 30;
+      if (haystack.includes(q)) score += 15;
+      tokens.forEach((token) => { if (title.includes(token)) score += 8; else if (haystack.includes(token)) score += 3; });
       return { item, score };
-    }).filter(({ score }) => score > 0).sort((a,b) => b.score - a.score).slice(0, 12);
+    }).filter(({ score }) => score > 0).sort((a,b) => b.score - a.score).slice(0, 14);
     if (!matches.length) {
       results.innerHTML = '<div class="search-empty"><strong>No matching documentation</strong><span>Try a broader term.</span></div>';
       selected = -1;
@@ -116,21 +127,24 @@
         await navigator.clipboard.writeText(text.replace(/^Copy\n?/, ''));
         button.textContent = 'Copied';
         setTimeout(() => { button.textContent = 'Copy'; }, 1400);
-      } catch { button.textContent = 'Select'; }
+      } catch (_) { button.textContent = 'Select'; }
     });
     pre.appendChild(button);
   });
 
-  document.getElementById('copy-page')?.addEventListener('click', async (event) => {
-    if (!article) return;
+  const copyPage = async (button) => {
+    if (!article || !button) return;
     const clone = article.cloneNode(true);
     clone.querySelectorAll('.article-tools,.page-footer,.code-copy').forEach((node) => node.remove());
     try {
       await navigator.clipboard.writeText(clone.innerText.trim());
-      event.currentTarget.textContent = 'Copied';
-      setTimeout(() => { event.currentTarget.textContent = 'Copy page'; }, 1400);
-    } catch { event.currentTarget.textContent = 'Select page'; }
-  });
+      const original = button.textContent;
+      button.textContent = 'Copied';
+      setTimeout(() => { button.textContent = original; }, 1400);
+    } catch (_) { button.textContent = 'Select page'; }
+  };
+  document.getElementById('copy-page')?.addEventListener('click', (event) => copyPage(event.currentTarget));
+  document.getElementById('toc-copy-page')?.addEventListener('click', (event) => copyPage(event.currentTarget));
 
   const headings = Array.from(article?.querySelectorAll('h2[id],h3[id]') || []);
   if (toc && headings.length) {
