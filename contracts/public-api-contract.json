@@ -1,0 +1,329 @@
+{
+  "contract_fingerprint": "49af21db4fbeb0f8868d83c9df0cbf63a562bc5998f9e9056fe48ac694ddab1c",
+  "contract_format": "wednesday-public-api-structural-v1",
+  "endpoint_count": 24,
+  "endpoints": [
+    {
+      "deprecated": false,
+      "method": "POST",
+      "parameters": [
+        {"in": "header", "name": "X-Wednesday-Session-Id", "required": false}
+      ],
+      "path": "/chat",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "f9bcf9ba90a606aa2afe23b7b67bb45cff8b39563309ff9df2dc435e754a2c96"
+    },
+    {
+      "deprecated": false,
+      "method": "POST",
+      "parameters": [
+        {"in": "path", "name": "turn_id", "required": true}
+      ],
+      "path": "/chat/{turn_id}/input",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["202", "422"],
+      "structural_fingerprint": "5e583aa775622cf3ff4e8938a8246871ad86223e0e35364fd9fb08cbe4e7ca02"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "query", "name": "archived", "required": false},
+        {"in": "query", "name": "cursor", "required": false},
+        {"in": "query", "name": "limit", "required": false}
+      ],
+      "path": "/conversations",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "9857dbbb215e4ff331fb0f1d1195dc72735ceb9445c0245e3956bc3a4995ff82"
+    },
+    {
+      "deprecated": false,
+      "method": "DELETE",
+      "parameters": [
+        {"in": "path", "name": "conversation_id", "required": true}
+      ],
+      "path": "/conversations/{conversation_id}",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["204", "422"],
+      "structural_fingerprint": "ca580ad626ee5db08e76b7ab9e0b1ebca7e108d2c04f25bc4c3c92d5e6e27b18"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "path", "name": "conversation_id", "required": true}
+      ],
+      "path": "/conversations/{conversation_id}",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "0bc9da8238813a1bc93fde7e4ed8557709a14362445fbf28f83a725ec57f554f"
+    },
+    {
+      "deprecated": false,
+      "method": "PUT",
+      "parameters": [
+        {"in": "path", "name": "conversation_id", "required": true}
+      ],
+      "path": "/conversations/{conversation_id}",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "2f069b59398f011274eb19dfbe437a1b05f0acd9421bb5bdfac9dfa7d9d4dbc3"
+    },
+    {
+      "deprecated": false,
+      "method": "PUT",
+      "parameters": [
+        {"in": "path", "name": "conversation_id", "required": true}
+      ],
+      "path": "/conversations/{conversation_id}/draft",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "a38ce6b89c408000e6f7a7b9a15aabc1f22fbfb985acf61e88d7b5bd3b62540b"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "path", "name": "conversation_id", "required": true},
+        {"in": "query", "name": "cursor", "required": false},
+        {"in": "query", "name": "limit", "required": false}
+      ],
+      "path": "/conversations/{conversation_id}/messages",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "bb91aa4340c3c34d84d438c47cfbeb345e604c2411ce70e27709b2d0900822bf"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "path", "name": "conversation_id", "required": true},
+        {"in": "query", "name": "limit", "required": false}
+      ],
+      "path": "/conversations/{conversation_id}/research-tasks",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "7d924745d68125872b01ebfbfb984d3f41d938dbff6b2fdadde4c259994c8566"
+    },
+    {
+      "deprecated": false,
+      "method": "PUT",
+      "parameters": [
+        {"in": "path", "name": "conversation_id", "required": true}
+      ],
+      "path": "/conversations/{conversation_id}/title",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "3c39511c42cdfea0b93a2131035868c0ded1bfc1626df6539ae15a792671cc70"
+    },
+    {
+      "deprecated": false,
+      "method": "POST",
+      "parameters": [
+        {"in": "header", "name": "Idempotency-Key", "required": true}
+      ],
+      "path": "/files/uploads",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["201", "422"],
+      "structural_fingerprint": "1ae9fa94a63b69f4f551669960c8b73cfad5c2e02b363d26f5d0fbe1f83b890f"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "path", "name": "upload_id", "required": true}
+      ],
+      "path": "/files/uploads/{upload_id}",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "b138f7cadf266572a3ab355bb4db50b31c82e39498b203a7c1e15cac995a9dd0"
+    },
+    {
+      "deprecated": false,
+      "method": "PUT",
+      "parameters": [
+        {"in": "path", "name": "upload_id", "required": true}
+      ],
+      "path": "/files/uploads/{upload_id}/content",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "ab80374e5f9bfd3f85264572735b62d1737a226803cc802ac3e469de185b1ec6"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "query", "name": "archived", "required": false},
+        {"in": "query", "name": "limit", "required": false}
+      ],
+      "path": "/projects",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "a02e8c262cb3c09da631db10d73ae363c9147bc24da5a6fbd0fc0038623ce750"
+    },
+    {
+      "deprecated": false,
+      "method": "POST",
+      "parameters": [],
+      "path": "/projects",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["201", "422"],
+      "structural_fingerprint": "3d535432d23b1180255918b7c0b246730048da98af237828cc8ad479865299b7"
+    },
+    {
+      "deprecated": false,
+      "method": "DELETE",
+      "parameters": [
+        {"in": "path", "name": "project_id", "required": true}
+      ],
+      "path": "/projects/{project_id}",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "1f972f05138ec4ff61de8305b87f825710e1b5c822d137e850c9cbeddd5920fe"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "path", "name": "project_id", "required": true}
+      ],
+      "path": "/projects/{project_id}",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "2168576104f1f08998ef866dd25b66465de7ce7685bca88483d30472ae450572"
+    },
+    {
+      "deprecated": false,
+      "method": "PUT",
+      "parameters": [
+        {"in": "path", "name": "project_id", "required": true}
+      ],
+      "path": "/projects/{project_id}/archive",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "981cd2f92d0efdce955c251b79fd6c6b56fba413bca1f485eee3312486815022"
+    },
+    {
+      "deprecated": false,
+      "method": "PUT",
+      "parameters": [
+        {"in": "path", "name": "project_id", "required": true}
+      ],
+      "path": "/projects/{project_id}/name",
+      "request_media_types": ["application/json"],
+      "request_required": true,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "4a044eecce285c3bba61bf49c913e895eadb083e8c20804e8e131c7b9f4bd402"
+    },
+    {
+      "deprecated": false,
+      "method": "POST",
+      "parameters": [
+        {"in": "path", "name": "project_id", "required": true}
+      ],
+      "path": "/projects/{project_id}/restore",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "0f76a16d4885745f5eee0ce1820d4ab3fca18d670ee7f1dd4793e464fae2be3a"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "path", "name": "project_id", "required": true},
+        {"in": "query", "name": "filter", "required": false},
+        {"in": "query", "name": "limit", "required": false},
+        {"in": "query", "name": "q", "required": true}
+      ],
+      "path": "/projects/{project_id}/search",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "eca4e251aef747dd1748a36e2d641697b1671069be0799fc9a61fce9eef2fd2f"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "path", "name": "task_id", "required": true}
+      ],
+      "path": "/research-tasks/{task_id}",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "0e7f430bfe9c4f8dd7ca3039abeb5f6a0fd9fc7237f6ab22c808cf5fd9894c31"
+    },
+    {
+      "deprecated": false,
+      "method": "POST",
+      "parameters": [
+        {"in": "path", "name": "task_id", "required": true}
+      ],
+      "path": "/research-tasks/{task_id}/cancel",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "d4a5bea3f7cd2458dd71fb0a179334e983252c07183e91851e9fc5da72a904f2"
+    },
+    {
+      "deprecated": false,
+      "method": "GET",
+      "parameters": [
+        {"in": "query", "name": "limit", "required": false},
+        {"in": "query", "name": "q", "required": true}
+      ],
+      "path": "/search",
+      "request_media_types": [],
+      "request_required": false,
+      "response_media_types": ["application/json"],
+      "response_statuses": ["200", "422"],
+      "structural_fingerprint": "4c9e6d5f294fdf4996f29bcc961b3350d2c88131bdc814052140cb8c614c0aa9"
+    }
+  ],
+  "schema_version": 1,
+  "source": "production-openapi"
+}
