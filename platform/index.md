@@ -1,22 +1,45 @@
 ---
-title: Platform concepts
-eyebrow: Start
-description: Public architecture and documentation boundaries for the WEDNESDAY platform.
+title: Key concepts
+eyebrow: Get started
+description: Understand WEDNESDAY's server-authoritative sessions, durable state, streaming protocol, projects, and tool-oriented execution model.
 permalink: /platform/
+markdown_url: /platform.md
 ---
 
-# Platform concepts
+# Key concepts
 
-<p class="lead">WEDNESDAY documentation separates product behavior from implementation detail so public contracts remain stable even as the underlying system evolves.</p>
+<p class="lead">WEDNESDAY combines server-owned identity, durable conversation state, structured streaming, project context, and tool-oriented execution into one product runtime.</p>
 
-## Public contracts
+## Server-authoritative identity
 
-A public contract is behavior users or developers may safely depend on. Examples include published API schemas, supported input/output behavior, documented model identifiers, authentication requirements, lifecycle notices, and user-visible reliability semantics.
+Protected operations derive the durable account owner from the validated server session. Client-supplied owner or role claims are not the authority boundary.
 
-## Implementation details
+This design keeps conversation, project, file, search, feedback, and tool state consistently scoped to the authenticated account.
 
-Private deployment topology, credentials, internal service names, private endpoints, operational runbooks, and unreleased architecture are not public contracts and are intentionally excluded.
+## Durable conversations
 
-## Versioning principle
+Conversation records are persisted independently of the live model stream. The platform supports conversation listing and loading, messages, drafts, follow-ups, branches, archive state, pinning, project movement, feedback, sharing, usage records, and deletion.
 
-Public behavior should be versioned or changelogged when a change could affect integrations. Breaking changes should be paired with a deprecation path whenever the affected surface supports one.
+[Read about conversation state →](/platform/conversation-state/)
+
+## Structured streaming
+
+Live chat responses use Server-Sent Events (`text/event-stream`) with a versioned event protocol. Events carry ordered sequence numbers and typed state for turns, answers, code, activities, and tools.
+
+[Read about streaming →](/platform/streaming/)
+
+## Mid-turn steering
+
+A running turn can accept supported steering input while it remains steerable. The server rejects steering after the acceptance window closes rather than silently pretending it was applied.
+
+[Read about steering →](/platform/steering/)
+
+## Projects and context
+
+Projects group conversations and related context. Production routes support project settings, instructions, search, files, connector bindings, work history, and project-scoped conversations.
+
+[Read about projects →](/projects/)
+
+## Fail-closed API surface
+
+The production API treats unlisted routes as session-required by default. Only an explicit narrow public allowlist is available without an account session.

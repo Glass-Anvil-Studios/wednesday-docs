@@ -1,29 +1,61 @@
 ---
-title: Getting started
-eyebrow: Start
-description: How to use the WEDNESDAY public documentation and understand its source-of-truth rules.
+title: Developer quickstart
+eyebrow: Get started
+description: Verify the WEDNESDAY production API origin and understand the supported access boundary before integrating.
 permalink: /getting-started/
+markdown_url: /getting-started.md
 ---
 
-# Getting started
+# Developer quickstart
 
-<p class="lead">Use this site to understand WEDNESDAY's public platform surface without relying on stale screenshots, internal implementation details, or undocumented assumptions.</p>
+<p class="lead">Start with the production contract that exists today: a public HTTPS origin, narrow unauthenticated operations, and session-protected product APIs.</p>
 
-## What belongs here
+## Production origin
 
-The public docs cover released or intentionally published behavior: platform concepts, models, API contracts, tools, integrations, security posture, reliability behavior, changelog entries, and deprecations.
+The canonical WEDNESDAY API origin is:
 
-## What does not belong here
+```text
+https://api.wednesdaychat.com
+```
 
-Secrets, private infrastructure, internal-only endpoints, customer data, incident-response material, unreleased implementation details, and credentials are excluded from this repository.
+The documentation origin is independent:
 
-## Documentation precedence
+```text
+https://docs.wednesdaychat.com
+```
 
-When public sources conflict, prefer the most specific and current production-synchronized reference. Versioned API contracts take precedence for wire behavior. Changelog and deprecation notices describe lifecycle changes. Narrative guides explain how to use those contracts.
+## Verify service health
 
-## Where to go next
+`GET /health` is part of the deliberately public service surface.
 
-- Read [Platform concepts](/platform/) for the documentation boundaries.
-- Read [API](/api/) for public contract status.
-- Read [Models](/models/) for the model publication policy.
-- Read [Machine-readable docs](/machine-readable/) if you are building an agent or documentation retriever.
+```bash
+curl --fail --silent https://api.wednesdaychat.com/health
+```
+
+A healthy API returns:
+
+```json
+{"status":"ok"}
+```
+
+`GET /ready` reports whether required production dependencies are ready. It can return an HTTP `503` with a `not_ready` state when the service cannot safely accept production work.
+
+## Understand authentication before calling product APIs
+
+WEDNESDAY's current production product APIs use a server-authoritative account session. Browser requests include the session credential automatically, and unsafe mutations require the WEDNESDAY CSRF header.
+
+Do **not** construct authority by sending owner IDs, roles, plans, or retired client identity headers. The server session is authoritative.
+
+<div class="notice"><strong>External developer access:</strong> this documentation does not claim a generally available API-key authentication scheme. When WEDNESDAY publishes one, the Authentication and API Reference pages will define it as an explicit public contract.</div>
+
+## Choose the right guide
+
+- Use [Conversation state](/platform/conversation-state/) for durable chat state.
+- Use [Streaming](/platform/streaming/) for the structured SSE protocol.
+- Use [Projects](/projects/) for scoped context and project-owned resources.
+- Use [Files](/files/) for the secure upload lifecycle.
+- Use [API reference](/api/reference/) for verified routes and access classification.
+
+## Machine-readable version
+
+The raw Markdown twin for this page is available at [`/getting-started.md`](/getting-started.md).

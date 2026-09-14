@@ -1,42 +1,20 @@
-# WEDNESDAY Public Documentation Corpus
-Canonical source: https://docs.wednesdaychat.com
-Generated scope: initial documentation platform, 2026-09-14
+---
+layout: null
+permalink: /llms-full.txt
+search: false
+---
+# WEDNESDAY Developer Platform — consolidated public documentation
 
-## Documentation policy
-WEDNESDAY public documentation is the canonical public reference for released or intentionally published platform behavior. Technical claims should be traceable to production behavior, a production specification, or an explicitly versioned public contract. Secrets, private infrastructure, internal-only endpoints, customer data, incident-response material, and unreleased implementation details are excluded.
+Canonical origin: https://docs.wednesdaychat.com
 
-## Getting started
-Use the documentation to understand WEDNESDAY's public platform surface. When public sources conflict, prefer the most specific and current production-synchronized reference. Versioned API contracts take precedence for wire behavior. Changelog and deprecation notices describe lifecycle changes.
+This file consolidates the human-facing public documentation that is safe to use as a WEDNESDAY platform reference. The HTML pages remain authoritative for navigation and release status.
 
-## Platform concepts
-Public contracts include published API schemas, supported behavior, documented model identifiers, authentication requirements, lifecycle notices, and user-visible reliability semantics. Private deployment topology, credentials, internal service names, private endpoints, operational runbooks, and unreleased architecture are not public contracts.
+{% assign docs = site.pages | where_exp: "p", "p.title" %}
+{% for p in docs %}{% unless p.search == false %}
+---
 
-## Models
-Detailed model specifications are published only after production verification. No detailed model specification is currently published in this repository. Do not infer model limits or capabilities from UI labels or internal roadmap material.
+# {{ p.title }}
+Source: {{ site.url }}{{ p.url }}
 
-## API
-Endpoint documentation should be generated from or reconciled with the production API specification. The production OpenAPI contract has not yet been published into this documentation repository; endpoint-level examples will follow that synchronization step.
-
-## Tools
-Tool documentation defines what a tool does, its public inputs and outputs, permission boundaries, and observable failure behavior. Documentation does not imply unrestricted access; user authorization, eligibility, workspace policy, and service availability may gate execution.
-
-## Agents
-Agent documentation distinguishes model output from externally executed actions. This documentation site is designed to be a retrievable source for WEDNESDAY itself so changing platform facts do not need to be permanently embedded in model prompts.
-
-## Integrations
-Integration pages document supported third-party connections, permissions, data boundaries, and user-visible behavior. Third-party service behavior may change independently of WEDNESDAY.
-
-## Security
-Public documentation must not expose credentials, secrets, private keys, internal-only endpoints, private network topology, customer data, confidential incident artifacts, or deployment environment files. Public security claims should be specific, verifiable, and scoped.
-
-## Reliability
-Reliability documentation covers externally observable behavior such as availability, retries, timeouts, idempotency, degradation, and status communication when those contracts are publicly defined. Current incidents belong on the independent WEDNESDAY status service.
-
-## Machine-readable documentation
-Use https://docs.wednesdaychat.com/llms.txt as the routing index and this file as the consolidated text corpus. The public sitemap is https://docs.wednesdaychat.com/sitemap.xml.
-
-## Changelog
-2026-09-14: established docs.wednesdaychat.com on GitHub Pages, configured the custom domain and HTTPS, set main as the production documentation branch, and added the initial documentation architecture and machine-readable discovery files.
-
-## Deprecations
-There are no public deprecation notices recorded in this documentation repository at this time.
+{{ p.content }}
+{% endunless %}{% endfor %}

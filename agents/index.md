@@ -1,20 +1,31 @@
 ---
 title: Agents
 eyebrow: Build
-description: Public concepts for agentic behavior in WEDNESDAY.
+description: "WEDNESDAY agent execution concepts: stateful turns, tool activity, durable research, steering, and approval-aware work."
 permalink: /agents/
+markdown_url: /agents.md
 ---
 
 # Agents
 
-<p class="lead">Agent documentation explains how WEDNESDAY combines model reasoning with tools, retrieval, state, and user authorization.</p>
+<p class="lead">WEDNESDAY agent behavior is built from stateful turns, typed tool activity, durable task state, and explicit user control rather than a hidden autonomous loop.</p>
 
-## Agent behavior
+## Stateful execution
 
-Public agent documentation should distinguish between model output and externally executed actions. Actions that affect accounts, files, infrastructure, communications, or other systems require the permissions and confirmations defined by the relevant product surface.
+A turn belongs to authenticated durable conversation state. Project context can be loaded for the conversation before execution and rendered into the system context supplied to the turn.
 
-## Documentation retrieval
+## Observable activity
 
-This documentation site is designed to be a retrievable source for WEDNESDAY itself. Machine-oriented indexes provide stable entry points without embedding rapidly changing platform facts directly into model prompts.
+The stream protocol has distinct activity and tool event families. Tool execution can report start, progress, state transitions, and completion rather than collapsing all tool work into opaque text.
 
-See [Machine-readable docs](/machine-readable/) for the retrieval surface.
+## Steering and cancellation
+
+Supported turns can accept mid-turn steering while the acceptance window remains open. Durable research tasks have an explicit cancellation route.
+
+## Approval-aware behavior
+
+The execution protocol models approval risk and reversibility as explicit concepts. Public documentation will describe concrete approval flows only when the corresponding user/developer contract is stable.
+
+## Agent boundary
+
+An agent may use tools and durable state, but authorization remains server-owned. Agent execution does not bypass the account session, project ownership, file ownership, connector scope, or external-write approval boundaries.

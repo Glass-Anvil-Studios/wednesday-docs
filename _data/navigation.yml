@@ -1,13 +1,29 @@
 sections:
   - title: Get started
     items:
-      - title: Overview
+      - title: Home
         url: /
-      - title: Quickstart
+      - title: Developer quickstart
         url: /getting-started/
-      - title: Platform concepts
+      - title: Key concepts
         url: /platform/
-  - title: Core platform
+  - title: Core concepts
+    items:
+      - title: Conversation state
+        url: /platform/conversation-state/
+      - title: Streaming
+        url: /platform/streaming/
+      - title: Mid-turn steering
+        url: /platform/steering/
+      - title: Projects
+        url: /projects/
+      - title: Files
+        url: /files/
+      - title: Search
+        url: /search/
+      - title: Deep research
+        url: /deep-research/
+  - title: Build
     items:
       - title: Models
         url: /models/
@@ -21,14 +37,28 @@ sections:
     items:
       - title: API overview
         url: /api/
+      - title: API reference
+        url: /api/reference/
+      - title: Authentication
+        url: /api/authentication/
+      - title: Errors
+        url: /api/errors/
+      - title: Rate limits
+        url: /api/rate-limits/
   - title: Production
     items:
-      - title: Reliability
-        url: /reliability/
+      - title: Production best practices
+        url: /production/
       - title: Security
         url: /security/
+      - title: Privacy
+        url: /privacy/
+      - title: Reliability
+        url: /reliability/
   - title: Resources
     items:
+      - title: Learn
+        url: /learn/
       - title: Changelog
         url: /changelog/
       - title: Deprecations

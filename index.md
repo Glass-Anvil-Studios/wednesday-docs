@@ -1,51 +1,67 @@
 ---
-title: WEDNESDAY Documentation
-eyebrow: Developer platform
-description: Official developer documentation for building, integrating, and operating with WEDNESDAY.
+title: WEDNESDAY Developer Platform
+eyebrow: API platform
+description: Build on WEDNESDAY with production-verified documentation for platform behavior, APIs, models, agents, tools, integrations, and operations.
 permalink: /
 ---
 
-<div class="hero">
-  <span class="status"><span class="status-dot"></span> Documentation online</span>
+# API Platform
 
-# Build with WEDNESDAY
+<div class="quickstart-panel">
+  <div class="quickstart-copy">
+    <h2>Developer quickstart</h2>
+    <p>Start with the production boundary, learn the session model, then build against contracts that WEDNESDAY explicitly supports.</p>
+    <div class="hero-actions"><a class="button" href="/getting-started/">Get started</a><a class="button secondary" href="/api/reference/">API reference</a></div>
+  </div>
+  <div class="quickstart-code">
+    <div class="code-label">HTTP · verify production availability</div>
 
-<p class="lead">Official developer documentation for the WEDNESDAY platform. Start with platform concepts, then move into verified models, agents, tools, integrations, production guidance, and the public API reference.</p>
-
-<div class="hero-actions">
-  <a class="button" href="/getting-started/">Developer quickstart</a>
-  <a class="button secondary" href="/api/">API reference</a>
+```bash
+curl -sS https://api.wednesdaychat.com/health
+# {"status":"ok"}
+```
+  </div>
 </div>
+
+<div class="notice"><strong>Production boundary:</strong> most product operations are authorized through a WEDNESDAY server account session. The public API origin is documented; a general third-party API-key program is not implied until WEDNESDAY explicitly releases one.</div>
+
+## Build paths
+
+<div class="build-paths">
+  <div class="build-path"><strong>Platform and API</strong><p>Understand durable state, streaming, projects, files, search, errors, rate limits, and the verified HTTP surface.</p><a href="/getting-started/">Start with the platform ↗</a></div>
+  <div class="build-path"><strong>Agents and tools</strong><p>Build around typed tool execution, project context, research, connectors, approvals, and observable runtime state.</p><a href="/agents/">Explore agents ↗</a></div>
 </div>
 
-## Start here
+## Models
+
+WEDNESDAY routes work through stable execution profiles while retaining freedom to improve the upstream provider route behind those profiles.
+
+<div class="model-catalog">
+  <article class="model-card model-balanced"><a href="/models/" class="model-visual"><span>Balanced</span></a><div class="model-meta"><strong>Balanced</strong><span class="model-badge">Production</span></div><p>Responsive general-purpose work with balanced reasoning and latency.</p></article>
+  <article class="model-card model-deep"><a href="/models/" class="model-visual"><span>Deep</span></a><div class="model-meta"><strong>Deep reasoning</strong><span class="model-badge">Production</span></div><p>Higher-reasoning execution for complex analysis and difficult multi-step work.</p></article>
+  <article class="model-card model-code"><a href="/models/" class="model-visual"><span>Code</span></a><div class="model-meta"><strong>Coding</strong><span class="model-badge">Production</span></div><p>Code-oriented routing for software-development-heavy tasks.</p></article>
+</div>
+
+## Start building
+
+<div class="capability-grid">
+  <a class="capability-row" href="/platform/conversation-state/"><span class="capability-icon">◯</span><span><strong>Durable conversation state</strong><small>Persist and recover conversations rather than treating every request as isolated.</small></span></a>
+  <a class="capability-row" href="/platform/streaming/"><span class="capability-icon">⌁</span><span><strong>Structured streaming</strong><small>Render typed model and tool events while work is still in progress.</small></span></a>
+  <a class="capability-row" href="/tools/"><span class="capability-icon">✦</span><span><strong>Tool-using applications</strong><small>Extend model execution with bounded tools, search, files, research, and connectors.</small></span></a>
+  <a class="capability-row" href="/projects/"><span class="capability-icon">◇</span><span><strong>Project context</strong><small>Scope instructions, files, connectors, conversations, and work history to a project.</small></span></a>
+  <a class="capability-row" href="/files/"><span class="capability-icon">▣</span><span><strong>Files and Library</strong><small>Upload, inspect, attach, retrieve, and manage account-owned files.</small></span></a>
+  <a class="capability-row" href="/deep-research/"><span class="capability-icon">◎</span><span><strong>Long-running research</strong><small>Track research as durable task state rather than one fragile request.</small></span></a>
+</div>
+
+## Production resources
 
 <div class="grid">
-<a class="card" href="/getting-started/"><div class="card-title">Developer quickstart</div><div class="card-copy">Learn how the documentation is organized and where to begin when building against WEDNESDAY.</div></a>
-<a class="card" href="/platform/"><div class="card-title">Platform concepts</div><div class="card-copy">Understand the public concepts and terminology used across the WEDNESDAY developer platform.</div></a>
-<a class="card" href="/api/"><div class="card-title">API reference</div><div class="card-copy">Use the production-synchronized public API contract and endpoint documentation.</div></a>
-<a class="card" href="/changelog/"><div class="card-title">Changelog</div><div class="card-copy">Track meaningful public documentation, contract, and platform changes as they are released.</div></a>
+<a class="card" href="/production/"><div class="card-title">Production best practices</div><div class="card-copy">Retries, durable reconciliation, readiness, security boundaries, and release discipline.</div></a>
+<a class="card" href="/security/"><div class="card-title">Security</div><div class="card-copy">Authority, account scope, connector boundaries, and safe public-contract rules.</div></a>
+<a class="card" href="/machine-readable/"><div class="card-title">Machine-readable docs</div><div class="card-copy"><code>llms.txt</code>, consolidated docs, Markdown twins, search index, sitemap, and crawler guidance.</div></a>
+<a class="card" href="https://status.wednesdaychat.com"><div class="card-title">Status</div><div class="card-copy">Check WEDNESDAY service health and incident communication independently of this documentation site.</div></a>
 </div>
 
-## Explore the platform
+## One source of truth
 
-<div class="grid">
-<a class="card" href="/models/"><div class="card-title">Models</div><div class="card-copy">Verified model identifiers, supported behavior, lifecycle information, and selection guidance.</div></a>
-<a class="card" href="/agents/"><div class="card-title">Agents</div><div class="card-copy">Public agent architecture, supported behavior, and developer-facing workflows.</div></a>
-<a class="card" href="/tools/"><div class="card-title">Tools</div><div class="card-copy">Developer-facing tools and tool behavior that have been verified for public release.</div></a>
-<a class="card" href="/integrations/"><div class="card-title">Integrations</div><div class="card-copy">Supported external integrations and the public contracts that govern them.</div></a>
-</div>
-
-## Production and operations
-
-Use the production sections for public guidance on [reliability](/reliability/), [security](/security/), lifecycle changes, and deprecations. Operational details are published only when they are intended to be part of the supported public platform contract.
-
-<div class="notice"><strong>Production-grounded documentation.</strong> Endpoints, model limits, tool behavior, quotas, security claims, and lifecycle statements are published only after they are verified against production source, a production specification, or another explicitly versioned public contract.</div>
-
-## One public source of truth
-
-This site is the canonical public developer reference for WEDNESDAY. Internal implementation details, administrative surfaces, secrets, infrastructure internals, and unsupported capabilities are intentionally excluded from the public documentation.
-
-## Machine-readable by design
-
-The documentation is structured for developers, search engines, and AI agents. Use [`/llms.txt`](/llms.txt) for the routing index and [`/llms-full.txt`](/llms-full.txt) for the consolidated public documentation corpus.
+Public documentation is a production compatibility surface. Technical claims are published only when traceable to production behavior, a verified production specification, or another explicitly versioned public contract. Internal topology, secrets, provider routing, roadmap-only functionality, and privileged operational procedures stay out of the public corpus.

@@ -1,30 +1,41 @@
 ---
 title: API
-eyebrow: Build
-description: WEDNESDAY public API documentation and contract publication status.
+eyebrow: API
+description: WEDNESDAY production API overview, access boundary, and reference structure.
 permalink: /api/
+markdown_url: /api.md
 ---
 
 # API
 
-<p class="lead">The API section is the human-readable companion to WEDNESDAY's public machine-readable API contract.</p>
+<p class="lead">WEDNESDAY exposes a production HTTP service at <code>https://api.wednesdaychat.com</code>. This documentation publishes the supported external contract without treating every internal service route as public API.</p>
 
-## Contract-first documentation
+## Production origin
 
-Endpoint documentation should be generated from or continuously reconciled with the production API specification. Request fields, response shapes, authentication rules, error contracts, and lifecycle status should not be maintained as disconnected copies.
+```text
+https://api.wednesdaychat.com
+```
 
-<div class="notice"><strong>Reference status:</strong> the production OpenAPI contract has not yet been published into this documentation repository. Endpoint-level examples will be added after that synchronization step.</div>
+The web product and supported WEDNESDAY clients use this origin for durable product operations. The API is designed around account-authorized state, streaming execution, projects, files, search, research, sharing, and related platform workflows.
 
-## What the reference will include
+## Access model
 
-- Authentication and authorization requirements
-- Endpoint and method definitions
-- Request and response schemas
-- Error formats and status codes
-- Pagination or streaming behavior where applicable
-- Rate and usage limits when publicly defined
-- Deprecation status and migration notes
+Most product operations require a valid WEDNESDAY account session and derive durable ownership from server-authorized account state. Do not fabricate owner identifiers or infer a general third-party API-key program from browser/client transport details.
 
-## Machine-readable contract
+Start with [Authentication](/api/authentication/) before integrating a protected route.
 
-When synchronized, the public OpenAPI artifact will be linked from this page and included in the machine-readable documentation index.
+## Reference
+
+Use the [API reference](/api/reference/) for the deliberately published HTTP surface. The reference currently includes verified system, search, project, conversation, chat, file, and artifact capability boundaries while withholding privileged, provider-callback, administrative, and implementation-only routes.
+
+## Errors and protection
+
+- [Errors](/api/errors/) documents stable HTTP failure classes and retry guidance.
+- [Rate limits](/api/rate-limits/) documents `429`, `Retry-After`, fail-closed protection, and quota publication policy.
+- [Production best practices](/production/) covers durable-state reconciliation, streaming, readiness, security, and release discipline.
+
+## Contract policy
+
+Public documentation is a compatibility promise. An endpoint, header, provider model, internal module, or telemetry label found in source code is **not** automatically public API. WEDNESDAY publishes only the behavior it intends developers to depend on.
+
+<div class="notice"><strong>Machine-readable docs:</strong> use <a href="/llms.txt"><code>/llms.txt</code></a> for routing, <a href="/llms-full.txt"><code>/llms-full.txt</code></a> for the consolidated corpus, and Markdown twins linked from individual reference pages.</div>
