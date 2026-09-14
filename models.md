@@ -1,30 +1,48 @@
 # Models
 
-<p class="lead">WEDNESDAY can route a turn through model roles, intelligence levels, latency profiles, and reasoning profiles. Only stable, explicitly documented model identifiers are treated as public contracts.</p>
+<p class="lead">Choose the execution profile that matches the work. WEDNESDAY owns the routing contract while retaining freedom to improve the underlying provider route as long as the published profile behavior remains compatible.</p>
 
-## Routing is part of execution
+## Choose an execution profile
 
-The streaming protocol can represent resolved routing information for a turn, including a model identifier, model role, requested and resolved intelligence level, latency profile, reasoning profile, and bounded completion behavior.
+<div class="model-catalog">
+  <article class="model-card model-balanced">
+    <div class="model-visual"><span>Balanced</span></div>
+    <div class="model-meta"><strong>Balanced</strong><span class="model-badge">Production</span></div>
+    <p>Default conversational profile for responsive, general-purpose work with balanced reasoning and latency.</p>
+  </article>
+  <article class="model-card model-deep">
+    <div class="model-visual"><span>Deep</span></div>
+    <div class="model-meta"><strong>Deep reasoning</strong><span class="model-badge">Production</span></div>
+    <p>Higher-reasoning profile for complex analysis and tasks where depth matters more than minimum latency.</p>
+  </article>
+  <article class="model-card model-code">
+    <div class="model-visual"><span>Code</span></div>
+    <div class="model-meta"><strong>Coding</strong><span class="model-badge">Production</span></div>
+    <p>Code-oriented execution route used when the runtime classifies the work as software-development heavy.</p>
+  </article>
+</div>
 
-Those runtime fields make execution observable. They do **not** automatically make every internal route target a permanently supported developer model ID.
+<div class="notice"><strong>Profile ≠ provider model ID.</strong> WEDNESDAY can change an upstream route without renaming a WEDNESDAY execution profile when the public behavior remains compatible. Upstream provider identifiers are not a permanent developer contract unless explicitly published as one.</div>
+
+## Routing is observable
+
+The streaming protocol can represent resolved routing information for a turn, including a model identifier, model role, requested and resolved intelligence level, latency profile, reasoning profile, and bounded completion behavior. Those fields make execution observable; they do not automatically turn every internal route target into a permanently supported developer model.
 
 ## Public model contract
 
-A model becomes part of the public catalog only when WEDNESDAY publishes:
+A named developer model becomes part of the public catalog only when WEDNESDAY publishes all of the following:
 
-- a stable model identifier;
-- supported input/output modalities;
+- a stable WEDNESDAY model identifier;
+- supported input and output modalities;
 - tool compatibility;
-- public limits that developers may rely on;
+- public limits developers may rely on;
 - lifecycle state;
 - migration guidance when behavior is replaced or retired.
 
-<div class="notice"><strong>Current support boundary:</strong> this page intentionally does not turn private provider configuration or internal fallback routes into a public compatibility promise.</div>
-
 ## Model selection
 
-Use product-level intelligence and latency controls only as documented by the interface that exposes them. Do not assume that a UI label maps one-to-one to a permanent upstream provider model.
+Use the product-level intelligence and latency controls documented by the interface that exposes them. For routine work, start with Balanced. Use Deep Reasoning when task difficulty justifies additional reasoning. Code-oriented work can resolve to the Coding profile through runtime routing.
 
 ## Lifecycle
 
-When a public model contract is deprecated, the change belongs in [Deprecations](/deprecations/) and the [Changelog](/changelog/) before removal.
+Public model contracts follow an explicit lifecycle. Deprecation is announced through [Deprecations](/deprecations/) and the [Changelog](/changelog/) before a supported identifier is removed or materially changed.
