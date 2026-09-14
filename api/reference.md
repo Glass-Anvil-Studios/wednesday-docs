@@ -1,16 +1,8 @@
 # API reference
 
-<p class="lead">The production API origin is <code>https://api.wednesdaychat.com</code>. This reference documents only routes and behaviors that are verified in the production service and safe to publish.</p>
+<p class="lead">The production API origin is <code>https://api.wednesdaychat.com</code>. This reference documents only routes and behaviors that are verified in the production service and explicitly approved for public use.</p>
 
 <div class="notice"><strong>Access boundary:</strong> WEDNESDAY currently uses server-authorized account sessions for most product operations. The existence of an HTTP route does not imply an unrestricted third-party API-key contract.</div>
-
-## System
-
-<div class="endpoint"><div class="endpoint-head"><span class="method">GET</span><span class="endpoint-path">/health</span></div><div class="endpoint-body"><p>Lightweight service health probe. Returns an <code>ok</code> health status when the API process is available.</p></div></div>
-
-<div class="endpoint"><div class="endpoint-head"><span class="method">GET</span><span class="endpoint-path">/ready</span></div><div class="endpoint-body"><p>Production readiness probe. Readiness depends on required backing services including persistence, cache, object storage, malware scanning, and model access.</p></div></div>
-
-<div class="endpoint"><div class="endpoint-head"><span class="method">GET</span><span class="endpoint-path">/version</span></div><div class="endpoint-body"><p>Returns the WEDNESDAY API service identity, environment, build SHA when available, and configured model-provider family. The response is marked <code>no-store</code>.</p></div></div>
 
 ## Search
 
@@ -32,8 +24,10 @@ Verified conversation operations include listing and loading conversations, mess
 
 ## Files and artifacts
 
-The production service exposes owner-scoped file upload, file inspection, file-library, picker, attachment-state, download, message-attachment, assistant-artifact, location-context, memory-source-consent, and deep-research routers. Individual contracts are published only after their request/response schemas are stable enough to support externally.
+The production service exposes owner-scoped file upload, file inspection, file-library, picker, attachment-state, download, message-attachment, assistant-artifact, location-context, memory-source-consent, and deep-research capability families. Individual contracts are published only after their request/response schemas are stable enough to support externally.
 
-## Contract policy
+## Publication boundary
 
-Routes used only for internal operations, provider callbacks, privileged administration, deployment, or implementation-specific coordination are intentionally omitted. Public documentation is a compatibility promise; source-code presence alone is not.
+Operational probes, privileged administration, deployment coordination, implementation-specific service metadata, upstream routing, and private callback surfaces are intentionally omitted from the developer reference.
+
+Public documentation is a compatibility promise. Source-code presence alone is not a public contract.
