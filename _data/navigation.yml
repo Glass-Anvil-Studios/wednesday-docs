@@ -1,13 +1,13 @@
 sections:
   - title: Get started
     items:
-      - title: Overview
+      - title: Home
         url: /
       - title: Developer quickstart
         url: /getting-started/
       - title: Key concepts
         url: /platform/
-  - title: Core platform
+  - title: Core concepts
     items:
       - title: Conversation state
         url: /platform/conversation-state/
@@ -47,7 +47,7 @@ sections:
         url: /api/rate-limits/
   - title: Production
     items:
-      - title: Production guide
+      - title: Production best practices
         url: /production/
       - title: Security
         url: /security/
@@ -57,6 +57,8 @@ sections:
         url: /reliability/
   - title: Resources
     items:
+      - title: Learn
+        url: /learn/
       - title: Changelog
         url: /changelog/
       - title: Deprecations
