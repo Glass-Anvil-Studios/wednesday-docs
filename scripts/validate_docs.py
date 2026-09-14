@@ -9,15 +9,25 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC_ROOTS = [
     "getting-started", "platform", "projects", "files", "search", "deep-research",
     "models", "agents", "tools", "integrations", "api", "production", "security",
-    "privacy", "reliability", "machine-readable", "changelog", "deprecations",
+    "privacy", "reliability", "machine-readable", "changelog", "deprecations", "learn",
 ]
 REQUIRED = [
     "CNAME", "index.md", "404.html", "robots.txt", "sitemap.xml", "search.json",
     "llms.txt", "llms-full.txt", "_layouts/default.html", "_data/navigation.yml",
     "assets/css/site.css", "assets/js/site.js", "SECURITY.md", "CONTRIBUTING.md",
+    "policy/public_release_policy.json", "policy/public_contract_allowlist.json",
+    "policy/public_release_exceptions.json", "scripts/public_release_firewall.py",
+    "tests/test_public_release_firewall.py",
+]
+REQUIRED_EXCLUDES = [
+    "scripts", "tests", "policy", "docs", ".github", "CONTRIBUTING.md",
+    "SECURITY.md", "README.md", "LICENSE",
 ]
 PLACEHOLDER_RE = re.compile(r"\b(TODO|TBD|FIXME|LOREM IPSUM)\b", re.I)
-SECRET_RE = re.compile(r"(?:ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)")
+SECRET_RE = re.compile(
+    r"(?:ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|"
+    r"sk-[A-Za-z0-9]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)"
+)
 
 
 def fail(message: str) -> None:
@@ -62,10 +72,19 @@ def twin_for(permalink: str) -> Path | None:
     return ROOT / f"{clean}.md"
 
 
+def validate_excludes() -> None:
+    config = (ROOT / "_config.yml").read_text(encoding="utf-8")
+    for entry in REQUIRED_EXCLUDES:
+        if f"  - {entry}\n" not in config:
+            fail(f"_config.yml must exclude non-public repository content: {entry}")
+
+
 def main() -> None:
     for rel in REQUIRED:
         if not (ROOT / rel).exists():
             fail(f"required repository file is missing: {rel}")
+
+    validate_excludes()
 
     if (ROOT / "CNAME").read_text(encoding="utf-8").strip() != "docs.wednesdaychat.com":
         fail("CNAME must contain exactly docs.wednesdaychat.com")
