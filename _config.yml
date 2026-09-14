@@ -13,7 +13,12 @@ kramdown:
       line_numbers: false
 exclude:
   - scripts
+  - tests
+  - policy
+  - docs
+  - .github
   - CONTRIBUTING.md
+  - SECURITY.md
   - README.md
   - LICENSE
 defaults:
