@@ -1,0 +1,19 @@
+title: WEDNESDAY Docs
+description: Official public documentation for the WEDNESDAY platform.
+url: https://docs.wednesdaychat.com
+baseurl: ""
+repository: Glass-Anvil-Studios/wednesday-docs
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+exclude:
+  - LICENSE
+  - README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      description: Official public documentation for the WEDNESDAY platform.

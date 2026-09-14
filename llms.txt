@@ -1,0 +1,25 @@
+# WEDNESDAY Documentation
+
+> Official public documentation for the WEDNESDAY platform. Use this file as the routing index for machine retrieval. Canonical host: https://docs.wednesdaychat.com
+
+## Start
+- [Overview](https://docs.wednesdaychat.com/): Documentation home and source-of-truth policy.
+- [Getting started](https://docs.wednesdaychat.com/getting-started/): How to use the public documentation.
+- [Platform concepts](https://docs.wednesdaychat.com/platform/): Public contract and implementation boundaries.
+
+## Build
+- [Models](https://docs.wednesdaychat.com/models/): Model publication policy and catalog status.
+- [API](https://docs.wednesdaychat.com/api/): API documentation and contract status.
+- [Tools](https://docs.wednesdaychat.com/tools/): Tool contract documentation.
+- [Agents](https://docs.wednesdaychat.com/agents/): Agent concepts and documentation retrieval.
+- [Integrations](https://docs.wednesdaychat.com/integrations/): Connector and third-party integration documentation.
+
+## Operate
+- [Security](https://docs.wednesdaychat.com/security/): Public security documentation boundaries.
+- [Reliability](https://docs.wednesdaychat.com/reliability/): Public reliability behavior.
+
+## Reference
+- [Machine-readable documentation](https://docs.wednesdaychat.com/machine-readable/): Agent and crawler entry points.
+- [Changelog](https://docs.wednesdaychat.com/changelog/): Published changes.
+- [Deprecations](https://docs.wednesdaychat.com/deprecations/): Public lifecycle notices.
+- [Full documentation corpus](https://docs.wednesdaychat.com/llms-full.txt): Consolidated text export.

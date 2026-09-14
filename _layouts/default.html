@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/" aria-label="WEDNESDAY Docs home"><span class="brand-mark">W</span><span>WEDNESDAY</span><span class="brand-docs">Docs</span></a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="/api/">API</a>
+        <a href="/changelog/">Changelog</a>
+        <a href="https://github.com/Glass-Anvil-Studios/wednesday-docs">GitHub</a>
+      </nav>
+      <button class="menu-button" type="button" aria-label="Toggle documentation navigation" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" aria-label="Documentation">
+      <div class="search-wrap">
+        <label class="sr-only" for="docs-search">Filter documentation</label>
+        <input id="docs-search" class="docs-search" type="search" placeholder="Filter docs  /" autocomplete="off">
+      </div>
+      <nav id="docs-nav">
+        {% for section in site.data.navigation.sections %}
+        <div class="nav-section">
+          <div class="nav-heading">{{ section.title }}</div>
+          {% for item in section.items %}
+          <a class="nav-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </nav>
+    </aside>
+
+    <main class="content" id="main-content">
+      <div class="content-inner">
+        {% if page.eyebrow %}<div class="eyebrow">{{ page.eyebrow }}</div>{% endif %}
+        {{ content }}
+        <footer class="page-footer">
+          <span>Official WEDNESDAY documentation</span>
+          <a href="https://github.com/Glass-Anvil-Studios/wednesday-docs">View source repository</a>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

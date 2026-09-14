@@ -1,0 +1,19 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://docs.wednesdaychat.com/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/getting-started/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/platform/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/models/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/api/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/tools/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/agents/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/integrations/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/security/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/reliability/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/machine-readable/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/changelog/</loc></url>
+  <url><loc>https://docs.wednesdaychat.com/deprecations/</loc></url>
+</urlset>

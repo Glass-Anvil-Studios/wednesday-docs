@@ -1,0 +1,35 @@
+sections:
+  - title: Start
+    items:
+      - title: Overview
+        url: /
+      - title: Getting started
+        url: /getting-started/
+      - title: Platform concepts
+        url: /platform/
+  - title: Build
+    items:
+      - title: Models
+        url: /models/
+      - title: API
+        url: /api/
+      - title: Tools
+        url: /tools/
+      - title: Agents
+        url: /agents/
+      - title: Integrations
+        url: /integrations/
+  - title: Operate
+    items:
+      - title: Security
+        url: /security/
+      - title: Reliability
+        url: /reliability/
+  - title: Reference
+    items:
+      - title: Machine-readable docs
+        url: /machine-readable/
+      - title: Changelog
+        url: /changelog/
+      - title: Deprecations
+        url: /deprecations/
