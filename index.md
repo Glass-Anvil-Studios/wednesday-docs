@@ -15,11 +15,8 @@ permalink: /
   </div>
   <div class="quickstart-code">
     <div class="code-label">HTTP · verify production availability</div>
-
-```bash
-curl -sS https://api.wednesdaychat.com/health
-# {"status":"ok"}
-```
+    <pre><code class="language-bash">curl -sS https://api.wednesdaychat.com/health
+# {"status":"ok"}</code></pre>
   </div>
 </div>
 
