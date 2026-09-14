@@ -47,6 +47,14 @@ jobs:
       - name: Validate documentation sources
         run: python scripts/validate_docs.py
 
+      - name: Validate JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in assets/js/*.js; do
+            node --check "$file"
+          done
+
       - name: Build production site
         uses: actions/jekyll-build-pages@v1
         with:
