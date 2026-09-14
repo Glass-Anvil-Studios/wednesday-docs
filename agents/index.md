@@ -1,7 +1,7 @@
 ---
 title: Agents
 eyebrow: Build
-description: WEDNESDAY agent execution concepts: stateful turns, tool activity, durable research, steering, and approval-aware work.
+description: "WEDNESDAY agent execution concepts: stateful turns, tool activity, durable research, steering, and approval-aware work."
 permalink: /agents/
 markdown_url: /agents.md
 ---
