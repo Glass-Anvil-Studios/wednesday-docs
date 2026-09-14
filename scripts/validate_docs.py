@@ -17,7 +17,8 @@ REQUIRED = [
     "assets/css/site.css", "assets/js/site.js", "SECURITY.md", "CONTRIBUTING.md",
     "policy/public_release_policy.json", "policy/public_contract_allowlist.json",
     "policy/public_release_exceptions.json", "scripts/public_release_firewall.py",
-    "tests/test_public_release_firewall.py",
+    "scripts/validate_public_contract.py", "tests/test_public_release_firewall.py",
+    "tests/test_public_contract.py",
 ]
 REQUIRED_EXCLUDES = [
     "scripts", "tests", "policy", "docs", ".github", "CONTRIBUTING.md",
