@@ -9,12 +9,12 @@ Canonical origin: https://docs.wednesdaychat.com
 
 This file consolidates the human-facing public documentation that is safe to use as a WEDNESDAY platform reference. The HTML pages remain authoritative for navigation and release status.
 
-{% assign docs = site.pages | where_exp: "p", "p.title and p.search != false" %}
-{% for p in docs %}
+{% assign docs = site.pages | where_exp: "p", "p.title" %}
+{% for p in docs %}{% unless p.search == false %}
 ---
 
 # {{ p.title }}
 Source: {{ site.url }}{{ p.url }}
 
 {{ p.content }}
-{% endfor %}
+{% endunless %}{% endfor %}
