@@ -11,6 +11,7 @@
 - https://docs.wednesdaychat.com/platform/conversation-state/ — Durable conversation state
 - https://docs.wednesdaychat.com/platform/streaming/ — Streaming responses
 - https://docs.wednesdaychat.com/platform/steering/ — Mid-turn steering
+- https://docs.wednesdaychat.com/memory/ — Memory
 - https://docs.wednesdaychat.com/projects/ — Projects
 - https://docs.wednesdaychat.com/files/ — Files
 - https://docs.wednesdaychat.com/search/ — Search
