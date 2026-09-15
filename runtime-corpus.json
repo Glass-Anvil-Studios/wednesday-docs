@@ -3,8 +3,8 @@
   "corpus_id": "wednesday-public-docs",
   "canonical_origin": "https://docs.wednesdaychat.com",
   "language": "en",
-  "corpus_hash": "fce04dbd05d20f2db474d59a6c4daa738912d3fbf26384c7f87c290a527a6f1d",
-  "chunk_count": 147,
+  "corpus_hash": "11507ad116b7485f4d6e7fc7f1ad080889215d6b7c63d5405d00e180fb4a8fd1",
+  "chunk_count": 157,
   "chunks": [
     {
       "id": "agents.overview",
@@ -1121,6 +1121,146 @@
       "lifecycle": "stable",
       "source_path": "machine-readable/index.md",
       "ordinal": 6
+    },
+    {
+      "id": "memory.overview",
+      "title": "Memory",
+      "section": "Overview",
+      "url": "https://docs.wednesdaychat.com/memory/",
+      "content": "Memory gives WEDNESDAY controlled continuity across conversations while keeping account, Project, source-consent, and Temporary Chat boundaries explicit.",
+      "content_hash": "b6e3ff75a52881e41bc038c3aa56263834e0ecbc1c6e1a822039e12bc7efe2b9",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 0
+    },
+    {
+      "id": "memory.memory-at-a-glance",
+      "title": "Memory",
+      "section": "Memory at a glance",
+      "url": "https://docs.wednesdaychat.com/memory/#memory-at-a-glance",
+      "content": "WEDNESDAY has separate continuity layers rather than one global memory switch:\n\n- **Saved Memory** stores durable account-scoped facts and preferences that can be used in later standard conversations.\n- **Chat History Reference** can use relevant prior non-Project conversations without converting those conversations into Saved Memory.\n- **Project Memory** stays within its Project and is governed by that Project's Memory setting.\n\nSaved Memory and Chat History Reference are independent. Turning one off does not automatically turn the other off.",
+      "content_hash": "ad3a51fd1d318e59645ff7a28391050c3a051f234aa429341d1b7916274e7f55",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 1
+    },
+    {
+      "id": "memory.saved-memory",
+      "title": "Memory",
+      "section": "Saved Memory",
+      "url": "https://docs.wednesdaychat.com/memory/#saved-memory",
+      "content": "Saved Memory is durable account-scoped continuity. When effective Saved Memory is enabled, WEDNESDAY can use eligible Saved Memory in later standard conversations and can create or update eligible account Memory.\n\nWhen Saved Memory is off:\n\n- WEDNESDAY does not read ordinary account Saved Memory into a new standard turn;\n- new ordinary account Saved Memory is not written;\n- existing Saved Memory is retained rather than deleted automatically; and\n- existing Memory can still be reviewed or deleted.\n\nTurning Saved Memory off is therefore a usage control, not a delete operation.",
+      "content_hash": "e5f6381bb6197d865661e89f7f1d9e85cbe822e8179f8f2db74fba5accbbd67e",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 2
+    },
+    {
+      "id": "memory.chat-history-reference",
+      "title": "Memory",
+      "section": "Chat History Reference",
+      "url": "https://docs.wednesdaychat.com/memory/#chat-history-reference",
+      "content": "Chat History Reference is a separate continuity layer for relevant prior non-Project conversations.\n\nWhen it is off, WEDNESDAY does not scan or use those prior conversations as cross-chat context. Existing conversations are not deleted, and they are not converted into Saved Memory.\n\nThe current conversation remains available normally. Saved Memory remains independently controlled by its own effective setting.",
+      "content_hash": "ca0ea70d8a20129493779b628ed8059ff3301929aec576545e1f16f7142ea81b",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 3
+    },
+    {
+      "id": "memory.project-memory",
+      "title": "Memory",
+      "section": "Project Memory",
+      "url": "https://docs.wednesdaychat.com/memory/#project-memory",
+      "content": "Project Memory is scoped to the Project that owns it. A Project can maintain its own continuity under its Project Memory setting without turning that information into account-wide Saved Memory.\n\nInside a Project, Project-local context remains the authority for Project continuity. Account Saved Memory and ordinary prior-chat reference are kept separate from that Project scope.",
+      "content_hash": "8f47e05d84c460484d42e0800e9b3e93392991e9377c37b06d160e2da9914dfa",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 4
+    },
+    {
+      "id": "memory.memory-controls-and-availability",
+      "title": "Memory",
+      "section": "Memory controls and availability",
+      "url": "https://docs.wednesdaychat.com/memory/#memory-controls-and-availability",
+      "content": "**Settings > Personalization > Memory** exposes separate controls for Saved Memory and Chat History Reference.\n\nA user's preference and the service's availability decision are separate. A feature can therefore be turned on by the user but still be unavailable because of the account's plan or an applicable policy. The effective state is the combination of both.\n\nIf a Memory control is unavailable, the product can explain that it is unavailable on the current plan or disabled by policy without exposing internal entitlement identifiers.",
+      "content_hash": "00144f34494edbe116ef170ddda3bfed360376164d2abb96e2d040b01fc0a61b",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 5
+    },
+    {
+      "id": "memory.managing-existing-memory",
+      "title": "Memory",
+      "section": "Managing existing Memory",
+      "url": "https://docs.wednesdaychat.com/memory/#managing-existing-memory",
+      "content": "Existing account Memory remains manageable even when Saved Memory is off. Users can review and delete existing Memory, and destructive clear-all behavior remains available.\n\nEditing existing account Memory is unavailable while effective Saved Memory is off because an edit is a new durable write. Project Memory editing remains governed by the Project's own scope and Memory setting.",
+      "content_hash": "e1213af119b1df5ad1fb822884f31e865d87c3c2239fc399f0ea17f9c1cc17db",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 6
+    },
+    {
+      "id": "memory.files-and-connected-source-consent",
+      "title": "Memory",
+      "section": "Files and connected-source consent",
+      "url": "https://docs.wednesdaychat.com/memory/#files-and-connected-source-consent",
+      "content": "Information from files or connected sources does not become reusable Memory merely because the source exists. Reusable Memory from those sources is governed by explicit source-consent and ownership boundaries.\n\nIf consent for a source is revoked, Memory supported only by that source is no longer retained as reusable source-backed Memory. A Memory can remain when it is still independently supported by another consented source.",
+      "content_hash": "84440bc307eb1fa1b42d0c5422a792b4cdaa91de43aa5a666aab165d5e8a4b08",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 7
+    },
+    {
+      "id": "memory.temporary-chat",
+      "title": "Memory",
+      "section": "Temporary Chat",
+      "url": "https://docs.wednesdaychat.com/memory/#temporary-chat",
+      "content": "Temporary Chat is a no-continuity boundary for ordinary account Memory:\n\n- ordinary account Saved Memory is not read;\n- prior non-Project Chat History Reference is not read;\n- ordinary account Memory is not written from the Temporary Chat; and\n- the current Temporary Chat transcript still works as current-conversation context.\n\nA Temporary Chat cannot be attached to a Project. Files uploaded from it remain temporary unless the user explicitly saves them to Library.\n\nLeaving Temporary Chat means starting a new standard conversation; an existing Temporary Chat is not retroactively converted into an ordinary continuity source.",
+      "content_hash": "cdb16d6efad7a20bd802ba98dee8c891f563fb6de2259bdaf178d98904102a36",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 8
+    },
+    {
+      "id": "memory.privacy-and-ownership-boundary",
+      "title": "Memory",
+      "section": "Privacy and ownership boundary",
+      "url": "https://docs.wednesdaychat.com/memory/#privacy-and-ownership-boundary",
+      "content": "Memory is account-owned and server-authorized. Conversation, Project, file, and connected-source boundaries are evaluated before information can participate in Memory or retrieval.\n\nDocumentation describes these product semantics, but documentation itself never grants Memory access, changes an account setting, overrides policy, or authorizes access to another account's data.",
+      "content_hash": "9f56f2a8de74993dad1aea050a94904aca339d31ab59d44dd6c4ebcbc1e74c0f",
+      "tags": [
+        "memory"
+      ],
+      "lifecycle": "stable",
+      "source_path": "memory/index.md",
+      "ordinal": 9
     },
     {
       "id": "models.overview",
