@@ -4,6 +4,7 @@
   "public_source_roots": [
     "getting-started",
     "platform",
+    "memory",
     "projects",
     "files",
     "search",
