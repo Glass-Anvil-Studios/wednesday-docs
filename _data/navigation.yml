@@ -15,6 +15,8 @@ sections:
         url: /platform/streaming/
       - title: Mid-turn steering
         url: /platform/steering/
+      - title: Memory
+        url: /memory/
       - title: Projects
         url: /projects/
       - title: Files
