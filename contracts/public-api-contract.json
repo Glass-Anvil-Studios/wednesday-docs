@@ -1,5 +1,5 @@
 {
-  "contract_fingerprint": "0fd00506aa1f88370532acef4680aef5aebba3c03b28bcf75230e8b1b5fd37af",
+  "contract_fingerprint": "bc4840cfd7b751100f8e37403151744cb2302746fba696501392fa6eac264104",
   "contract_format": "wednesday-public-api-structural-v1",
   "endpoint_count": 24,
   "endpoints": [
@@ -125,7 +125,7 @@
         "200",
         "422"
       ],
-      "structural_fingerprint": "e650e7b60d5c7159a8f75522e11f96c754ea420dffc0648c034e435233f22b06"
+      "structural_fingerprint": "57616f7ec84c1658c849de65f91761e36c6c50651aa64eddbb11bf146a4edb03"
     },
     {
       "deprecated": false,
@@ -149,7 +149,7 @@
         "200",
         "422"
       ],
-      "structural_fingerprint": "d729ffec8871ef8a17883feb64161df9f98872097369c2563f2bb53c30eec8e5"
+      "structural_fingerprint": "9222bfef0b2175a2aa04bae04625a78e4848f17a99fb46eec329744fbf6a69fd"
     },
     {
       "deprecated": false,
@@ -205,7 +205,7 @@
         "200",
         "422"
       ],
-      "structural_fingerprint": "fa694d54f553d386974d4b3963f4c77d39a6186f0bac16d9fdfbd1f41d229156"
+      "structural_fingerprint": "41e609bc2328c499a0bddd30c9887c982c134e9cd0ee7821dc30d31feb0774af"
     },
     {
       "deprecated": false,
@@ -256,7 +256,7 @@
         "200",
         "422"
       ],
-      "structural_fingerprint": "3eae0d276be2d128a3356dd0068c2ef87f539b0c1363c539e87905d42275e056"
+      "structural_fingerprint": "abae8893065319452a8548533d2cdb319113d8a7f873482fc349c6f5ab2b0898"
     },
     {
       "deprecated": false,
